@@ -9,7 +9,12 @@ a{color:#1f6f5c}.cta{background:#e3f1ec;border:1px solid #b7dccd;border-radius:1
 table{border-collapse:collapse;width:100%;margin:16px 0}td,th{border:1px solid #d1d5db;padding:8px;text-align:left}th{background:#f3f4f6}
 .lista a{display:block;padding:14px 0;border-bottom:1px solid #e5e7eb;font-weight:600;text-decoration:none}.lista span{display:block;font-weight:400;color:#6b7280;font-size:.95rem}
 footer{text-align:center;color:#6b7280;font-size:.85rem;padding:30px 20px;border-top:1px solid #e5e7eb}.aviso{font-size:.85rem;color:#6b7280}"""
-def cta(): return f"""<div class="cta"><strong>Planilha MEI 2027: controle tudo isso automaticamente</strong>
+CHECKOUT2="https://pay.kiwify.com.br/YThmb2o"
+def cta(prod="mei"):
+    if prod=="fin": return f"""<div class="cta" style="background:#e8ebf7;border-color:#c5cbeb"><strong>Planilha Financeira Pessoal 2027: faça isso no automático</strong>
+<p>Orçamento por categoria com alerta quando estoura, controle de dívidas, metas de economia e painel com gráficos. Funciona no Excel e no Google Planilhas.</p>
+<a class="btn" style="background:#3b4a9c" href="{CHECKOUT2}" rel="nofollow">Quero a planilha por R$ 24,90</a></div>"""
+    return f"""<div class="cta"><strong>Planilha MEI 2027: controle tudo isso automaticamente</strong>
 <p>Relatório mensal pronto para imprimir, alerta do limite de R$ 81 mil, controle do DAS e valores da DASN-SIMEI calculados. Funciona no Excel e no Google Planilhas.</p>
 <a class="btn" href="{CHECKOUT}" rel="nofollow">Quero a planilha por R$ 29,90</a></div>"""
 def page(slug,title,desc,body,article=True):
@@ -205,14 +210,65 @@ A.append(("planilha-relatorio-mensal-mei-gratis","Planilha grátis: Relatório M
 <p>Na versão gratuita você precisa somar suas vendas antes de digitar. Na versão completa você lança cada venda e despesa uma vez, e ela monta o relatório de qualquer mês, mostra o lucro, avisa quando você chega perto do limite de R$ 81 mil e controla o DAS.</p>
 """))
 
-for slug,t,d,b in A:
+A.append(("como-fazer-orcamento-pessoal","Como fazer um orçamento pessoal que funciona (método 50-30-20)",
+"Passo a passo para montar seu orçamento mensal, a regra 50-30-20 adaptada à realidade brasileira e como fazer sobrar dinheiro no fim do mês.",
+"""<h1>Como fazer um orçamento pessoal que funciona (método 50-30-20)</h1>
+<p>Orçamento não é cortar tudo o que dá prazer. É decidir antes para onde o dinheiro vai, em vez de descobrir depois para onde ele foi.</p>
+<h2>1. Descubra quanto entra de verdade</h2>
+<p>Use a renda <strong>líquida</strong>: o que cai na conta depois dos descontos. Se a renda varia (comissão, bicos, MEI), use a média dos últimos 3 meses, ou o menor valor deles para ficar mais seguro.</p>
+<h2>2. Anote um mês inteiro de gastos</h2>
+<p>Antes de planejar, registre tudo por 30 dias: do aluguel ao cafezinho. A maioria das pessoas se surpreende com delivery, assinaturas esquecidas e compras pequenas no cartão.</p>
+<h2>3. Divida a renda com a regra 50-30-20</h2>
+<table><tr><th>Parte</th><th>Para quê</th><th>Exemplo com R$ 4.000</th></tr>
+<tr><td>50%</td><td>Necessidades: moradia, contas, mercado, transporte, saúde</td><td>R$ 2.000</td></tr>
+<tr><td>30%</td><td>Desejos: lazer, restaurantes, compras, streaming</td><td>R$ 1.200</td></tr>
+<tr><td>20%</td><td>Futuro: reserva de emergência, investimentos, quitar dívidas</td><td>R$ 800</td></tr></table>
+<p>Na realidade brasileira, moradia e mercado costumam passar de 50%. Tudo bem ajustar para 60-30-10 no começo; o importante é ter uma parte fixa para o futuro e ir aumentando.</p>
+<h2>4. Transforme em limites por categoria</h2>
+<p>Quebre cada parte em categorias com um valor máximo: mercado R$ 900, delivery R$ 200, lazer R$ 250... É o limite por categoria que funciona no dia a dia, porque você sabe na hora se ainda pode gastar.</p>
+<h2>5. Pague-se primeiro</h2>
+<p>No dia em que o salário cair, transfira a parte do futuro para outra conta ou investimento. O que sobra é o que você pode gastar. Deixar para guardar "o que sobrar" quase sempre resulta em zero.</p>
+<h2>6. Revise toda semana</h2>
+<p>Uma olhada de 5 minutos por semana para ver quanto já foi gasto em cada categoria evita a surpresa no fim do mês. Se uma categoria estourou, compense em outra no mesmo mês.</p>
+<h2>Erros comuns</h2>
+<ul><li>Esquecer gastos anuais (IPVA, IPTU, material escolar): divida por 12 e reserve todo mês.</li>
+<li>Tratar o limite do cartão como renda.</li><li>Fazer um orçamento apertado demais e desistir na segunda semana.</li></ul>
+""","fin"))
+A.append(("reserva-de-emergencia","Reserva de emergência: quanto guardar, onde deixar e como começar",
+"Quanto deve ter na reserva de emergência, onde guardar com segurança e liquidez, e um plano simples para montar a sua mesmo ganhando pouco.",
+"""<h1>Reserva de emergência: quanto guardar, onde deixar e como começar</h1>
+<p>A reserva de emergência é o dinheiro que impede que um imprevisto, como desemprego, conserto do carro ou problema de saúde, vire dívida no cartão ou no cheque especial.</p>
+<h2>Quanto guardar</h2>
+<table><tr><th>Situação</th><th>Reserva recomendada</th></tr>
+<tr><td>Carteira assinada, renda estável</td><td>3 a 6 meses de despesas</td></tr>
+<tr><td>Autônomo, MEI ou renda variável</td><td>6 a 12 meses de despesas</td></tr></table>
+<p>A conta é sobre suas <strong>despesas mensais</strong>, não sobre o salário. Se você gasta R$ 3.000 por mês e tem carteira assinada, a meta fica entre R$ 9.000 e R$ 18.000.</p>
+<h2>Onde deixar</h2>
+<p>A reserva precisa de três coisas: <strong>segurança</strong>, <strong>liquidez</strong> (resgate no mesmo dia) e render pelo menos perto da inflação. Opções comuns:</p>
+<ul><li><strong>Tesouro Selic:</strong> título público, baixo risco, resgate rápido.</li>
+<li><strong>CDB com liquidez diária</strong> que pague perto de 100% do CDI, de banco coberto pelo FGC.</li>
+<li><strong>Contas remuneradas</strong> de bancos digitais com rendimento atrelado ao CDI.</li></ul>
+<p>Evite ações, criptomoedas e qualquer aplicação com carência ou que possa cair de valor justo quando você precisar do dinheiro. A poupança é segura, mas costuma render menos que as opções acima.</p>
+<h2>Como começar ganhando pouco</h2>
+<ol><li>Defina uma primeira meta pequena: um mês de despesas.</li>
+<li>Escolha um valor fixo para guardar todo mês, mesmo que seja R$ 50, e transfira assim que receber.</li>
+<li>Direcione dinheiro extra (13º, restituição do IR, bicos) para a reserva até bater a meta.</li>
+<li>Corte uma despesa recorrente (uma assinatura, delivery semanal) e mande esse valor direto para a reserva.</li></ol>
+<h2>E se eu tiver dívidas?</h2>
+<p>Se as dívidas têm juros altos (cartão rotativo, cheque especial), priorize quitá-las, mantendo uma reserva mínima para não voltar a usar o crédito no próximo imprevisto. Dívidas com juros baixos podem seguir no prazo enquanto a reserva cresce.</p>
+<h2>Quando usar</h2>
+<p>Só em emergências de verdade: perda de renda, saúde, consertos inadiáveis. Usou? A prioridade passa a ser repor a reserva.</p>
+""","fin"))
+for art in A:
+    slug,t,d,b=art[:4]; prod=art[4] if len(art)>4 else "mei"
     os.makedirs(f"{OUT}/{slug}",exist_ok=True)
-    body=b+cta()+'<p class="aviso">Conteúdo informativo. Regras podem mudar: confirme no Portal do Empreendedor ou com um contador.</p><p><a href="'+BASE+'/">← Todos os guias</a></p>'
+    aviso='Conteúdo informativo, não é recomendação financeira individual.' if prod=='fin' else 'Conteúdo informativo. Regras podem mudar: confirme no Portal do Empreendedor ou com um contador.'
+    body=b+cta(prod)+'<p class="aviso">'+aviso+'</p><p><a href="'+BASE+'/">← Todos os guias</a></p>'
     open(f"{OUT}/{slug}/index.html","w").write(page(slug+"/",t,d,body))
-lista="".join(f'<a href="{BASE}/{s}/">{html.escape(t)}<span>{html.escape(d)}</span></a>' for s,t,d,_ in A)
-home=f"""<h1>Guias práticos para o MEI</h1><p>Limite de faturamento, DAS, relatório mensal e declaração anual explicados sem complicação.</p>{cta()}<div class="lista">{lista}</div>"""
+lista="".join(f'<a href="{BASE}/{s}/">{html.escape(t)}<span>{html.escape(d)}</span></a>' for s,t,d,*_ in A)
+home=f"""<h1>Guias práticos para o MEI e para o seu dinheiro</h1><p>Limite de faturamento, DAS, relatório mensal, declaração anual e organização financeira explicados sem complicação.</p>{cta()}<div class="lista">{lista}</div>"""
 open(f"{OUT}/index.html","w").write(page("","MEI em Dia: guias práticos para o Microempreendedor Individual","Limite do MEI, DAS, relatório mensal de receitas e DASN-SIMEI explicados de forma simples.",home,False))
-sm="".join(f"<url><loc>{BASE}/{s}/</loc><lastmod>{HOJE}</lastmod></url>" for s,_,_,_ in A)
+sm="".join(f"<url><loc>{BASE}/{a[0]}/</loc><lastmod>{HOJE}</lastmod></url>" for a in A)
 open(f"{OUT}/sitemap.xml","w").write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>{BASE}/</loc></url>{sm}</urlset>')
 open(f"{OUT}/robots.txt","w").write(f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n")
 print("ok", len(A))
