@@ -55,7 +55,7 @@ A.append(("relatorio-mensal-de-receitas-brutas-mei","Relatório Mensal de Receit
 <tr><td>Prestação de serviços</td><td>Quem vende serviços</td></tr></table>
 <p>No final vem o <strong>total geral do mês</strong>, que é a soma dos três blocos. Se você só presta serviços, deixa os outros zerados.</p>
 <h2>Com ou sem nota fiscal?</h2>
-<p>O MEI não precisa emitir nota fiscal quando vende para pessoa física (consumidor final), a não ser que o cliente peça. Para empresas (CNPJ), a nota é obrigatória. Na prestação de serviços, a nota é a NFS-e no padrão nacional. Mesmo sem nota, a receita entra no relatório e conta para o limite anual.</p>
+<p>Hoje o MEI não precisa emitir nota fiscal quando vende para pessoa física (consumidor final), a não ser que o cliente peça. Para empresas (CNPJ), a nota é obrigatória. Na prestação de serviços, a nota é a NFS-e no padrão nacional. Mesmo sem nota, a receita entra no relatório e conta para o limite anual. Atenção: a Reforma Tributária prevê ampliar a exigência de nota a partir de 2027 (veja o <a href="https://projects-betanull.github.io/mei-em-dia/nota-fiscal-mei/">guia de nota fiscal</a>).</p>
 <h2>Erros comuns</h2>
 <ul><li>Lançar só o que teve nota e esquecer as vendas em dinheiro ou Pix.</li><li>Descontar despesas: o relatório é de receita <em>bruta</em>.</li><li>Deixar para preencher tudo em maio, na hora da declaração anual.</li></ul>
 """))
@@ -67,7 +67,10 @@ A.append(("das-mei-valor-vencimento","DAS MEI: valor, vencimento e o que acontec
 <p>O valor é a soma de três partes:</p>
 <ul><li><strong>INSS:</strong> 5% do salário mínimo vigente. Garante aposentadoria, auxílio-doença e salário-maternidade.</li>
 <li><strong>ICMS: R$ 1</strong>, para comércio e indústria.</li><li><strong>ISS: R$ 5</strong>, para serviços.</li></ul>
-<p>Como depende do salário mínimo, o DAS muda todo janeiro. Confira o valor exato da sua guia no Portal do Empreendedor ou no app MEI.</p>
+<p>Com o salário mínimo de 2026 (R$ 1.621), a parte do INSS é de R$ 81,05. Os valores mensais ficam assim:</p>
+<table><tr><th>Atividade</th><th>DAS 2026</th></tr><tr><td>Comércio e indústria</td><td>R$ 82,05</td></tr>
+<tr><td>Serviços</td><td>R$ 86,05</td></tr><tr><td>Comércio e serviços</td><td>R$ 87,05</td></tr></table>
+<p>Como depende do salário mínimo, o DAS muda todo ano: o valor novo vale a partir da guia de janeiro (paga em fevereiro). Confira sempre o valor exato no Portal do Empreendedor ou no app MEI.</p>
 <h2>Vencimento</h2>
 <p>O DAS vence no <strong>dia 20 de cada mês</strong> e se refere ao mês anterior. Exemplo: o DAS de março vence em 20 de abril. Se cair em fim de semana ou feriado, o prazo passa para o dia útil seguinte.</p>
 <h2>Como pagar</h2>
@@ -95,6 +98,113 @@ A.append(("dasn-simei-declaracao-anual-mei","DASN-SIMEI: como fazer a declaraç�
 <h2>Erros que mais acontecem</h2>
 <ul><li>Informar só o valor das notas emitidas.</li><li>Informar o lucro em vez do faturamento bruto.</li><li>Misturar receitas de comércio e de serviços.</li></ul>
 """))
+A.append(("nota-fiscal-mei","Nota fiscal MEI: quando é obrigatória e como emitir (e o que muda em 2027)",
+"Quando o MEI precisa emitir nota fiscal, a diferença entre NFS-e e NF-e, como emitir pelo emissor nacional e a mudança prevista para 2027.",
+"""<h1>Nota fiscal MEI: quando é obrigatória e como emitir (e o que muda em 2027)</h1>
+<p>Nota fiscal é uma das maiores dúvidas de quem é MEI. A regra geral é simples, mas existe uma mudança importante prevista para 2027 que vale acompanhar desde já.</p>
+<h2>Quando a nota é obrigatória hoje</h2>
+<table><tr><th>Situação</th><th>Nota fiscal</th></tr>
+<tr><td>Venda ou serviço para empresa (CNPJ)</td><td>Obrigatória</td></tr>
+<tr><td>Venda ou serviço para órgão público</td><td>Obrigatória</td></tr>
+<tr><td>Venda ou serviço para pessoa física (CPF)</td><td>Só se o cliente pedir</td></tr></table>
+<p>Mesmo quando a nota não é obrigatória, o valor recebido conta como faturamento e entra no relatório mensal e no limite anual de R$ 81 mil.</p>
+<h2>NFS-e ou NF-e?</h2>
+<ul><li><strong>NFS-e (serviços):</strong> o MEI prestador de serviços emite pelo <strong>Emissor Nacional da NFS-e</strong> (site nfse.gov.br ou app NFS-e Mobile), com login gov.br. É gratuito.</li>
+<li><strong>NF-e (produtos):</strong> quem vende mercadorias emite a nota de produto, que depende de credenciamento na Secretaria da Fazenda do seu estado e de um sistema emissor autorizado.</li></ul>
+<p>Quem vende produtos e serviços pode precisar dos dois tipos.</p>
+<h2>Como emitir a NFS-e, passo a passo</h2>
+<ol><li>Acesse o Emissor Nacional com sua conta gov.br (nível prata ou ouro).</li>
+<li>No primeiro acesso, confira os dados do seu CNPJ.</li>
+<li>Clique em emitir nota e informe os dados do cliente (CPF ou CNPJ).</li>
+<li>Escolha o código do serviço que corresponde ao que você fez, descreva o serviço e informe o valor.</li>
+<li>Confira tudo e emita. O PDF e o XML ficam salvos no sistema.</li></ol>
+<p>Dica: cadastre como favoritos os clientes e serviços que se repetem. A emissão cai para menos de um minuto.</p>
+<h2>O que muda em 2027</h2>
+<p>Com a Reforma Tributária, o cronograma em discussão prevê que a emissão de nota fiscal passe a ser exigida em praticamente todas as operações do MEI, inclusive vendas e serviços para pessoa física, a partir de 2027. As regras finais ainda podem ser ajustadas, então acompanhe pelo Portal do Empreendedor. Na prática, quem já se acostumar a emitir nota em toda venda e a registrar tudo no controle mensal vai sentir muito menos a mudança.</p>
+<h2>Erros comuns</h2>
+<ul><li>Não emitir para empresas por achar que é opcional.</li><li>Usar um código de serviço que não corresponde à atividade.</li>
+<li>Lançar no controle só o que teve nota e esquecer vendas por Pix ou dinheiro.</li></ul>
+"""))
+A.append(("mei-pode-ter-funcionario","MEI pode ter funcionário? Regras, custo e como contratar",
+"Quantos funcionários o MEI pode ter, qual salário pode pagar, encargos de 3% de INSS e 8% de FGTS e quanto custa contratar em 2026.",
+"""<h1>MEI pode ter funcionário? Regras, custo e como contratar</h1>
+<p>Sim. O MEI pode contratar <strong>um único funcionário</strong> com carteira assinada (Lei Complementar 123/2006, art. 18-C). Mas há regras de salário e encargos que precisam caber no seu caixa.</p>
+<h2>As regras</h2>
+<ul><li><strong>Apenas 1 empregado.</strong> Contratar o segundo tira a empresa do MEI.</li>
+<li><strong>Salário:</strong> o salário mínimo nacional ou o piso da categoria profissional.</li>
+<li>O funcionário tem todos os direitos da CLT: férias com 1/3, 13º, FGTS, vale-transporte, aviso prévio.</li>
+<li>O registro é feito pelo <strong>eSocial</strong> (módulo simplificado), antes de a pessoa começar a trabalhar.</li></ul>
+<h2>Quanto custa por mês</h2>
+<p>Sobre o salário, o MEI paga <strong>3% de INSS patronal</strong> e <strong>8% de FGTS</strong>. Os dois são pagos em uma guia única gerada pelo eSocial (DAE). Exemplo com o salário mínimo de 2026 (R$ 1.621):</p>
+<table><tr><th>Item</th><th>Valor mensal</th></tr>
+<tr><td>Salário</td><td>R$ 1.621,00</td></tr><tr><td>INSS patronal (3%)</td><td>R$ 48,63</td></tr>
+<tr><td>FGTS (8%)</td><td>R$ 129,68</td></tr><tr><td><strong>Total direto</strong></td><td><strong>R$ 1.799,31</strong></td></tr></table>
+<p>O INSS do próprio empregado (7,5% na faixa do salário mínimo) é descontado do salário dele, não é custo extra seu.</p>
+<h2>O custo que muita gente esquece</h2>
+<p>Além do mês a mês, separe todo mês uma reserva para 13º salário, férias com 1/3 e o FGTS sobre eles. Na prática, isso acrescenta cerca de <strong>20% a 25%</strong> ao custo. Considere também vale-transporte e uma provisão para a multa de 40% do FGTS em caso de demissão sem justa causa.</p>
+<h2>Vale a pena contratar?</h2>
+<p>Faça a conta com seus números: o funcionário precisa gerar mais lucro do que custa. Se seu lucro médio mensal for de R$ 3 mil, por exemplo, um custo total perto de R$ 2.200 consome quase tudo. Olhe o lucro dos últimos meses, não só o faturamento.</p>
+<p>Lembre também do limite de R$ 81 mil por ano: crescer com funcionário costuma aproximar o MEI do teto. Se isso for acontecer, vale conversar com um contador sobre virar Microempresa.</p>
+"""))
+A.append(("controle-financeiro-mei","Controle financeiro do MEI: como organizar o dinheiro do seu negócio",
+"Passo a passo simples para o MEI controlar receitas, despesas e lucro, separar o dinheiro pessoal e não estourar o limite anual.",
+"""<h1>Controle financeiro do MEI: como organizar o dinheiro do seu negócio</h1>
+<p>Muitos MEIs faturam bem e mesmo assim sentem que o dinheiro some. Quase sempre o problema é falta de controle, não de vendas. A boa notícia: um controle simples, feito com constância, já resolve.</p>
+<h2>1. Separe a conta da empresa da conta pessoal</h2>
+<p>Abra uma conta PJ (muitos bancos digitais oferecem conta gratuita para MEI) e use-a só para o negócio. Recebimentos de clientes entram nela; gastos do negócio saem dela. Misturar as duas é o erro número um.</p>
+<h2>2. Defina quanto você vai tirar para você</h2>
+<p>Em vez de pegar dinheiro do caixa sempre que precisar, estabeleça uma retirada fixa por mês, como se fosse um salário. O que sobra fica no negócio para reposição, imprevistos e investimento.</p>
+<h2>3. Registre toda entrada e saída</h2>
+<p>Cada venda e cada gasto vira uma linha: data, tipo (receita ou despesa), categoria, valor. Para receitas, anote também se teve nota fiscal e se é comércio, indústria ou serviço. É isso que monta o relatório mensal obrigatório.</p>
+<h2>4. Use categorias de despesa</h2>
+<p>Mercadorias, DAS, aluguel, internet, transporte, anúncios, taxas de maquininha. Com categorias, você descobre para onde o dinheiro vai e onde dá para cortar.</p>
+<h2>5. Feche o mês</h2>
+<p>Até o dia 20 do mês seguinte, faça três coisas: preencha o relatório mensal de receitas brutas, pague o DAS e olhe o resultado:</p>
+<table><tr><th>Indicador</th><th>Como calcular</th></tr>
+<tr><td>Lucro do mês</td><td>Receitas − despesas</td></tr>
+<tr><td>Margem</td><td>Lucro ÷ receitas</td></tr>
+<tr><td>Uso do limite</td><td>Faturamento acumulado ÷ R$ 81.000</td></tr></table>
+<h2>6. Acompanhe o limite anual</h2>
+<p>Passar do limite em mais de 20% gera desenquadramento retroativo e impostos com multa. Acompanhando mês a mês, você vê o problema chegando com antecedência.</p>
+<h2>Planilha ou aplicativo?</h2>
+<p>Aplicativos de gestão costumam cobrar mensalidade. Uma planilha bem montada faz o essencial de graça depois de pronta, funciona no celular e os dados ficam com você.</p>
+"""))
+A.append(("separar-dinheiro-pessoal-e-da-empresa-mei","Como o MEI separa o dinheiro pessoal do da empresa (e quanto pode retirar)",
+"Por que misturar contas prejudica o MEI, como definir sua retirada mensal, se o lucro do MEI paga imposto de renda e como organizar na prática.",
+"""<h1>Como o MEI separa o dinheiro pessoal do da empresa (e quanto pode retirar)</h1>
+<p>No MEI, a empresa e a pessoa usam o mesmo nome e, muitas vezes, a mesma conta. Por isso é tão fácil misturar tudo. O resultado: você não sabe se o negócio dá lucro, nem quanto pode gastar sem descapitalizar a empresa.</p>
+<h2>Por que separar</h2>
+<ul><li>Saber o lucro real do negócio.</li><li>Ter dinheiro para repor estoque e pagar o DAS.</li>
+<li>Comprovar renda com mais facilidade (extratos da conta PJ).</li><li>Ter as contas organizadas se o negócio crescer e virar Microempresa.</li></ul>
+<h2>Quanto posso retirar?</h2>
+<p>Não existe valor fixo por lei. Um jeito prático:</p>
+<ol><li>Calcule o lucro médio dos últimos 3 meses (receitas − despesas).</li>
+<li>Defina sua retirada mensal em torno de 60% a 70% desse lucro.</li>
+<li>Deixe o restante na conta da empresa como reserva e capital de giro.</li></ol>
+<p>Exemplo: lucro médio de R$ 4.000 → retirada de R$ 2.600, com R$ 1.400 ficando no negócio. Revise o valor a cada trimestre.</p>
+<h2>A retirada paga imposto de renda?</h2>
+<p>Parte do lucro do MEI é isenta de imposto de renda na pessoa física, conforme percentuais que variam com a atividade (8% para comércio e indústria, 32% para serviços em geral, aplicados sobre a receita bruta), e essa parte pode crescer se você comprovar o lucro com escrituração. O que passar disso pode ser tributável. Se você tem outras rendas ou retiradas altas, vale conferir com um contador na época da declaração.</p>
+<h2>Como organizar na prática</h2>
+<ul><li>Receba sempre na conta PJ, inclusive o Pix dos clientes.</li><li>Pague as contas do negócio sempre pela conta PJ.</li>
+<li>Faça uma única transferência por mês para a sua conta pessoal: sua retirada.</li>
+<li>Registre essa transferência no controle como "retirada do dono", não como despesa do negócio, para enxergar o lucro real.</li></ul>
+"""))
+A.append(("planilha-relatorio-mensal-mei-gratis","Planilha grátis: Relatório Mensal de Receitas Brutas do MEI",
+"Baixe grátis a planilha do Relatório Mensal de Receitas Brutas do MEI, pronta para preencher e imprimir, no Excel ou Google Planilhas.",
+"""<h1>Planilha grátis: Relatório Mensal de Receitas Brutas do MEI</h1>
+<p>Todo MEI precisa preencher e guardar o Relatório Mensal de Receitas Brutas. Para facilitar, montamos uma planilha gratuita com os 12 meses do ano: você digita os valores de cada mês e o relatório fica pronto para imprimir e assinar.</p>
+<p><a class="btn" href="https://projects-betanull.github.io/mei-em-dia/arquivos/Relatorio_Mensal_MEI_Gratis.xlsx">Baixar planilha grátis (.xlsx)</a></p>
+<h2>O que tem na versão gratuita</h2>
+<ul><li>Uma aba para cada mês com o modelo oficial do relatório (comércio, indústria e serviços, com e sem nota fiscal).</li>
+<li>Totais calculados automaticamente.</li><li>Resumo anual com o total para a declaração DASN-SIMEI.</li></ul>
+<h2>Como usar</h2>
+<ol><li>Baixe o arquivo e abra no Excel ou importe no Google Planilhas (Arquivo → Importar).</li>
+<li>Na aba do mês, preencha os valores que você recebeu em cada tipo de receita.</li>
+<li>Imprima, assine e guarde junto com as notas fiscais do mês.</li></ol>
+<h2>Quer que a planilha some tudo sozinha?</h2>
+<p>Na versão gratuita você precisa somar suas vendas antes de digitar. Na versão completa você lança cada venda e despesa uma vez, e ela monta o relatório de qualquer mês, mostra o lucro, avisa quando você chega perto do limite de R$ 81 mil e controla o DAS.</p>
+"""))
+
 for slug,t,d,b in A:
     os.makedirs(f"{OUT}/{slug}",exist_ok=True)
     body=b+cta()+'<p class="aviso">Conteúdo informativo. Regras podem mudar: confirme no Portal do Empreendedor ou com um contador.</p><p><a href="'+BASE+'/">← Todos os guias</a></p>'
