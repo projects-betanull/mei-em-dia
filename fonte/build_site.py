@@ -15,7 +15,7 @@ def cta(): return f"""<div class="cta"><strong>Planilha MEI 2027: controle tudo 
 def page(slug,title,desc,body,article=True):
     url=f"{BASE}/{slug}" if slug else f"{BASE}/"
     ld=f'<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Article","headline":"{html.escape(title)}","dateModified":"{HOJE}","publisher":{{"@type":"Organization","name":"{SITE}"}}}}</script>' if article else ""
-    return f"""<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    return f"""<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="google-site-verification" content="w_NTN5a5cFI9a-yrtXuVR_EZzN4_bGfdlxHHK1rwZHU"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><meta name="description" content="{html.escape(desc)}"><link rel="canonical" href="{url}">
 <meta property="og:title" content="{html.escape(title)}"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:type" content="article">
 <style>{CSS}</style>{ld}</head><body><header><a href="{BASE}/">{SITE}</a></header><main>{body}</main>
