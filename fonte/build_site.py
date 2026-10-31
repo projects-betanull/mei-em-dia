@@ -259,6 +259,29 @@ A.append(("reserva-de-emergencia","Reserva de emergência: quanto guardar, onde 
 <h2>Quando usar</h2>
 <p>Só em emergências de verdade: perda de renda, saúde, consertos inadiáveis. Usou? A prioridade passa a ser repor a reserva.</p>
 ""","fin"))
+A.append(("nfs-e-nacional-simples-nacional-novembro-2026-mei","NFS-e Nacional obrigatória a partir de 1º de novembro: o que muda para o MEI",
+"Desde 1º de novembro de 2026, ME e EPP do Simples Nacional emitem nota de serviço pelo Emissor Nacional. Veja o que muda (e o que não muda) para o MEI.",
+"""<h1>NFS-e Nacional obrigatória a partir de 1º de novembro: o que muda para o MEI</h1>
+<p>A partir de <strong>1º de novembro de 2026</strong>, microempresas (ME) e empresas de pequeno porte (EPP) do Simples Nacional que prestam serviços passam a emitir a nota fiscal de serviço obrigatoriamente pelo <strong>Emissor Nacional da NFS-e</strong>, e não mais pelo sistema da prefeitura. A regra está na Resolução CGSN nº 191/2026, que adiou a data original de 1º de setembro.</p>
+<h2>E o MEI? Resposta curta: para você, quase nada muda agora</h2>
+<p>O MEI já é obrigado a emitir a NFS-e pelo Emissor Nacional desde <strong>setembro de 2023</strong>. Se você é MEI prestador de serviço e já emite pelo site nfse.gov.br ou pelo app NFS-e Mobile, continue do mesmo jeito.</p>
+<p>A mudança de novembro vale para quem é ME ou EPP. Mas ela interessa ao MEI em duas situações:</p>
+<ul><li><strong>Se você vai sair do MEI</strong> (por ter passado do limite de R$ 81 mil ou por contratar mais de um funcionário): como ME no Simples Nacional, você continua emitindo pelo mesmo Emissor Nacional. Não precisa aprender o sistema da prefeitura.</li>
+<li><strong>Se seus clientes são empresas do Simples:</strong> as notas que eles emitem agora seguem o mesmo padrão nacional, o que facilita conferir e guardar documentos.</li></ul>
+<h2>O imposto vai para Brasília?</h2>
+<p>Não. O que muda é <strong>onde a nota é emitida e o formato dela</strong>, que passa a ser igual no país inteiro. O <strong>ISS continua sendo um imposto municipal</strong>: a prefeitura segue responsável por fiscalizar, cobrar e arrecadar, e recebe automaticamente os dados das notas emitidas no ambiente nacional. Para o MEI, o ISS continua embutido no DAS mensal (R$ 5), sem mudança.</p>
+<p>O padrão nacional começou a ser construído em 2021 e 2022, por acordo entre a Receita Federal e entidades de municípios, e vem sendo adotado aos poucos pelas prefeituras. Ele também é a base técnica dos novos tributos da Reforma Tributária (IBS e CBS), que começam a aparecer nas notas a partir de 2027.</p>
+<h2>O que vem em 2027</h2>
+<table><tr><th>Quando</th><th>O que acontece</th></tr>
+<tr><td>Desde set/2023</td><td>MEI emite NFS-e só pelo Emissor Nacional</td></tr>
+<tr><td>1º/11/2026</td><td>ME e EPP do Simples também passam a emitir só pelo Emissor Nacional</td></tr>
+<tr><td>1º/1/2027</td><td>Começam a valer as regras de IBS e CBS para o Simples Nacional nos documentos fiscais</td></tr></table>
+<p>Para o MEI, o ponto de atenção em 2027 é a <strong>ampliação da exigência de nota fiscal</strong> prevista pela Reforma, inclusive em vendas para pessoa física. Veja os detalhes no <a href="https://projects-betanull.github.io/mei-em-dia/nota-fiscal-mei/">guia de nota fiscal do MEI</a> e acompanhe as regras finais no Portal do Empreendedor.</p>
+<h2>Checklist rápido para o MEI</h2>
+<ul><li>Sua conta gov.br está no nível prata ou ouro? É ela que dá acesso ao Emissor Nacional.</li>
+<li>Seus clientes e serviços frequentes estão salvos como favoritos no emissor?</li>
+<li>Você registra todas as receitas, com e sem nota, no seu controle mensal? É isso que monta o relatório mensal e mostra quanto falta para o limite anual.</li></ul>
+"""))
 for art in A:
     slug,t,d,b=art[:4]; prod=art[4] if len(art)>4 else "mei"
     os.makedirs(f"{OUT}/{slug}",exist_ok=True)
