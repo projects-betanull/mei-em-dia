@@ -282,6 +282,45 @@ A.append(("nfs-e-nacional-simples-nacional-novembro-2026-mei","NFS-e Nacional ob
 <li>Seus clientes e serviços frequentes estão salvos como favoritos no emissor?</li>
 <li>Você registra todas as receitas, com e sem nota, no seu controle mensal? É isso que monta o relatório mensal e mostra quanto falta para o limite anual.</li></ul>
 """))
+A.append(("como-sair-das-dividas","Como sair das dívidas: plano em 7 passos para quitar e limpar o nome",
+"Passo a passo para sair das dívidas: listar tudo, priorizar os juros mais caros, negociar com desconto, usar o Desenrola e não voltar a se endividar.",
+"""<h1>Como sair das dívidas: plano em 7 passos para quitar e limpar o nome</h1>
+<p>Dívida não se resolve com força de vontade nem pagando "um pouco de cada" sem critério. Resolve-se com um plano: saber exatamente quanto deve, atacar primeiro o que cobra mais juros e negociar no momento certo. Este guia mostra o caminho em sete passos.</p>
+<h2>1. Liste todas as dívidas, sem exceção</h2>
+<p>Pegue as faturas, os extratos e os carnês e monte uma lista com cada dívida. Para descobrir o que você não lembra, consulte de graça:</p>
+<ul><li><strong>Registrato</strong>, do Banco Central (acesso com conta gov.br): mostra empréstimos, cartões e financiamentos em seu nome em todos os bancos.</li>
+<li><strong>Serasa</strong> e outros birôs de crédito: mostram as dívidas negativadas, inclusive de lojas e contas de consumo.</li></ul>
+<p>Para cada dívida, anote: credor, valor total, valor da parcela, <strong>taxa de juros ao mês</strong>, quantas parcelas faltam e se está em atraso.</p>
+<table><tr><th>Credor</th><th>Saldo</th><th>Juros ao mês</th><th>Situação</th></tr>
+<tr><td>Cartão (rotativo)</td><td>R$ 2.400</td><td>acima de 10%</td><td>Atrasado</td></tr>
+<tr><td>Cheque especial</td><td>R$ 800</td><td>até 8%</td><td>Em uso</td></tr>
+<tr><td>Empréstimo pessoal</td><td>R$ 3.000</td><td>cerca de 5%</td><td>Em dia</td></tr>
+<tr><td>Consignado</td><td>R$ 6.000</td><td>cerca de 1,8%</td><td>Em dia</td></tr></table>
+<p class="aviso">Exemplo ilustrativo. As taxas reais variam por banco e por cliente: confira no seu contrato ou na fatura.</p>
+<h2>2. Pare de criar dívida nova</h2>
+<p>Não adianta quitar de um lado e abrir de outro. Enquanto estiver no plano, tire o cartão da carteira e dos apps de compra, não use o cheque especial como se fosse saldo e não faça parcelamentos novos. Quem paga conta com cartão porque o dinheiro não fecha precisa primeiro ajustar o orçamento (passo 4).</p>
+<h2>3. Ordene pela taxa de juros, não pelo valor</h2>
+<p>A ordem que economiza mais dinheiro é quitar primeiro a dívida com <strong>maior juro</strong>, mantendo o pagamento mínimo das outras para não gerar multa. No Brasil, as mais caras quase sempre são, nesta ordem: <strong>rotativo do cartão, cheque especial e parcelamento de fatura</strong>. Consignado e financiamento de veículo costumam ficar por último.</p>
+<p>Se você precisa de motivação, existe a alternativa de quitar primeiro a menor dívida (método "bola de neve"). Custa um pouco mais em juros, mas a sensação de riscar itens da lista ajuda muita gente a não desistir. Escolha um método e siga.</p>
+<h2>4. Descubra quanto sobra por mês para as dívidas</h2>
+<p>Faça um orçamento realista: renda líquida menos gastos essenciais (moradia, mercado, contas, transporte, saúde). O que sobra é o valor que você pode comprometer com acordos. <strong>Nunca feche uma parcela que não cabe nesse valor</strong>: acordo quebrado volta a acumular juros e piora a negociação seguinte. Veja como montar o seu no <a href="https://projects-betanull.github.io/mei-em-dia/como-fazer-orcamento-pessoal/">guia de orçamento pessoal</a>.</p>
+<h2>5. Negocie com desconto</h2>
+<p>Dívidas atrasadas há mais tempo costumam ter os maiores descontos, porque o credor já espera receber pouco. Caminhos gratuitos:</p>
+<ul><li><strong>Direto com o banco ou a loja</strong>, pelo app ou central de atendimento. Peça o valor para quitação à vista e compare com o parcelado.</li>
+<li><strong>Plataformas de negociação</strong> como Serasa Limpa Nome, que reúnem ofertas de vários credores, principalmente nos feirões de mutirão.</li>
+<li><strong>Consumidor.gov.br</strong>, serviço público para registrar reclamação e buscar acordo com empresas participantes.</li></ul>
+<p>Antes de aceitar, confira o <strong>custo total</strong> (parcela × número de parcelas) e peça tudo por escrito. Pague só por boleto ou Pix com o nome do credor ou da plataforma oficial: golpistas imitam ofertas de "limpa nome".</p>
+<h2>6. Use os programas do governo quando se encaixar</h2>
+<p>Em 2026, o <strong>Novo Desenrola</strong> abriu renegociação para pessoas com renda de até 5 salários mínimos (R$ 8.105), com descontos de 30% a 90% em dívidas de cartão, cheque especial e crédito pessoal, juros de até 1,99% ao mês e possibilidade de usar parte do FGTS. Em setembro, uma nova medida provisória criou o <strong>Desenrola 3.0</strong>, voltado a dívidas de até R$ 10 mil atrasadas há cerca de 2 a 4 anos e meio, com desconto mínimo de 90%. Pelo cronograma do governo, os descontos dessa fase começam a chegar aos devedores a partir de <strong>fevereiro de 2027</strong>. Prazos e regras podem mudar: confira sempre em gov.br antes de decidir.</p>
+<h2>7. Troque dívida cara por barata (com cuidado)</h2>
+<p>Pegar um empréstimo com juros menores para quitar o rotativo ou o cheque especial pode fazer sentido, desde que a parcela caiba no orçamento e você <strong>não volte a usar</strong> o crédito que quitou. Compare sempre o Custo Efetivo Total (CET), que inclui juros, tarifas e seguros.</p>
+<h2>Seus direitos como endividado</h2>
+<ul><li><strong>Limite de juros do cartão:</strong> desde janeiro de 2024, os juros e encargos do rotativo e do parcelamento da fatura não podem passar de <strong>100% do valor original</strong> da dívida (Lei 14.690/2023).</li>
+<li><strong>Superendividamento:</strong> quem não consegue pagar as dívidas de consumo sem comprometer o mínimo para viver pode pedir a repactuação de todas elas em um único plano, pelo Procon ou pela Justiça (Lei 14.181/2021).</li>
+<li><strong>Nome limpo após o pagamento:</strong> quitada a dívida, o credor deve pedir a retirada da negativação em até 5 dias úteis.</li></ul>
+<h2>Depois de quitar</h2>
+<p>Redirecione o valor que ia para as parcelas para uma <a href="https://projects-betanull.github.io/mei-em-dia/reserva-de-emergencia/">reserva de emergência</a>. É ela que evita que o próximo imprevisto vire uma nova dívida no cartão.</p>
+""","fin"))
 for art in A:
     slug,t,d,b=art[:4]; prod=art[4] if len(art)>4 else "mei"
     os.makedirs(f"{OUT}/{slug}",exist_ok=True)
