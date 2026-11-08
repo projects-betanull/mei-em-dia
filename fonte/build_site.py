@@ -151,28 +151,101 @@ A.append(("mei-pode-ter-funcionario","MEI pode ter funcionário? Regras, custo e
 <p>Faça a conta com seus números: o funcionário precisa gerar mais lucro do que custa. Se seu lucro médio mensal for de R$ 3 mil, por exemplo, um custo total perto de R$ 2.200 consome quase tudo. Olhe o lucro dos últimos meses, não só o faturamento.</p>
 <p>Lembre também do limite de R$ 81 mil por ano: crescer com funcionário costuma aproximar o MEI do teto. Se isso for acontecer, vale conversar com um contador sobre virar Microempresa.</p>
 """))
-A.append(("controle-financeiro-mei","Controle financeiro do MEI: como organizar o dinheiro do seu negócio",
-"Passo a passo simples para o MEI controlar receitas, despesas e lucro, separar o dinheiro pessoal e não estourar o limite anual.",
-"""<h1>Controle financeiro do MEI: como organizar o dinheiro do seu negócio</h1>
-<p>Muitos MEIs faturam bem e mesmo assim sentem que o dinheiro some. Quase sempre o problema é falta de controle, não de vendas. A boa notícia: um controle simples, feito com constância, já resolve.</p>
-<h2>1. Separe a conta da empresa da conta pessoal</h2>
-<p>Abra uma conta PJ (muitos bancos digitais oferecem conta gratuita para MEI) e use-a só para o negócio. Recebimentos de clientes entram nela; gastos do negócio saem dela. Misturar as duas é o erro número um.</p>
-<h2>2. Defina quanto você vai tirar para você</h2>
-<p>Em vez de pegar dinheiro do caixa sempre que precisar, estabeleça uma retirada fixa por mês, como se fosse um salário. O que sobra fica no negócio para reposição, imprevistos e investimento.</p>
-<h2>3. Registre toda entrada e saída</h2>
-<p>Cada venda e cada gasto vira uma linha: data, tipo (receita ou despesa), categoria, valor. Para receitas, anote também se teve nota fiscal e se é comércio, indústria ou serviço. É isso que monta o relatório mensal obrigatório.</p>
-<h2>4. Use categorias de despesa</h2>
-<p>Mercadorias, DAS, aluguel, internet, transporte, anúncios, taxas de maquininha. Com categorias, você descobre para onde o dinheiro vai e onde dá para cortar.</p>
-<h2>5. Feche o mês</h2>
-<p>Até o dia 20 do mês seguinte, faça três coisas: preencha o relatório mensal de receitas brutas, pague o DAS e olhe o resultado:</p>
-<table><tr><th>Indicador</th><th>Como calcular</th></tr>
-<tr><td>Lucro do mês</td><td>Receitas − despesas</td></tr>
-<tr><td>Margem</td><td>Lucro ÷ receitas</td></tr>
-<tr><td>Uso do limite</td><td>Faturamento acumulado ÷ R$ 81.000</td></tr></table>
-<h2>6. Acompanhe o limite anual</h2>
-<p>Passar do limite em mais de 20% gera desenquadramento retroativo e impostos com multa. Acompanhando mês a mês, você vê o problema chegando com antecedência.</p>
-<h2>Planilha ou aplicativo?</h2>
-<p>Aplicativos de gestão costumam cobrar mensalidade. Uma planilha bem montada faz o essencial de graça depois de pronta, funciona no celular e os dados ficam com você.</p>
+A.append(("controle-financeiro-mei","Controle financeiro para MEI: passo a passo com exemplo prático",
+"Como fazer o controle financeiro do MEI: separar contas, registrar receitas e despesas, calcular o lucro, fechar o mês e acompanhar o limite, com exemplo real.",
+"""<h1>Controle financeiro para MEI: passo a passo com exemplo prático</h1>
+<p>Muitos MEIs faturam bem e mesmo assim sentem que o dinheiro some. Quase sempre o problema é falta de controle, não de vendas. Sem controle, você não sabe se o negócio dá lucro, quanto pode tirar para você, nem quanto falta para o limite anual de R$ 81 mil.</p>
+<p>A boa notícia: o controle financeiro do MEI não precisa de sistema caro nem de conhecimento de contabilidade. Um registro simples, feito com constância, resolve. Este guia mostra o passo a passo e um exemplo completo de um mês.</p>
+
+<h2>Por que o MEI precisa de controle financeiro</h2>
+<ul><li><strong>É obrigatório</strong> preencher o <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">Relatório Mensal de Receitas Brutas</a> e guardá-lo por 5 anos. Sem anotar as vendas, não há como preenchê-lo.</li>
+<li><strong>A declaração anual (DASN-SIMEI)</strong> pede o faturamento do ano separado em comércio/indústria e serviços. Com controle, é só somar.</li>
+<li><strong>O limite de faturamento</strong> é anual. Quem passa dele em mais de 20% tem os impostos do ano inteiro recalculados, com multa.</li>
+<li><strong>Saber o lucro real</strong> mostra se o preço está certo, quais gastos pesam mais e quanto você pode retirar sem quebrar o caixa.</li></ul>
+
+<h2>Passo 1: separe a conta da empresa da conta pessoal</h2>
+<p>Abra uma conta PJ (muitos bancos digitais oferecem conta gratuita para MEI) e use-a só para o negócio. Pagamentos de clientes, inclusive o Pix, entram nela; gastos do negócio saem dela. Misturar as duas contas é o erro número um, porque torna impossível saber o que é do negócio e o que é seu. Veja como fazer isso no guia <a href="https://projects-betanull.github.io/mei-em-dia/separar-dinheiro-pessoal-e-da-empresa-mei/">como separar o dinheiro pessoal do da empresa</a>.</p>
+
+<h2>Passo 2: registre toda entrada e saída</h2>
+<p>Cada venda e cada gasto vira uma linha, com cinco informações:</p>
+<table><tr><th>Campo</th><th>Exemplo</th></tr>
+<tr><td>Data</td><td>12/03</td></tr>
+<tr><td>Tipo</td><td>Receita ou despesa</td></tr>
+<tr><td>Categoria</td><td>Serviço, revenda, material, DAS...</td></tr>
+<tr><td>Valor</td><td>R$ 150,00</td></tr>
+<tr><td>Teve nota fiscal?</td><td>Sim ou não (só para receitas)</td></tr></table>
+<p>Registre tudo, inclusive as vendas em dinheiro e por Pix sem nota. O limite e o relatório mensal consideram o <strong>faturamento bruto</strong>, com ou sem nota fiscal. O ideal é lançar no mesmo dia; se não der, separe 10 minutos por semana.</p>
+
+<h2>Passo 3: use categorias de despesa</h2>
+<p>Categorias mostram para onde o dinheiro vai. As mais comuns para MEI:</p>
+<ul><li><strong>Mercadorias para revenda</strong> ou matéria-prima</li>
+<li><strong>Materiais e insumos</strong> usados no serviço</li>
+<li><strong>DAS</strong> (o imposto mensal)</li>
+<li><strong>Aluguel</strong>, espaço ou coworking</li>
+<li><strong>Internet e telefone</strong></li>
+<li><strong>Transporte e combustível</strong></li>
+<li><strong>Taxas</strong> de maquininha, de plataformas e bancárias</li>
+<li><strong>Anúncios</strong> e divulgação</li>
+<li><strong>Ferramentas e assinaturas</strong> (aplicativos, programas)</li></ul>
+<p>Não crie categorias demais: oito a dez bastam. O que importa é usar sempre as mesmas, para comparar um mês com o outro.</p>
+
+<h2>Passo 4: feche o mês</h2>
+<p>Até o dia 20 do mês seguinte, faça três coisas: pague o <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">DAS</a>, preencha o relatório mensal e olhe os números do mês:</p>
+<table><tr><th>Indicador</th><th>Como calcular</th><th>O que mostra</th></tr>
+<tr><td>Faturamento</td><td>Soma das receitas</td><td>Quanto entrou</td></tr>
+<tr><td>Lucro</td><td>Receitas − despesas</td><td>Quanto o negócio realmente ganhou</td></tr>
+<tr><td>Margem</td><td>Lucro ÷ receitas</td><td>Quanto sobra de cada R$ 100 vendidos</td></tr>
+<tr><td>Uso do limite</td><td>Faturamento acumulado no ano ÷ R$ 81.000</td><td>Quanto do teto já foi usado</td></tr></table>
+
+<h2>Exemplo prático: um mês de uma MEI</h2>
+<p>A Ana é manicure e também revende esmaltes e produtos de cuidado. Em março, ela registrou:</p>
+<table><tr><th>Receitas</th><th>Valor</th></tr>
+<tr><td>Serviços de manicure e pedicure</td><td>R$ 4.300,00</td></tr>
+<tr><td>Revenda de produtos</td><td>R$ 900,00</td></tr>
+<tr><td><strong>Total de receitas</strong></td><td><strong>R$ 5.200,00</strong></td></tr></table>
+<table><tr><th>Despesas</th><th>Valor</th></tr>
+<tr><td>Produtos comprados para revenda</td><td>R$ 520,00</td></tr>
+<tr><td>Materiais usados nos atendimentos</td><td>R$ 380,00</td></tr>
+<tr><td>DAS (comércio e serviços, 2026)</td><td>R$ 87,05</td></tr>
+<tr><td>Aluguel da cadeira no salão</td><td>R$ 600,00</td></tr>
+<tr><td>Internet e celular</td><td>R$ 100,00</td></tr>
+<tr><td>Transporte</td><td>R$ 180,00</td></tr>
+<tr><td>Taxas da maquininha</td><td>R$ 70,00</td></tr>
+<tr><td>Anúncios</td><td>R$ 100,00</td></tr>
+<tr><td><strong>Total de despesas</strong></td><td><strong>R$ 2.037,05</strong></td></tr></table>
+<p><strong>Resultado de março:</strong></p>
+<ul><li>Lucro: R$ 5.200,00 − R$ 2.037,05 = <strong>R$ 3.162,95</strong></li>
+<li>Margem: 3.162,95 ÷ 5.200 = <strong>cerca de 61%</strong></li>
+<li>No relatório mensal: R$ 900 no bloco de revenda e R$ 4.300 no bloco de serviços.</li></ul>
+<p>Com o lucro na mão, a Ana decide sua retirada. Se ela tirar 65% do lucro (cerca de R$ 2.050) e deixar o resto (cerca de R$ 1.100) na conta da empresa, forma uma reserva para meses fracos e para repor estoque.</p>
+<p>E o limite? Se até agosto o faturamento acumulado dela for de R$ 41.300, ela usou 51% do limite e ainda pode faturar R$ 39.700 até dezembro. No ritmo de R$ 5.200 por mês, chegaria a cerca de R$ 62 mil no ano, dentro do teto.</p>
+
+<h2>Passo 5: defina quanto você vai tirar para você</h2>
+<p>Em vez de pegar dinheiro do caixa sempre que precisar, estabeleça uma <strong>retirada fixa por mês</strong>, como se fosse um salário, com base no lucro médio dos últimos meses. Faça uma única transferência para a sua conta pessoal e registre-a como "retirada do dono", não como despesa do negócio. Assim o lucro do mês continua aparecendo certo.</p>
+
+<h2>Passo 6: acompanhe o limite anual todo mês</h2>
+<p>O teto do MEI é de R$ 81 mil por ano (ou proporcional, se você abriu a empresa no meio do ano). Olhando o acumulado todo mês, você vê com meses de antecedência se vai passar. Ao chegar perto de 80% do limite, planeje os meses seguintes ou converse com um contador. Mais detalhes no guia do <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite do MEI em 2027</a>.</p>
+
+<h2>Erros mais comuns no controle financeiro do MEI</h2>
+<ul><li><strong>Anotar só o que teve nota fiscal.</strong> Vendas em dinheiro e Pix também são faturamento.</li>
+<li><strong>Confundir faturamento com lucro.</strong> Faturar R$ 6 mil não significa ter R$ 6 mil para gastar.</li>
+<li><strong>Esquecer as taxas.</strong> Maquininha, plataformas e tarifas bancárias somam bastante no fim do mês.</li>
+<li><strong>Lançar a retirada do dono como despesa.</strong> Isso esconde o lucro real do negócio.</li>
+<li><strong>Deixar tudo para maio,</strong> na hora da declaração anual, e tentar lembrar o ano inteiro de uma vez.</li>
+<li><strong>Esquecer gastos anuais,</strong> como renovação de equipamentos ou de assinaturas: divida por 12 e reserve todo mês.</li></ul>
+
+<h2>Caderno, aplicativo ou planilha?</h2>
+<table><tr><th>Opção</th><th>Vantagem</th><th>Desvantagem</th></tr>
+<tr><td>Caderno</td><td>Simples, sem custo</td><td>Não soma nada sozinho e é fácil perder</td></tr>
+<tr><td>Aplicativo de gestão</td><td>Muitos recursos</td><td>Costuma cobrar mensalidade</td></tr>
+<tr><td>Planilha</td><td>Faz as contas sozinha, sem mensalidade, funciona no celular e os dados ficam com você</td><td>Precisa estar bem montada</td></tr></table>
+<p>Para começar sem gastar nada, use a <a href="https://projects-betanull.github.io/mei-em-dia/planilha-relatorio-mensal-mei-gratis/">planilha grátis do relatório mensal</a>. Se quiser que o lucro, o relatório e o limite sejam calculados automaticamente a partir de cada lançamento, a planilha completa está logo abaixo.</p>
+
+<h2>Perguntas frequentes</h2>
+<p><strong>O MEI é obrigado a ter controle financeiro?</strong><br>O MEI não precisa ter contabilidade formal, mas é obrigado a preencher o relatório mensal de receitas brutas e a guardar as notas fiscais de compras e vendas. Na prática, isso exige registrar todas as receitas.</p>
+<p><strong>Preciso registrar as despesas também?</strong><br>Para o governo, o essencial são as receitas. Mas sem as despesas você não sabe o seu lucro, que é o número que mostra se o negócio vale a pena e quanto você pode retirar.</p>
+<p><strong>Posso usar minha conta pessoal para o MEI?</strong><br>Pode, mas não é recomendado. Com uma conta só, fica muito difícil separar o que é do negócio, e o controle perde a utilidade.</p>
+<p><strong>Quanto tempo leva por mês?</strong><br>Lançando as vendas no dia a dia, o fechamento do mês leva de 15 a 30 minutos.</p>
 """))
 A.append(("separar-dinheiro-pessoal-e-da-empresa-mei","Como o MEI separa o dinheiro pessoal do da empresa (e quanto pode retirar)",
 "Por que misturar contas prejudica o MEI, como definir sua retirada mensal, se o lucro do MEI paga imposto de renda e como organizar na prática.",
