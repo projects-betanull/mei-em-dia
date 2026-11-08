@@ -2,7 +2,7 @@ import os, datetime, html, json
 OUT=".."; CHECKOUT="https://pay.kiwify.com.br/IJghjr7"; BASE="https://projects-betanull.github.io/mei-em-dia"
 SITE="MEI em Dia"; HOJE=datetime.date.today().isoformat()
 # Guia em destaque na página inicial (trocar quando houver um tema de prazo mais urgente)
-DESTAQUE="nfs-e-nacional-simples-nacional-novembro-2026-mei"
+DESTAQUE="limite-mei-2027"
 CSS="""*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#1f2937;line-height:1.7;background:#fafaf9;font-size:17px}
 header{background:#1f6f5c;color:#fff;padding:12px 20px}header .in{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
 header .logo{color:#fff;text-decoration:none;font-weight:800;font-size:1.15rem;margin-right:auto}header nav a{color:#e3f1ec;text-decoration:none;font-size:.92rem}header nav a:hover{color:#fff;text-decoration:underline}header nav{display:flex;gap:14px;flex-wrap:wrap}
@@ -27,7 +27,7 @@ def cta(prod="mei"):
 <p>Orçamento por categoria com alerta quando estoura, controle de dívidas, metas de economia e painel com gráficos. Funciona no Excel e no Google Planilhas.</p>
 <a class="btn" style="background:#3b4a9c" href="{CHECKOUT2}" rel="nofollow">Quero a planilha por R$ 24,90</a></div>"""
     return f"""<div class="cta" id="oferta"><strong>Planilha MEI 2027: controle tudo isso automaticamente</strong>
-<p>Relatório mensal pronto para imprimir, alerta do limite de R$ 81 mil, controle do DAS e valores da DASN-SIMEI calculados. Funciona no Excel e no Google Planilhas.</p>
+<p>Relatório mensal pronto para imprimir, alerta do limite anual de faturamento, controle do DAS e valores da DASN-SIMEI calculados. Funciona no Excel e no Google Planilhas.</p>
 <a class="btn" href="{CHECKOUT}" rel="nofollow">Quero a planilha por R$ 29,90</a></div>"""
 def mini_cta(prod):
     if prod=="fin": return '<p class="mini">Prefere que as contas se façam sozinhas? A <a href="#oferta">Planilha Financeira Pessoal 2027</a> monta o orçamento por categoria e avisa quando um gasto estoura.</p>'
@@ -89,24 +89,44 @@ def icones():
         except Exception as e: print("aviso: ícone não gerado:",e)
 
 A=[]
-A.append(("limite-mei-2027","Limite do MEI em 2027: quanto pode faturar e o que acontece se passar",
-"Entenda o limite de faturamento do MEI, o cálculo proporcional para quem abriu no meio do ano e a regra dos 20% de excesso.",
-"""<h1>Limite do MEI em 2027: quanto pode faturar e o que acontece se passar</h1>
-<p>O limite de faturamento do MEI é de <strong>R$ 81.000 por ano</strong>, valor em vigor desde 2018. Existem projetos no Congresso para aumentar esse teto, mas enquanto nenhum for aprovado e sancionado, vale o valor atual.</p>
+A.append(('limite-mei-2027','Limite do MEI em 2027 sobe para R$ 110 mil: o que muda e o que vale em 2026',
+'A LC 238/2026 elevou o limite do MEI para R$ 110 mil em 2027 e R$ 140 mil em 2028. Veja o limite de 2026, o cálculo proporcional e o que acontece se passar.',
+"""<h1>Limite do MEI em 2027 sobe para R$ 110 mil: o que muda e o que vale em 2026</h1>
+<p>O limite de faturamento do MEI mudou pela primeira vez desde 2018. A <strong>Lei Complementar 238/2026</strong>, publicada em 21 de outubro de 2026, eleva o teto para <strong>R$ 110 mil em 2027</strong> e <strong>R$ 140 mil a partir de 2028</strong>. Mas atenção: em 2026 nada muda, e quem passar do limite neste ano continua sujeito às regras antigas.</p>
+<h2>Limite do MEI ano a ano</h2>
+<table><tr><th>Ano</th><th>Limite anual</th><th>Média por mês</th></tr>
+<tr><td>2026</td><td>R$ 81.000</td><td>R$ 6.750</td></tr>
+<tr><td>2027</td><td><strong>R$ 110.000</strong></td><td>R$ 9.166,67</td></tr>
+<tr><td>A partir de 2028</td><td><strong>R$ 140.000</strong></td><td>R$ 11.666,67</td></tr></table>
+<h2>Em 2026, o limite continua sendo R$ 81 mil</h2>
+<p>Até 31 de dezembro de 2026 vale o teto de <strong>R$ 81.000</strong>. O novo valor não é retroativo: se você faturar R$ 95 mil em 2026, por exemplo, isso conta como excesso sobre os R$ 81 mil, mesmo que o valor caiba no limite de 2027. Por isso, quem está perto do teto deve planejar com cuidado as vendas de novembro e dezembro.</p>
 <h2>Existe limite mensal?</h2>
-<p>Não. O controle é anual. A média de <strong>R$ 6.750 por mês</strong> é só uma referência: você pode faturar R$ 10 mil em dezembro e R$ 3 mil em fevereiro, desde que a soma do ano não passe do limite.</p>
-<h2>Limite proporcional no ano de abertura</h2>
-<p>Quem abre o MEI durante o ano tem limite proporcional: <strong>R$ 6.750 multiplicado pelo número de meses de atividade</strong>, contando o mês de abertura.</p>
-<table><tr><th>Mês de abertura</th><th>Meses</th><th>Limite no ano</th></tr>
-<tr><td>Janeiro</td><td>12</td><td>R$ 81.000</td></tr><tr><td>Abril</td><td>9</td><td>R$ 60.750</td></tr>
-<tr><td>Julho</td><td>6</td><td>R$ 40.500</td></tr><tr><td>Outubro</td><td>3</td><td>R$ 20.250</td></tr></table>
+<p>Não. O controle é anual. A média mensal (R$ 6.750 em 2026 e R$ 9.166,67 em 2027) é só uma referência: você pode faturar mais em dezembro e menos em fevereiro, desde que a soma do ano não passe do teto.</p>
+<h2>Limite proporcional para quem abre o MEI no meio do ano</h2>
+<p>Quem abre o MEI durante o ano tem limite proporcional aos meses de atividade, contando o mês de abertura. Em 2027, a conta é <strong>R$ 9.166,67 por mês</strong>:</p>
+<table><tr><th>Abertura em 2027</th><th>Meses</th><th>Limite no ano (aprox.)</th></tr>
+<tr><td>Janeiro</td><td>12</td><td>R$ 110.000</td></tr><tr><td>Abril</td><td>9</td><td>R$ 82.500</td></tr>
+<tr><td>Julho</td><td>6</td><td>R$ 55.000</td></tr><tr><td>Outubro</td><td>3</td><td>R$ 27.500</td></tr></table>
+<p>Em 2026, a conta continua sendo R$ 6.750 por mês de atividade.</p>
 <h2>Passei do limite. E agora?</h2>
-<p><strong>Excesso de até 20%</strong> (até R$ 97.200 no ano cheio): você continua MEI até dezembro, paga um DAS complementar sobre o valor que passou e, a partir de janeiro, vira Microempresa (ME).</p>
-<p><strong>Excesso acima de 20%</strong>: o desenquadramento é retroativo a janeiro do ano em que passou. Os impostos de todo o ano são recalculados como ME, com juros e multa. É o cenário mais caro, e o motivo de acompanhar o faturamento mês a mês.</p>
-<h2>O que entra no cálculo</h2>
+<p>A regra dos 20% da Lei Complementar 123/2006 continua valendo, agora sobre o novo teto:</p>
+<table><tr><th>Situação</th><th>2026</th><th>2027</th><th>O que acontece</th></tr>
+<tr><td>Excesso de até 20%</td><td>até R$ 97.200</td><td>até R$ 132.000</td><td>Continua MEI até dezembro, paga DAS complementar sobre o excesso e vira Microempresa (ME) em janeiro</td></tr>
+<tr><td>Excesso acima de 20%</td><td>acima de R$ 97.200</td><td>acima de R$ 132.000</td><td>Desenquadramento retroativo a janeiro do mesmo ano, com impostos recalculados como ME, juros e multa</td></tr></table>
+<h2>Faturei mais de R$ 81 mil em 2026. Posso voltar ao MEI em 2027?</h2>
+<p>Contadores que analisaram a lei apontam que quem fechar 2026 com faturamento até R$ 110 mil poderá pedir para voltar ao MEI em janeiro de 2027, já que esse é o limite do novo ano. O excesso de 2026, porém, continua tendo as consequências da tabela acima para 2026. Ainda faltam as regras do Comitê Gestor do Simples Nacional sobre a transição: antes de decidir, confirme com um contador.</p>
+<h2>Existe alguma condição para o novo limite valer?</h2>
+<p>Sim. O art. 3º da lei condiciona a ampliação dos limites a que a perda de arrecadação seja considerada nas leis orçamentárias de 2027 a 2029. Na prática, o novo teto já está na lei, mas vale acompanhar as orientações do Portal do Empreendedor e da Receita Federal no começo de 2027.</p>
+<h2>O que mais muda com a LC 238/2026</h2>
+<ul><li><strong>Até 2 empregados</strong> a partir de 2027 (hoje é só 1). Veja as regras e o custo no guia <a href="https://projects-betanull.github.io/mei-em-dia/mei-pode-ter-funcionario/">MEI pode ter funcionário?</a>.</li>
+<li><strong>Perdão das dívidas do INSS do DAS</strong> vencidas até 13/10/2026, de forma automática a partir de 1º de janeiro de 2027. Detalhes no guia do <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">DAS MEI</a>.</li>
+<li><strong>Licitações exclusivas para MEI</strong>: órgãos públicos podem fazer compras reservadas a microempreendedores em contratações de menor valor.</li></ul>
+<h2>O que entra no cálculo do limite</h2>
 <p>Conta o <strong>faturamento bruto</strong>: tudo o que você recebeu com vendas e serviços, com ou sem nota fiscal, sem descontar despesas. Por isso o <a href="https://projects-betanull.github.io/mei-em-dia/controle-financeiro-mei/">controle financeiro</a> precisa somar todas as entradas, não só as notas emitidas.</p>
 <h2>Como não ser pego de surpresa</h2>
-<ul><li>Lance cada receita assim que ela entrar e preencha o <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal</a> até o dia 20.</li><li>Confira todo mês quanto do limite já foi usado.</li><li>Ao passar de 80% do limite, planeje os meses seguintes ou converse com um contador sobre virar ME.</li></ul>
+<ul><li>Lance cada receita assim que ela entrar e preencha o <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal</a> até o dia 20.</li><li>Confira todo mês quanto do limite do ano já foi usado.</li>
+<li>Ao passar de 80% do limite, planeje os meses seguintes ou converse com um contador sobre virar ME.</li>
+<li>Em 2027, atualize o teto da sua planilha ou aplicativo para R$ 110 mil, ou para o valor proporcional se abriu no meio do ano.</li></ul>
 """))
 A.append(("relatorio-mensal-de-receitas-brutas-mei","Relatório Mensal de Receitas Brutas do MEI: o que é e como preencher",
 "O que é o relatório mensal de receitas brutas, quem precisa fazer, prazo, como preencher cada campo e por quanto tempo guardar.",
@@ -126,44 +146,98 @@ A.append(("relatorio-mensal-de-receitas-brutas-mei","Relatório Mensal de Receit
 <h2>Erros comuns</h2>
 <ul><li>Lançar só o que teve nota e esquecer as vendas em dinheiro ou Pix.</li><li>Descontar despesas: o relatório é de receita <em>bruta</em>.</li><li>Deixar para preencher tudo em maio, na hora da <a href="https://projects-betanull.github.io/mei-em-dia/dasn-simei-declaracao-anual-mei/">declaração anual (DASN-SIMEI)</a>.</li></ul>
 """))
-A.append(("das-mei-valor-vencimento","DAS MEI: valor, vencimento e o que acontece se atrasar",
-"Como é calculado o DAS do MEI, quando vence, como pagar e o que acontece se você atrasar ou deixar de pagar.",
-"""<h1>DAS MEI: valor, vencimento e o que acontece se atrasar</h1>
-<p>O DAS (Documento de Arrecadação do Simples Nacional) é o imposto mensal fixo do MEI. Ele é pago mesmo nos meses sem faturamento.</p>
-<h2>Quanto custa</h2>
-<p>O valor é a soma de três partes:</p>
-<ul><li><strong>INSS:</strong> 5% do salário mínimo vigente. Garante aposentadoria, auxílio-doença e salário-maternidade.</li>
+A.append(('das-mei-valor-vencimento','DAS MEI 2026 e 2027: valor, vencimento, atraso e perdão das dívidas',
+'Valor do DAS MEI em 2026, previsão para 2027, vencimento no dia 20, multa por atraso, parcelamento e o perdão das dívidas do INSS do MEI pela LC 238/2026.',
+"""<h1>DAS MEI 2026 e 2027: valor, vencimento, atraso e perdão das dívidas</h1>
+<p>O DAS (Documento de Arrecadação do Simples Nacional) é o imposto mensal fixo do MEI. Ele junta, numa guia só, a contribuição para o INSS e os impostos da sua atividade, e é devido todo mês, mesmo nos meses sem faturamento. Este guia mostra quanto custa em 2026, a previsão para 2027, o que acontece se atrasar e como funciona o perdão de dívidas aprovado em outubro de 2026.</p>
+<h2>Como o valor do DAS é calculado</h2>
+<ul><li><strong>INSS:</strong> 5% do salário mínimo. É o que garante aposentadoria por idade, auxílio por incapacidade, salário-maternidade e pensão para a família.</li>
 <li><strong>ICMS: R$ 1</strong>, para comércio e indústria.</li><li><strong>ISS: R$ 5</strong>, para serviços.</li></ul>
-<p>Com o salário mínimo de 2026 (R$ 1.621), a parte do INSS é de R$ 81,05. Os valores mensais ficam assim:</p>
-<table><tr><th>Atividade</th><th>DAS 2026</th></tr><tr><td>Comércio e indústria</td><td>R$ 82,05</td></tr>
-<tr><td>Serviços</td><td>R$ 86,05</td></tr><tr><td>Comércio e serviços</td><td>R$ 87,05</td></tr></table>
-<p>Como depende do salário mínimo, o DAS muda todo ano: o valor novo vale a partir da guia de janeiro (paga em fevereiro). Confira sempre o valor exato no Portal do Empreendedor ou no app MEI.</p>
+<p>ICMS e ISS são valores fixos. Toda mudança anual vem da parte do INSS, que acompanha o salário mínimo. O MEI caminhoneiro tem regra própria: a parte do INSS é de 12% do salário mínimo.</p>
+<h2>Valor do DAS em 2026</h2>
+<p>Com o salário mínimo de R$ 1.621, a parte do INSS é de R$ 81,05:</p>
+<table><tr><th>Atividade</th><th>Composição</th><th>DAS 2026</th></tr>
+<tr><td>Comércio ou indústria</td><td>R$ 81,05 + R$ 1</td><td><strong>R$ 82,05</strong></td></tr>
+<tr><td>Serviços</td><td>R$ 81,05 + R$ 5</td><td><strong>R$ 86,05</strong></td></tr>
+<tr><td>Comércio e serviços</td><td>R$ 81,05 + R$ 1 + R$ 5</td><td><strong>R$ 87,05</strong></td></tr></table>
+<h2>Quanto vai ser o DAS em 2027?</h2>
+<p>O valor depende do salário mínimo de 2027, que só é oficializado por decreto no fim de dezembro, depois da inflação de novembro. A proposta de Orçamento enviada ao Congresso projeta <strong>R$ 1.741</strong>. Se esse valor for confirmado, o DAS fica assim:</p>
+<table><tr><th>Atividade</th><th>DAS 2027 (previsão)</th></tr>
+<tr><td>Comércio ou indústria</td><td>R$ 88,05</td></tr><tr><td>Serviços</td><td>R$ 92,05</td></tr><tr><td>Comércio e serviços</td><td>R$ 93,05</td></tr></table>
+<p>O valor novo vale a partir da guia de <strong>janeiro de 2027</strong>, paga em fevereiro. Como 20 de fevereiro de 2027 cai num sábado, essa primeira guia vence em 22 de fevereiro. Esta página será atualizada quando o decreto sair.</p>
 <h2>Vencimento</h2>
-<p>O DAS vence no <strong>dia 20 de cada mês</strong> e se refere ao mês anterior. Exemplo: o DAS de março vence em 20 de abril. Se cair em fim de semana ou feriado, o prazo passa para o dia útil seguinte. Aproveite a data para preencher também o <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal de receitas</a> do mês anterior, que tem o mesmo prazo.</p>
+<p>O DAS vence no <strong>dia 20 de cada mês</strong> e se refere ao mês anterior: o DAS de março vence em 20 de abril. Se o dia 20 cair em fim de semana ou feriado, o prazo passa para o dia útil seguinte. Aproveite a data para preencher também o <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal de receitas</a> do mês anterior, que tem o mesmo prazo.</p>
 <h2>Como pagar</h2>
-<p>Gere a guia no Portal do Empreendedor (gov.br/mei) ou no app MEI e pague por Pix, boleto ou débito automático.</p>
+<ol><li>Acesse o Portal do Empreendedor (gov.br/mei) ou o app MEI e entre em "Pagamento de contribuição mensal (DAS)".</li>
+<li>Informe o CNPJ, escolha o ano e marque os meses que quer pagar.</li>
+<li>Gere a guia e pague por Pix (QR Code na própria guia), boleto ou internet banking.</li></ol>
+<p>Também dá para cadastrar o <strong>débito automático</strong> no portal, o que evita esquecimentos. E vale incluir o DAS no seu <a href="https://projects-betanull.github.io/mei-em-dia/controle-financeiro-mei/">controle financeiro mensal</a> como uma despesa fixa.</p>
 <h2>E se atrasar?</h2>
-<ul><li>Multa de 0,33% por dia de atraso, limitada a 20%, mais juros Selic.</li><li>O tempo sem pagamento não conta para os benefícios do INSS.</li>
-<li>Dívidas acumuladas podem ir para a Dívida Ativa e o CNPJ pode ser cancelado.</li></ul>
-<p>Se tiver guias atrasadas, é possível parcelar a dívida pelo próprio portal. Para não esquecer, inclua o DAS no seu <a href="https://projects-betanull.github.io/mei-em-dia/controle-financeiro-mei/">controle financeiro mensal</a> como uma despesa fixa.</p>
+<ul><li><strong>Multa de 0,33% por dia</strong> de atraso, limitada a 20% do valor da guia. Num DAS de R$ 86,05, a multa chega ao teto de R$ 17,21 com cerca de 61 dias.</li>
+<li><strong>Juros pela taxa Selic</strong>, acumulada a partir do mês seguinte ao vencimento, mais 1% no mês do pagamento.</li>
+<li>Os meses sem pagamento <strong>não contam</strong> para os benefícios do INSS.</li>
+<li>Dívidas acumuladas vão para a Dívida Ativa (a parte federal, com a PGFN; ICMS e ISS, com o estado e o município) e o CNPJ pode ser cancelado.</li></ul>
+<p>A guia gerada no portal depois do vencimento já vem com multa e juros calculados.</p>
+<h2>Perdão das dívidas do DAS (LC 238/2026)</h2>
+<p>A Lei Complementar 238/2026 perdoou as dívidas da <strong>parte do INSS do DAS vencidas até 13 de outubro de 2026</strong>, com juros e multas, estejam ou não na Dívida Ativa, inclusive as que estão em parcelamento ou em cobrança na Justiça. Pontos importantes:</p>
+<ul><li><strong>É automático.</strong> Segundo a PGFN e a Receita Federal (Portaria nº 740/2026), não é preciso fazer pedido: o cancelamento será feito nos sistemas a partir de 1º de janeiro de 2027.</li>
+<li><strong>ICMS e ISS não entram.</strong> Essas partes continuam sendo cobradas.</li>
+<li><strong>Há uma condição:</strong> quem continuar MEI precisa pagar em dia o DAS de janeiro a junho de 2027. Atrasar nesse período pode cancelar o perdão.</li>
+<li>Quem já pagou não recebe o dinheiro de volta.</li>
+<li>Perdoar a dívida não é o mesmo que pagar a contribuição. Se esses meses fazem diferença para a sua aposentadoria ou para algum benefício, consulte o INSS antes de contar com eles.</li></ul>
+<p>Você pode consultar suas pendências no Portal de Serviços da Receita Federal (dívidas ainda não inscritas) e no Regularize, da PGFN (dívidas em Dívida Ativa).</p>
+<h2>Como parcelar o DAS atrasado</h2>
+<p>Dívidas que não entram no perdão (ICMS, ISS e guias vencidas depois de 13/10/2026) podem ser parceladas no Portal do Simples Nacional, em "Parcelamento - Microempreendedor Individual". Se a dívida já estiver na Dívida Ativa, o parcelamento é feito pelo Regularize.</p>
+<h2>Dicas para nunca mais atrasar</h2>
+<ul><li>Ative o débito automático ou um lembrete fixo para o dia 15.</li>
+<li>Separe o valor do DAS na conta da empresa assim que receber o primeiro pagamento do mês.</li>
+<li>Pague mesmo nos meses fracos: o DAS é fixo e não depende do faturamento.</li></ul>
 """))
-A.append(("dasn-simei-declaracao-anual-mei","DASN-SIMEI: como fazer a declaração anual do MEI sem erro",
-"Prazo da DASN-SIMEI, quais valores informar, multa por atraso e como deixar os números prontos ao longo do ano.",
-"""<h1>DASN-SIMEI: como fazer a declaração anual do MEI sem erro</h1>
-<p>A DASN-SIMEI é a declaração anual do MEI. Nela você informa quanto faturou no ano anterior. Mesmo quem não faturou nada precisa entregar.</p>
-<h2>Prazo</h2>
-<p>Até <strong>31 de maio</strong> de cada ano, referente ao ano anterior. A entrega é feita no Portal do Empreendedor (gov.br/mei).</p>
+A.append(('dasn-simei-declaracao-anual-mei','DASN-SIMEI 2027: prazo, passo a passo e como fazer a declaração anual do MEI',
+'A DASN-SIMEI referente a 2026 vai até 31 de maio de 2027. Veja quem precisa entregar, o que informar, o passo a passo, a multa por atraso e como corrigir erros.',
+"""<h1>DASN-SIMEI 2027: prazo, passo a passo e como fazer a declaração anual do MEI</h1>
+<p>A DASN-SIMEI é a declaração anual do MEI. Nela você informa quanto faturou no ano anterior, separando comércio e indústria de serviços, e se teve empregado. É rápida de fazer, mas quem perde o prazo paga multa e fica com o CNPJ irregular. Veja tudo o que precisa para entregar a declaração de 2027 sem erro.</p>
+<h2>Prazo da DASN-SIMEI em 2027</h2>
+<p>A declaração referente ao ano de 2026 deve ser entregue até <strong>31 de maio de 2027</strong> (segunda-feira). Ela já pode ser enviada a partir do começo de janeiro: não há vantagem em esperar o fim do prazo.</p>
+<p>Quem dá baixa no MEI entrega a <strong>DASN-SIMEI de extinção</strong>, com prazo próprio:</p>
+<table><tr><th>Baixa do MEI</th><th>Prazo da declaração de extinção</th></tr>
+<tr><td>Entre janeiro e abril</td><td>Até o último dia de junho do mesmo ano</td></tr>
+<tr><td>De maio em diante</td><td>Até o último dia do mês seguinte ao da baixa</td></tr></table>
+<h2>Quem precisa entregar</h2>
+<ul><li>Todo MEI que esteve ativo em 2026, mesmo que por poucos meses.</li>
+<li>Quem <strong>não faturou nada</strong>: nesse caso, informa R$ 0,00.</li>
+<li>Quem abriu o MEI durante 2026: declara o faturamento do período em que esteve ativo.</li></ul>
 <h2>O que você vai informar</h2>
 <table><tr><th>Campo</th><th>De onde vem</th></tr>
 <tr><td>Receita bruta total do ano</td><td>Soma dos 12 <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatórios mensais</a></td></tr>
-<tr><td>Parte de comércio e indústria</td><td>Blocos de revenda e indústria</td></tr>
+<tr><td>Parte de comércio, indústria e transporte de cargas</td><td>Blocos de revenda e indústria dos relatórios</td></tr>
 <tr><td>Parte de serviços</td><td>Bloco de prestação de serviços</td></tr>
-<tr><td>Teve empregado?</td><td>Sim ou Não</td></tr></table>
-<p>Quem preencheu os relatórios mensais em dia já tem tudo pronto: é só somar.</p>
+<tr><td>Teve empregado?</td><td>Sim ou não</td></tr></table>
+<p>A receita bruta é tudo o que entrou com vendas e serviços, <strong>com ou sem nota fiscal</strong>, sem descontar despesas. Quem preencheu os relatórios mensais em dia já tem tudo pronto: é só somar. Se não preencheu, junte extratos, notas emitidas e anotações de vendas em dinheiro e Pix antes de começar.</p>
+<h2>Passo a passo para enviar</h2>
+<ol><li>Acesse o Portal do Empreendedor (gov.br/mei) ou o app MEI e entre em "Declaração Anual de Faturamento (DASN-SIMEI)".</li>
+<li>Informe o CNPJ e escolha o ano-calendário <strong>2026</strong>.</li>
+<li>Digite a receita bruta total e, dentro dela, quanto veio de comércio e indústria. O restante corresponde aos serviços.</li>
+<li>Responda se teve empregado em 2026.</li>
+<li>Confira o resumo, transmita e salve o <strong>recibo de entrega</strong> em PDF.</li></ol>
+<p>Se o faturamento passou do limite, o próprio sistema gera o DAS complementar sobre o excesso.</p>
+<h2>Faturamento acima do limite</h2>
+<p>Na declaração de 2027 (ano-base 2026) ainda vale o limite de <strong>R$ 81 mil</strong>. O teto de R$ 110 mil só vale para o faturamento de 2027, que será declarado em 2028.</p>
+<table><tr><th>Faturamento em 2026</th><th>O que acontece</th></tr>
+<tr><td>Até R$ 81.000</td><td>Declaração normal, sem imposto extra</td></tr>
+<tr><td>De R$ 81.000,01 a R$ 97.200</td><td>DAS complementar sobre o excesso e passagem para Microempresa em janeiro de 2027</td></tr>
+<tr><td>Acima de R$ 97.200</td><td>Desenquadramento retroativo a janeiro de 2026; procure um contador</td></tr></table>
+<p>Veja as regras novas no guia do <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite do MEI em 2027</a>.</p>
 <h2>Multa por atraso</h2>
-<p>A entrega fora do prazo gera multa de 2% ao mês sobre os impostos do período, com <strong>mínimo de R$ 50</strong> (com desconto se pagar logo). Também bloqueia a emissão das <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">guias DAS</a> até a declaração ser entregue.</p>
+<p>Entregar depois do prazo gera multa de <strong>2% ao mês</strong> (ou fração) sobre os impostos declarados, limitada a 20%, com <strong>valor mínimo de R$ 50</strong>. A guia da multa (DARF) sai junto com o recibo, na hora da transmissão. Há redução de 50% para quem entrega antes de qualquer intimação e paga no prazo da notificação, mas confira o valor que aparece na sua guia. Enquanto a declaração não é entregue, o MEI fica irregular e não consegue emitir as <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">guias DAS</a> dos períodos seguintes.</p>
+<h2>Errei a declaração. Como corrigir?</h2>
+<p>É só enviar uma <strong>declaração retificadora</strong> para o mesmo ano, pelo mesmo serviço. Ela substitui a anterior por completo, então preencha todos os campos de novo, não só o que mudou.</p>
+<h2>DASN-SIMEI não é imposto de renda</h2>
+<p>A DASN-SIMEI é a declaração da empresa. A declaração de imposto de renda da pessoa física é outra obrigação, com prazo próprio, e depende das suas rendas como pessoa (inclusive a parte do lucro do MEI que não é isenta). Veja como separar as duas coisas no guia <a href="https://projects-betanull.github.io/mei-em-dia/separar-dinheiro-pessoal-e-da-empresa-mei/">dinheiro pessoal e da empresa</a>.</p>
 <h2>Erros que mais acontecem</h2>
-<ul><li>Informar só o valor das notas emitidas.</li><li>Informar o lucro em vez do faturamento bruto.</li><li>Passar do <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite de R$ 81 mil</a> e não perceber até a hora da declaração.</li><li>Misturar receitas de comércio e de serviços.</li></ul>
+<ul><li>Informar só o valor das notas emitidas e esquecer vendas em dinheiro e Pix.</li><li>Informar o lucro em vez do faturamento bruto.</li>
+<li>Misturar receitas de comércio e de serviços.</li><li>Deixar para o último dia e enfrentar o portal lento.</li>
+<li>Passar do limite e só perceber na hora da declaração.</li></ul>
 """))
 A.append(("nota-fiscal-mei","Nota fiscal MEI: quando é obrigatória e como emitir (e o que muda em 2027)",
 "Quando o MEI precisa emitir nota fiscal, a diferença entre NFS-e e NF-e, como emitir pelo emissor nacional e a mudança prevista para 2027.",
@@ -174,7 +248,7 @@ A.append(("nota-fiscal-mei","Nota fiscal MEI: quando é obrigatória e como emit
 <tr><td>Venda ou serviço para empresa (CNPJ)</td><td>Obrigatória</td></tr>
 <tr><td>Venda ou serviço para órgão público</td><td>Obrigatória</td></tr>
 <tr><td>Venda ou serviço para pessoa física (CPF)</td><td>Só se o cliente pedir</td></tr></table>
-<p>Mesmo quando a nota não é obrigatória, o valor recebido conta como faturamento e entra no <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal</a> e no <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite anual de R$ 81 mil</a>.</p>
+<p>Mesmo quando a nota não é obrigatória, o valor recebido conta como faturamento e entra no <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal</a> e no <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite anual de faturamento</a> (R$ 81 mil em 2026 e R$ 110 mil a partir de 2027).</p>
 <h2>NFS-e ou NF-e?</h2>
 <ul><li><strong>NFS-e (serviços):</strong> o MEI prestador de serviços emite pelo <strong>Emissor Nacional da NFS-e</strong> (site nfse.gov.br ou app NFS-e Mobile), com login gov.br. É gratuito. Desde 1º/11/2026, ME e EPP do Simples também usam esse emissor (veja <a href="https://projects-betanull.github.io/mei-em-dia/nfs-e-nacional-simples-nacional-novembro-2026-mei/">o que mudou em novembro</a>).</li>
 <li><strong>NF-e (produtos):</strong> quem vende mercadorias emite a nota de produto, que depende de credenciamento na Secretaria da Fazenda do seu estado e de um sistema emissor autorizado.</li></ul>
@@ -192,31 +266,35 @@ A.append(("nota-fiscal-mei","Nota fiscal MEI: quando é obrigatória e como emit
 <ul><li>Não emitir para empresas por achar que é opcional.</li><li>Usar um código de serviço que não corresponde à atividade.</li>
 <li>Lançar no controle só o que teve nota e esquecer vendas por Pix ou dinheiro.</li></ul>
 """))
-A.append(("mei-pode-ter-funcionario","MEI pode ter funcionário? Regras, custo e como contratar",
-"Quantos funcionários o MEI pode ter, qual salário pode pagar, encargos de 3% de INSS e 8% de FGTS e quanto custa contratar em 2026.",
-"""<h1>MEI pode ter funcionário? Regras, custo e como contratar</h1>
-<p>Sim. O MEI pode contratar <strong>um único funcionário</strong> com carteira assinada (Lei Complementar 123/2006, art. 18-C). Mas há regras de salário e encargos que precisam caber no seu caixa.</p>
+A.append(('mei-pode-ter-funcionario','MEI pode ter funcionário? Em 2027 passam a ser 2: regras, custo e como contratar',
+'Em 2026 o MEI pode ter 1 funcionário; a partir de 2027, até 2 (LC 238/2026). Veja o salário permitido, os encargos de 3% de INSS e 8% de FGTS e quanto custa contratar.',
+"""<h1>MEI pode ter funcionário? Em 2027 passam a ser 2: regras, custo e como contratar</h1>
+<p>Sim. Hoje o MEI pode ter <strong>um empregado</strong> com carteira assinada. Com a Lei Complementar 238/2026, a partir de <strong>1º de janeiro de 2027</strong> esse número sobe para <strong>dois</strong>. Mas há regras de salário e encargos que precisam caber no seu caixa.</p>
 <h2>As regras</h2>
-<ul><li><strong>Apenas 1 empregado.</strong> Contratar o segundo tira a empresa do MEI.</li>
-<li><strong>Salário:</strong> o salário mínimo nacional ou o piso da categoria profissional.</li>
-<li>O funcionário tem todos os direitos da CLT: férias com 1/3, 13º, FGTS, vale-transporte, aviso prévio.</li>
+<table><tr><th>Período</th><th>Empregados permitidos</th></tr>
+<tr><td>Até 31/12/2026</td><td>1</td></tr><tr><td>A partir de 1º/01/2027</td><td>Até 2</td></tr></table>
+<ul><li><strong>Salário:</strong> cada empregado recebe o salário mínimo nacional ou o piso da categoria profissional.</li>
+<li>Em 2026, contratar um segundo empregado ainda tira a empresa do MEI. Espere janeiro de 2027.</li>
+<li>Se um empregado se afastar por motivo legal (licença-maternidade, auxílio por incapacidade), é possível contratar um substituto pelo período do afastamento.</li>
+<li>O empregado tem todos os direitos da CLT: férias com 1/3, 13º, FGTS, vale-transporte, aviso prévio.</li>
 <li>O registro é feito pelo <strong>eSocial</strong> (módulo simplificado), antes de a pessoa começar a trabalhar.</li></ul>
 <h2>Quanto custa por mês</h2>
-<p>Sobre o salário, o MEI paga <strong>3% de INSS patronal</strong> e <strong>8% de FGTS</strong>. Os dois são pagos em uma guia única gerada pelo eSocial (DAE). Exemplo com o salário mínimo de 2026 (R$ 1.621):</p>
-<table><tr><th>Item</th><th>Valor mensal</th></tr>
-<tr><td>Salário</td><td>R$ 1.621,00</td></tr><tr><td>INSS patronal (3%)</td><td>R$ 48,63</td></tr>
-<tr><td>FGTS (8%)</td><td>R$ 129,68</td></tr><tr><td><strong>Total direto</strong></td><td><strong>R$ 1.799,31</strong></td></tr></table>
+<p>Sobre o salário, o MEI paga <strong>3% de INSS patronal</strong> e <strong>8% de FGTS</strong>, numa guia única gerada pelo eSocial (DAE):</p>
+<table><tr><th>Item</th><th>2026 (mínimo R$ 1.621)</th><th>2027 (previsão R$ 1.741)</th></tr>
+<tr><td>Salário</td><td>R$ 1.621,00</td><td>R$ 1.741,00</td></tr><tr><td>INSS patronal (3%)</td><td>R$ 48,63</td><td>R$ 52,23</td></tr>
+<tr><td>FGTS (8%)</td><td>R$ 129,68</td><td>R$ 139,28</td></tr><tr><td><strong>Total direto por empregado</strong></td><td><strong>R$ 1.799,31</strong></td><td><strong>R$ 1.932,51</strong></td></tr></table>
+<p class="aviso">O salário mínimo de 2027 ainda não foi oficializado; R$ 1.741 é a projeção da proposta de Orçamento.</p>
 <p>O INSS do próprio empregado (7,5% na faixa do salário mínimo) é descontado do salário dele, não é custo extra seu.</p>
 <h2>O custo que muita gente esquece</h2>
-<p>Além do mês a mês, separe todo mês uma reserva para 13º salário, férias com 1/3 e o FGTS sobre eles. Na prática, isso acrescenta cerca de <strong>20% a 25%</strong> ao custo. Considere também vale-transporte e uma provisão para a multa de 40% do FGTS em caso de demissão sem justa causa.</p>
+<p>Além do mês a mês, separe todo mês uma reserva para 13º salário, férias com 1/3 e o FGTS sobre eles. Na prática, isso acrescenta cerca de <strong>20% a 25%</strong> ao custo. Considere também vale-transporte e uma provisão para a multa de 40% do FGTS em caso de demissão sem justa causa. Com dois empregados, todos esses valores dobram.</p>
 <h2>Vale a pena contratar?</h2>
-<p>Faça a conta com seus números: o funcionário precisa gerar mais lucro do que custa. Se seu lucro médio mensal for de R$ 3 mil, por exemplo, um custo total perto de R$ 2.200 consome quase tudo. Olhe o lucro dos últimos meses, não só o faturamento (o <a href="https://projects-betanull.github.io/mei-em-dia/controle-financeiro-mei/">guia de controle financeiro</a> mostra como calcular).</p>
-<p>Lembre também do <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite de R$ 81 mil por ano</a>: crescer com funcionário costuma aproximar o MEI do teto. Se isso for acontecer, vale conversar com um contador sobre virar Microempresa.</p>
+<p>Faça a conta com seus números: cada empregado precisa gerar mais lucro do que custa. Se seu lucro médio mensal for de R$ 3 mil, por exemplo, um custo total perto de R$ 2.200 consome quase tudo. Olhe o lucro dos últimos meses, não só o faturamento (o <a href="https://projects-betanull.github.io/mei-em-dia/controle-financeiro-mei/">guia de controle financeiro</a> mostra como calcular).</p>
+<p>Lembre também do <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite de faturamento</a>, que sobe para R$ 110 mil em 2027. Crescer com funcionário costuma aproximar o MEI do teto. Se isso for acontecer, vale conversar com um contador sobre virar Microempresa.</p>
 """))
 A.append(("controle-financeiro-mei","Controle financeiro para MEI: passo a passo com exemplo prático",
 "Como fazer o controle financeiro do MEI: separar contas, registrar receitas e despesas, calcular o lucro, fechar o mês e acompanhar o limite, com exemplo real.",
 """<h1>Controle financeiro para MEI: passo a passo com exemplo prático</h1>
-<p>Muitos MEIs faturam bem e mesmo assim sentem que o dinheiro some. Quase sempre o problema é falta de controle, não de vendas. Sem controle, você não sabe se o negócio dá lucro, quanto pode tirar para você, nem quanto falta para o limite anual de R$ 81 mil.</p>
+<p>Muitos MEIs faturam bem e mesmo assim sentem que o dinheiro some. Quase sempre o problema é falta de controle, não de vendas. Sem controle, você não sabe se o negócio dá lucro, quanto pode tirar para você, nem quanto falta para o limite anual (R$ 81 mil em 2026 e R$ 110 mil a partir de 2027).</p>
 <p>A boa notícia: o controle financeiro do MEI não precisa de sistema caro nem de conhecimento de contabilidade. Um registro simples, feito com constância, resolve. Este guia mostra o passo a passo e um exemplo completo de um mês.</p>
 
 <h2>Por que o MEI precisa de controle financeiro</h2>
@@ -257,7 +335,7 @@ A.append(("controle-financeiro-mei","Controle financeiro para MEI: passo a passo
 <tr><td>Faturamento</td><td>Soma das receitas</td><td>Quanto entrou</td></tr>
 <tr><td>Lucro</td><td>Receitas − despesas</td><td>Quanto o negócio realmente ganhou</td></tr>
 <tr><td>Margem</td><td>Lucro ÷ receitas</td><td>Quanto sobra de cada R$ 100 vendidos</td></tr>
-<tr><td>Uso do limite</td><td>Faturamento acumulado no ano ÷ R$ 81.000</td><td>Quanto do teto já foi usado</td></tr></table>
+<tr><td>Uso do limite</td><td>Faturamento acumulado no ano ÷ limite do ano (R$ 81 mil em 2026; R$ 110 mil em 2027)</td><td>Quanto do teto já foi usado</td></tr></table>
 
 <h2>Exemplo prático: um mês de uma MEI</h2>
 <p>A Ana é manicure e também revende esmaltes e produtos de cuidado. Em março, ela registrou:</p>
@@ -286,7 +364,7 @@ A.append(("controle-financeiro-mei","Controle financeiro para MEI: passo a passo
 <p>Em vez de pegar dinheiro do caixa sempre que precisar, estabeleça uma <strong>retirada fixa por mês</strong>, como se fosse um salário, com base no lucro médio dos últimos meses. Faça uma única transferência para a sua conta pessoal e registre-a como "retirada do dono", não como despesa do negócio. Assim o lucro do mês continua aparecendo certo.</p>
 
 <h2>Passo 6: acompanhe o limite anual todo mês</h2>
-<p>O teto do MEI é de R$ 81 mil por ano (ou proporcional, se você abriu a empresa no meio do ano). Olhando o acumulado todo mês, você vê com meses de antecedência se vai passar. Ao chegar perto de 80% do limite, planeje os meses seguintes ou converse com um contador. Mais detalhes no guia do <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite do MEI em 2027</a>.</p>
+<p>O teto do MEI é de R$ 81 mil em 2026 e sobe para R$ 110 mil em 2027 (ou proporcional, se você abriu a empresa no meio do ano). Olhando o acumulado todo mês, você vê com meses de antecedência se vai passar. Ao chegar perto de 80% do limite, planeje os meses seguintes ou converse com um contador. Mais detalhes no guia do <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite do MEI em 2027</a>.</p>
 
 <h2>Erros mais comuns no controle financeiro do MEI</h2>
 <ul><li><strong>Anotar só o que teve nota fiscal.</strong> Vendas em dinheiro e Pix também são faturamento.</li>
@@ -337,7 +415,7 @@ A.append(("planilha-relatorio-mensal-mei-gratis","Planilha grátis: Relatório M
 <li>Na aba do mês, preencha os valores que você recebeu em cada tipo de receita.</li>
 <li>Imprima, assine e guarde junto com as notas fiscais do mês.</li></ol>
 <h2>Quer que a planilha some tudo sozinha?</h2>
-<p>Na versão gratuita você precisa somar suas vendas antes de digitar. Na versão completa você lança cada venda e despesa uma vez, e ela monta o relatório de qualquer mês, mostra o lucro, avisa quando você chega perto do limite de R$ 81 mil e controla o DAS.</p>
+<p>Na versão gratuita você precisa somar suas vendas antes de digitar. Na versão completa você lança cada venda e despesa uma vez, e ela monta o relatório de qualquer mês, mostra o lucro, avisa quando você chega perto do limite anual e controla o DAS.</p>
 """))
 
 A.append(("como-fazer-orcamento-pessoal","Como fazer um orçamento pessoal que funciona (método 50-30-20)",
@@ -396,7 +474,7 @@ A.append(("nfs-e-nacional-simples-nacional-novembro-2026-mei","NFS-e Nacional ob
 <h2>E o MEI? Resposta curta: para você, quase nada muda agora</h2>
 <p>O MEI já é obrigado a emitir a NFS-e pelo Emissor Nacional desde <strong>setembro de 2023</strong>. Se você é MEI prestador de serviço e já emite pelo site nfse.gov.br ou pelo app NFS-e Mobile, continue do mesmo jeito.</p>
 <p>A mudança de novembro vale para quem é ME ou EPP. Mas ela interessa ao MEI em duas situações:</p>
-<ul><li><strong>Se você vai sair do MEI</strong> (por ter passado do <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite de R$ 81 mil</a> ou por contratar mais de um funcionário): como ME no Simples Nacional, você continua emitindo pelo mesmo Emissor Nacional. Não precisa aprender o sistema da prefeitura.</li>
+<ul><li><strong>Se você vai sair do MEI</strong> (por ter passado do <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite de faturamento</a> ou por contratar mais empregados do que o permitido): como ME no Simples Nacional, você continua emitindo pelo mesmo Emissor Nacional. Não precisa aprender o sistema da prefeitura.</li>
 <li><strong>Se seus clientes são empresas do Simples:</strong> as notas que eles emitem agora seguem o mesmo padrão nacional, o que facilita conferir e guardar documentos.</li></ul>
 <h2>O imposto vai para Brasília?</h2>
 <p>Não. O que muda é <strong>onde a nota é emitida e o formato dela</strong>, que passa a ser igual no país inteiro. O <strong>ISS continua sendo um imposto municipal</strong>: a prefeitura segue responsável por fiscalizar, cobrar e arrecadar, e recebe automaticamente os dados das notas emitidas no ambiente nacional. Para o MEI, o ISS continua embutido no DAS mensal (R$ 5), sem mudança.</p>
@@ -466,13 +544,13 @@ A.append(("como-sair-das-dividas","Como sair das dívidas: plano em 7 passos par
 GRUPOS=[("nf","Nota fiscal","mei"),("obr","Impostos, prazos e obrigações do MEI","mei"),("ctrl","Organização financeira do MEI","mei"),("fin","Finanças pessoais","financas")]
 META={
 "limite-mei-2027":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",gratis=True,
- resumo=["O limite do MEI é de <strong>R$ 81.000 por ano</strong>. Não existe limite mensal; R$ 6.750 é só a média.",
-  "No ano de abertura, o limite é <strong>R$ 6.750 × meses de atividade</strong>.",
-  "Passou até 20%: paga DAS complementar e vira ME em janeiro. Passou mais de 20%: o desenquadramento volta a janeiro do mesmo ano."],
- faq=[("O limite do MEI vai aumentar em 2027?","Existem projetos no Congresso para elevar o teto, mas enquanto nenhum for aprovado e sancionado, o limite continua sendo de R$ 81 mil por ano."),
-  ("Vendas sem nota fiscal contam para o limite?","Sim. O limite considera o faturamento bruto: tudo o que você recebeu com vendas e serviços, com ou sem nota fiscal."),
-  ("Posso faturar mais em um mês e menos em outro?","Pode. O controle é anual. O que importa é a soma do ano não passar do limite.")],
- rel=["relatorio-mensal-de-receitas-brutas-mei","controle-financeiro-mei","dasn-simei-declaracao-anual-mei"]),
+ resumo=["Em 2026 o limite continua em <strong>R$ 81 mil</strong>. Pela LC 238/2026, sobe para <strong>R$ 110 mil em 2027</strong> e <strong>R$ 140 mil em 2028</strong>.",
+  "Não existe limite mensal. Quem abre o MEI em 2027 tem R$ 9.166,67 por mês de atividade.",
+  "Passou até 20% (R$ 132 mil em 2027): DAS complementar e vira ME em janeiro. Acima disso, o desenquadramento volta a janeiro."],
+ faq=[("O limite de R$ 110 mil já vale em 2026?","Não. Até 31 de dezembro de 2026 o limite é de R$ 81 mil. O novo teto vale para o faturamento a partir de 1º de janeiro de 2027."),
+  ("Quanto o MEI pode faturar por mês em 2027?","Não existe limite mensal, só o anual de R$ 110 mil. A média é de R$ 9.166,67 por mês, mas você pode faturar mais em um mês e menos em outro."),
+  ("Vendas sem nota fiscal contam para o limite?","Sim. O limite considera o faturamento bruto: tudo o que você recebeu com vendas e serviços, com ou sem nota fiscal.")],
+ rel=["mei-pode-ter-funcionario","das-mei-valor-vencimento","controle-financeiro-mei"]),
 "relatorio-mensal-de-receitas-brutas-mei":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",gratis=True,
  resumo=["É obrigatório para todo MEI, mas <strong>não é enviado ao governo</strong>: você preenche, assina e guarda.",
   "Prazo: até o <strong>dia 20 do mês seguinte</strong>.",
@@ -482,36 +560,37 @@ META={
   ("O relatório mensal ajuda na declaração anual?","Sim. A soma dos 12 relatórios dá o faturamento do ano, separado em comércio, indústria e serviços, que é exatamente o que a DASN-SIMEI pede.")],
  rel=["planilha-relatorio-mensal-mei-gratis","dasn-simei-declaracao-anual-mei","limite-mei-2027"]),
 "das-mei-valor-vencimento":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",gratis=True,
- resumo=["O DAS é 5% do salário mínimo (INSS) + R$ 1 de ICMS e/ou R$ 5 de ISS.",
-  "Em 2026: <strong>R$ 82,05</strong> (comércio/indústria), <strong>R$ 86,05</strong> (serviços) ou <strong>R$ 87,05</strong> (os dois).",
-  "Vence no <strong>dia 20</strong> de cada mês e é pago mesmo sem faturamento."],
+ resumo=["Em 2026: <strong>R$ 82,05</strong> (comércio/indústria), <strong>R$ 86,05</strong> (serviços) ou <strong>R$ 87,05</strong> (os dois). Vence no <strong>dia 20</strong>.",
+  "Em 2027 o valor sobe com o novo salário mínimo; pela previsão do Orçamento, vai para R$ 88,05 a R$ 93,05.",
+  "A parte do INSS das dívidas vencidas até 13/10/2026 será perdoada automaticamente em 2027, se você pagar em dia de janeiro a junho."],
  faq=[("Preciso pagar o DAS se não faturei nada?","Sim. O DAS é um valor fixo mensal e é devido mesmo nos meses sem faturamento."),
-  ("O valor do DAS muda em 2027?","Muda, porque a parte do INSS acompanha o salário mínimo. O valor novo vale a partir da guia de janeiro, que é paga em fevereiro."),
-  ("Dá para parcelar DAS atrasado?","Sim. O parcelamento pode ser pedido pelo Portal do Empreendedor.")],
- rel=["relatorio-mensal-de-receitas-brutas-mei","controle-financeiro-mei","dasn-simei-declaracao-anual-mei"]),
+  ("Preciso pedir o perdão das dívidas do DAS?","Não. Segundo a PGFN e a Receita Federal, o cancelamento da parte do INSS vencida até 13/10/2026 é automático a partir de 1º de janeiro de 2027. Para manter o perdão, pague em dia o DAS de janeiro a junho de 2027."),
+  ("Quando sai o valor oficial do DAS 2027?","Depois que o governo publicar o decreto do salário mínimo de 2027, o que costuma acontecer no fim de dezembro. O valor novo vale a partir da guia de janeiro, paga em fevereiro.")],
+ rel=["relatorio-mensal-de-receitas-brutas-mei","limite-mei-2027","dasn-simei-declaracao-anual-mei"]),
 "dasn-simei-declaracao-anual-mei":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",gratis=True,
- resumo=["É a declaração anual do faturamento do MEI. Prazo: <strong>31 de maio</strong>.",
-  "Informa a receita bruta do ano anterior, separada em comércio/indústria e serviços.",
-  "É obrigatória mesmo sem faturamento. Atraso gera multa mínima de R$ 50."],
- faq=[("Quem não faturou nada precisa entregar a DASN-SIMEI?","Sim. A entrega é obrigatória para todo MEI, mesmo com faturamento zero."),
+ resumo=["A declaração do ano de 2026 vai até <strong>31 de maio de 2027</strong> e já pode ser enviada em janeiro.",
+  "Informa a receita bruta do ano, a parte de comércio/indústria e se teve empregado. É obrigatória mesmo sem faturamento.",
+  "Atraso gera multa de 2% ao mês sobre os impostos, com mínimo de <strong>R$ 50</strong>."],
+ faq=[("Quem não faturou nada precisa entregar a DASN-SIMEI?","Sim. A entrega é obrigatória para todo MEI que esteve ativo no ano, mesmo com faturamento zero."),
+  ("Na declaração de 2027 já vale o limite de R$ 110 mil?","Não. A declaração de 2027 é sobre o faturamento de 2026, cujo limite é de R$ 81 mil. O teto de R$ 110 mil vale para o faturamento de 2027, declarado em 2028."),
   ("A DASN-SIMEI substitui o imposto de renda da pessoa física?","Não. São declarações diferentes: a DASN-SIMEI é da empresa, e a obrigação de declarar o IR como pessoa física depende das suas rendas."),
-  ("Errei a declaração. Dá para corrigir?","Sim. É possível enviar uma declaração retificadora pelo próprio Portal do Empreendedor.")],
- rel=["relatorio-mensal-de-receitas-brutas-mei","planilha-relatorio-mensal-mei-gratis","das-mei-valor-vencimento"]),
+  ("Errei a declaração. Dá para corrigir?","Sim. Envie uma declaração retificadora para o mesmo ano pelo Portal do Empreendedor, preenchendo todos os campos de novo.")],
+ rel=["relatorio-mensal-de-receitas-brutas-mei","planilha-relatorio-mensal-mei-gratis","limite-mei-2027"]),
 "nota-fiscal-mei":dict(grupo="nf",pub="2026-10-30",mod="2026-11-08",gratis=True,
  resumo=["Hoje a nota é obrigatória para vendas e serviços a <strong>empresas (CNPJ)</strong> e órgãos públicos.",
   "Para pessoa física, só se o cliente pedir. A Reforma Tributária prevê ampliar a exigência a partir de 2027.",
   "A NFS-e de serviços é emitida de graça no <strong>Emissor Nacional</strong> (nfse.gov.br)."],
  faq=[("O MEI precisa emitir nota para pessoa física?","Pela regra atual, só se o cliente pedir. A Reforma Tributária prevê ampliar a exigência a partir de 2027, então vale acompanhar o Portal do Empreendedor."),
   ("Emitir nota fiscal de serviço tem custo?","Não. O Emissor Nacional da NFS-e (site e app) é gratuito; basta a conta gov.br nível prata ou ouro."),
-  ("Venda sem nota entra no faturamento?","Sim. Ela entra no relatório mensal e conta para o limite anual de R$ 81 mil.")],
+  ("Venda sem nota entra no faturamento?","Sim. Ela entra no relatório mensal e conta para o limite anual de faturamento.")],
  rel=["nfs-e-nacional-simples-nacional-novembro-2026-mei","relatorio-mensal-de-receitas-brutas-mei","limite-mei-2027"]),
 "mei-pode-ter-funcionario":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",
- resumo=["O MEI pode ter <strong>1 empregado</strong>, com salário mínimo ou piso da categoria.",
-  "Encargos: <strong>3% de INSS + 8% de FGTS</strong>. Com o mínimo de 2026, o custo direto é de cerca de R$ 1.799 por mês.",
-  "Some ainda 13º, férias e vale-transporte: cerca de 20% a 25% a mais."],
- faq=[("O que acontece se o MEI contratar um segundo funcionário?","A empresa deixa de se enquadrar como MEI. Nesse caso, converse com um contador sobre a mudança para Microempresa."),
+ resumo=["Em 2026 o MEI pode ter <strong>1 empregado</strong>. A partir de 1º/01/2027, pela LC 238/2026, até <strong>2</strong>.",
+  "Cada um recebe salário mínimo ou piso da categoria. Encargos: <strong>3% de INSS + 8% de FGTS</strong>.",
+  "Custo direto em 2026: cerca de R$ 1.799 por empregado, mais 20% a 25% de 13º, férias e reservas."],
+ faq=[("Posso contratar o segundo funcionário ainda em 2026?","Não. Em 2026 o limite continua sendo de 1 empregado, e contratar o segundo tira a empresa do MEI. A regra de até 2 vale a partir de 1º de janeiro de 2027."),
   ("Onde registro o funcionário do MEI?","No eSocial, no módulo simplificado, antes de a pessoa começar a trabalhar. Os encargos são pagos em uma guia única (DAE).")],
- rel=["controle-financeiro-mei","limite-mei-2027","das-mei-valor-vencimento"]),
+ rel=["limite-mei-2027","controle-financeiro-mei","das-mei-valor-vencimento"]),
 "controle-financeiro-mei":dict(grupo="ctrl",pub="2026-10-30",mod="2026-11-08",
  resumo=["Separe a conta da empresa da pessoal e registre <strong>toda</strong> entrada e saída, com ou sem nota.",
   "Feche o mês até o dia 20: pague o DAS, preencha o relatório mensal e veja lucro, margem e uso do limite.",
