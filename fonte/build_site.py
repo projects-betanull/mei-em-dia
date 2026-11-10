@@ -2,7 +2,7 @@ import os, datetime, html, json
 OUT=".."; CHECKOUT="https://pay.kiwify.com.br/IJghjr7"; BASE="https://projects-betanull.github.io/mei-em-dia"
 SITE="MEI em Dia"; HOJE=datetime.date.today().isoformat()
 # Guia em destaque na página inicial (trocar quando houver um tema de prazo mais urgente)
-DESTAQUE="limite-mei-2027"
+DESTAQUE="mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal"
 CSS="""*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#1f2937;line-height:1.7;background:#fafaf9;font-size:17px}
 header{background:#1f6f5c;color:#fff;padding:12px 20px}header .in{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
 header .logo{color:#fff;text-decoration:none;font-weight:800;font-size:1.15rem;margin-right:auto}header nav a{color:#e3f1ec;text-decoration:none;font-size:.92rem}header nav a:hover{color:#fff;text-decoration:underline}header nav{display:flex;gap:14px;flex-wrap:wrap}
@@ -165,6 +165,7 @@ A.append(('das-mei-valor-vencimento','DAS MEI 2026 e 2027: valor, vencimento, at
 <table><tr><th>Atividade</th><th>DAS 2027 (previsão)</th></tr>
 <tr><td>Comércio ou indústria</td><td>R$ 88,05</td></tr><tr><td>Serviços</td><td>R$ 92,05</td></tr><tr><td>Comércio e serviços</td><td>R$ 93,05</td></tr></table>
 <p>O valor novo vale a partir da guia de <strong>janeiro de 2027</strong>, paga em fevereiro. Como 20 de fevereiro de 2027 cai num sábado, essa primeira guia vence em 22 de fevereiro. Esta página será atualizada quando o decreto sair.</p>
+<p>Há ainda um detalhe da Reforma Tributária: a Resolução CGSN 190/2026 prevê, a partir de 2027, uma parcela fixa de <strong>CBS e IBS de R$ 1,00 por mês</strong> (R$ 0,994 + R$ 0,006) no DAS do MEI, ao lado do ICMS e do ISS. Se ela entrar em todas as guias, cada valor da tabela acima sobe R$ 1. A composição exata por atividade será confirmada na guia gerada no Portal do Empreendedor. Veja o que mais muda no guia <a href="https://projects-betanull.github.io/mei-em-dia/mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal/">MEI na Reforma Tributária em 2027</a>.</p>
 <h2>Vencimento</h2>
 <p>O DAS vence no <strong>dia 20 de cada mês</strong> e se refere ao mês anterior: o DAS de março vence em 20 de abril. Se o dia 20 cair em fim de semana ou feriado, o prazo passa para o dia útil seguinte. Aproveite a data para preencher também o <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal de receitas</a> do mês anterior, que tem o mesmo prazo.</p>
 <h2>Como pagar</h2>
@@ -261,7 +262,7 @@ A.append(("nota-fiscal-mei","Nota fiscal MEI: quando é obrigatória e como emit
 <li>Confira tudo e emita. O PDF e o XML ficam salvos no sistema.</li></ol>
 <p>Dica: cadastre como favoritos os clientes e serviços que se repetem. A emissão cai para menos de um minuto.</p>
 <h2>O que muda em 2027</h2>
-<p>Com a Reforma Tributária, o cronograma em discussão prevê que a emissão de nota fiscal passe a ser exigida em praticamente todas as operações do MEI, inclusive vendas e serviços para pessoa física, a partir de 2027. As regras finais ainda podem ser ajustadas, então acompanhe pelo Portal do Empreendedor. Na prática, quem já se acostumar a emitir nota em toda venda e a registrar tudo no controle mensal vai sentir muito menos a mudança.</p>
+<p>Com a Reforma Tributária, a <strong>Resolução CGSN 190/2026</strong> retirou, a partir de 1º/1/2027, a dispensa de nota nas vendas a consumidor final: em regra, o MEI passa a emitir documento fiscal em toda venda (NFS-e nacional para serviços e, de preferência, a Nota Fiscal Fácil para mercadorias). Em outubro, porém, a <strong>Resolução CGSN 195/2026</strong> e o Decreto 13.140/2026 permitiram usar a <strong>DASN-SIMEI como documento fiscal</strong> nas vendas a pessoa física sem CNPJ. Para empresas e órgãos públicos, a nota continua obrigatória. Os detalhes de como isso vai funcionar ainda dependem de orientação do Comitê Gestor; veja tudo no guia <a href="https://projects-betanull.github.io/mei-em-dia/mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal/">MEI na Reforma Tributária em 2027</a>. Na prática, quem registra toda venda no controle mensal, separando clientes pessoa física e empresa, vai sentir muito menos a mudança.</p>
 <h2>Erros comuns</h2>
 <ul><li>Não emitir para empresas por achar que é opcional.</li><li>Usar um código de serviço que não corresponde à atividade.</li>
 <li>Lançar no controle só o que teve nota e esquecer vendas por Pix ou dinheiro.</li></ul>
@@ -530,6 +531,46 @@ A.append(("como-sair-das-dividas","Como sair das dívidas: plano em 7 passos par
 <p>Redirecione o valor que ia para as parcelas para uma <a href="https://projects-betanull.github.io/mei-em-dia/reserva-de-emergencia/">reserva de emergência</a>. É ela que evita que o próximo imprevisto vire uma nova dívida no cartão.</p>
 ""","fin"))
 
+A.append(("mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal","MEI na Reforma Tributária em 2027: IBS, CBS, DAS e nota fiscal para pessoa física",
+"O que muda para o MEI em 1º de janeiro de 2027: CBS e IBS no DAS, nota fiscal em toda venda, a DASN-SIMEI como documento fiscal para pessoa física e o nanoempreendedor.",
+"""<h1>MEI na Reforma Tributária em 2027: IBS, CBS, DAS e nota fiscal para pessoa física</h1>
+<p>Em <strong>1º de janeiro de 2027</strong> a Reforma Tributária do consumo começa a valer de verdade para as empresas do Simples Nacional, e o MEI está incluído. Entre agosto e outubro de 2026 saíram três normas que mudam o dia a dia do microempreendedor: a <strong>Resolução CGSN nº 190/2026</strong>, a <strong>Resolução CGSN nº 195/2026</strong> e o <strong>Decreto nº 13.140/2026</strong>. Muita notícia desencontrada circulou desde então. Este guia separa o que já está definido do que ainda depende de regulamentação.</p>
+<h2>Resumo do que muda em 2027</h2>
+<table><tr><th>Tema</th><th>Até 31/12/2026</th><th>A partir de 1º/1/2027</th></tr>
+<tr><td>Impostos no DAS</td><td>INSS + ICMS (R$ 1) e/ou ISS (R$ 5)</td><td>Entra uma parcela fixa de CBS e IBS (R$ 1 no total, segundo a Resolução CGSN 190)</td></tr>
+<tr><td>Nota para empresa (CNPJ)</td><td>Obrigatória</td><td>Continua obrigatória</td></tr>
+<tr><td>Nota para pessoa física</td><td>Só se o cliente pedir</td><td>Regra geral passa a exigir documento fiscal, mas a DASN-SIMEI poderá cumprir esse papel (Resolução CGSN 195)</td></tr>
+<tr><td>Destaque de IBS e CBS na nota</td><td>Não se aplica</td><td>O MEI continua dispensado de destacar os valores</td></tr></table>
+<h2>CBS e IBS: o MEI vai pagar imposto novo?</h2>
+<p>A CBS (federal) substitui o PIS e a Cofins, e o IBS (de estados e municípios) vai substituir aos poucos o ICMS e o ISS, até 2033. O MEI nunca pagou PIS e Cofins, e continua sem calcular imposto sobre cada venda: tudo segue dentro do <strong>valor fixo mensal do DAS</strong>.</p>
+<p>O que muda é a composição da guia. O anexo da Resolução CGSN 190/2026 com os valores fixos do MEI prevê, a partir de 2027, <strong>R$ 0,994 de CBS e R$ 0,006 de IBS</strong>, ou seja, R$ 1,00 por mês, ao lado do R$ 1 de ICMS e dos R$ 5 de ISS, que continuam. Nos anos seguintes, os valores de ICMS e ISS diminuem e os de IBS aumentam, acompanhando a transição.</p>
+<p>Na prática, a maior mudança no valor do DAS em 2027 continua vindo do <strong>salário mínimo</strong>, que define a parte do INSS (5%). Com a projeção de R$ 1.741 do Orçamento, só o INSS passa de R$ 81,05 para R$ 87,05. O valor exato da guia de janeiro de 2027 aparecerá no Portal do Empreendedor depois do decreto do salário mínimo. Veja as contas atualizadas no guia do <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">DAS MEI 2026 e 2027</a>.</p>
+<h2>Nota fiscal em toda venda: o que a Resolução CGSN 190 mudou</h2>
+<p>A Lei Complementar 214/2025, que regulamentou a Reforma, mudou a regra de documentos fiscais da Lei do Simples. Seguindo essa lei, a Resolução CGSN 190/2026, de agosto, retirou a antiga dispensa de nota nas vendas ao consumidor final, com efeitos a partir de 2027. Pela resolução, o MEI deve usar:</p>
+<ul><li><strong>NFS-e de padrão nacional</strong> para serviços, emitida de graça no Emissor Nacional (nfse.gov.br ou app NFS-e Mobile), como o MEI já faz desde 2023. Veja o passo a passo no <a href="https://projects-betanull.github.io/mei-em-dia/nota-fiscal-mei/">guia de nota fiscal do MEI</a>.</li>
+<li><strong>Nota Fiscal Fácil (NFF)</strong>, de preferência, para venda de mercadorias e alguns serviços de transporte. É o aplicativo gratuito de emissão de nota de produto; a disponibilidade depende do estado.</li></ul>
+<p>A mesma resolução manteve o MEI <strong>dispensado de destacar IBS e CBS</strong> nos documentos que emite. Isso faz sentido: como o imposto é fixo no DAS, não existe valor por venda para mostrar. Se você emite nota por um sistema particular, e não pelo emissor oficial, confirme com o fornecedor que ele estará atualizado para os leiautes de 2027.</p>
+<h2>DASN-SIMEI como documento fiscal: o alívio para quem vende a pessoa física</h2>
+<p>Depois da Resolução 190, muitos MEIs que atendem o público (manicures, ambulantes, pequenos comércios, prestadores de serviço em domicílio) se assustaram com a ideia de emitir uma nota a cada venda de R$ 10. Em <strong>21 de outubro de 2026</strong>, o governo publicou o Decreto nº 13.140/2026 e o CGSN aprovou a Resolução nº 195/2026, que permitem usar a <strong>DASN-SIMEI como documento fiscal eletrônico</strong> nas vendas de mercadorias e serviços do MEI a <strong>consumidor final pessoa física sem CNPJ</strong>, com efeitos a partir de 1º de janeiro de 2027.</p>
+<p>A Receita Federal apresentou a medida como uma simplificação das obrigações da Reforma para MEIs e nanoempreendedores. O que isso significa na prática:</p>
+<ul><li><strong>Vendas a pessoa física:</strong> em vez de uma nota por venda, essas receitas poderão ser informadas na declaração anual. Se o cliente pedir a nota, você continua podendo (e devendo) emitir.</li>
+<li><strong>Vendas a empresas e órgãos públicos:</strong> nada muda. A nota continua obrigatória.</li>
+<li><strong>Pontos ainda em aberto:</strong> como as vendas a pessoa física serão detalhadas na DASN-SIMEI e se o formulário vai pedir informações novas ainda dependem das orientações do Comitê Gestor do Simples Nacional e do Portal do Empreendedor.</li></ul>
+<p>Uma consequência é certa: se a declaração anual passa a servir de documento fiscal, ela precisa refletir exatamente o que você vendeu. Quem registra toda receita no <a href="https://projects-betanull.github.io/mei-em-dia/controle-financeiro-mei/">controle financeiro</a>, separando as vendas a pessoa física das vendas com nota, vai preencher a declaração sem dor de cabeça. Quem depende da memória vai ter mais trabalho e mais risco.</p>
+<h2>Nanoempreendedor: quem fica sem CNPJ</h2>
+<p>A Reforma criou a figura do <strong>nanoempreendedor</strong>: a pessoa física com receita bruta anual <strong>inferior à metade do limite do MEI</strong> e que não optou pelo MEI. O Decreto 13.140/2026 dispensou o nanoempreendedor de inscrição no CNPJ e de emissão de documentos fiscais eletrônicos ligados aos novos tributos. Para motoristas de aplicativo e entregadores, conta apenas 25% do valor bruto recebido por mês. As dispensas relativas ao IBS só produzem efeito a partir de 2029.</p>
+<p>Isso não significa que vale a pena dar baixa no MEI para virar nanoempreendedor. O DAS é o que garante a contribuição para o INSS (aposentadoria por idade, auxílio por incapacidade, salário-maternidade), e o CNPJ permite vender para empresas e emitir nota. Antes de qualquer decisão, compare com um contador.</p>
+<h2>Checklist para o MEI antes de janeiro de 2027</h2>
+<ol><li><strong>Confira seu acesso gov.br</strong> (nível prata ou ouro) e entre no Emissor Nacional da NFS-e para ver se seus dados e serviços estão corretos.</li>
+<li><strong>Se vende produtos</strong>, verifique se a Nota Fiscal Fácil está disponível no seu estado e faça o credenciamento na Secretaria da Fazenda, se ainda não tiver.</li>
+<li><strong>Separe os clientes</strong>: quais são empresas (nota obrigatória) e quais são pessoas físicas.</li>
+<li><strong>Organize o registro de vendas</strong> por tipo de cliente e por tipo de receita (comércio ou serviço), mês a mês.</li>
+<li><strong>Pague o DAS em dia de janeiro a junho de 2027</strong>: é a condição para manter o perdão das dívidas do INSS previsto na LC 238/2026.</li>
+<li><strong>Atualize o teto</strong> do seu controle para o novo <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite de R$ 110 mil em 2027</a>.</li></ol>
+<h2>O que ainda pode mudar</h2>
+<p>A Reforma está em plena fase de regulamentação, e as regras do Simples já foram ajustadas várias vezes em 2026. Os pontos que mais merecem atenção nas próximas semanas são o formato da DASN-SIMEI com as vendas a pessoa física, o valor final do DAS de 2027 e eventuais calendários estaduais da Nota Fiscal Fácil. Este guia será atualizado quando essas orientações forem publicadas.</p>
+"""))
+
 # ---------------------------------------------------------------------------
 # META: dados extras de cada guia.
 #   grupo: nf | obr | ctrl | fin  (seção na página inicial)
@@ -543,6 +584,14 @@ A.append(("como-sair-das-dividas","Como sair das dívidas: plano em 7 passos par
 # ---------------------------------------------------------------------------
 GRUPOS=[("nf","Nota fiscal","mei"),("obr","Impostos, prazos e obrigações do MEI","mei"),("ctrl","Organização financeira do MEI","mei"),("fin","Finanças pessoais","financas")]
 META={
+"mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal":dict(grupo="nf",pub="2026-11-10",mod="2026-11-10",gratis=True,
+ resumo=["A partir de <strong>1º/1/2027</strong>, o DAS ganha uma parcela fixa de CBS e IBS (R$ 0,994 + R$ 0,006). O MEI não calcula imposto por venda.",
+  "A Resolução CGSN 190/2026 passa a exigir documento fiscal em toda venda, mas a <strong>DASN-SIMEI poderá servir de documento fiscal</strong> nas vendas a pessoa física (Resolução CGSN 195/2026).",
+  "Para empresas e órgãos públicos, a nota continua obrigatória. O MEI segue dispensado de destacar IBS e CBS na nota."],
+ faq=[("O MEI vai ter que emitir nota fiscal para pessoa física em 2027?","A Resolução CGSN 190/2026 retirou a dispensa a partir de 2027, mas a Resolução CGSN 195/2026 e o Decreto 13.140/2026 permitem usar a DASN-SIMEI como documento fiscal nas vendas a consumidor final pessoa física sem CNPJ. Se o cliente pedir a nota, ela deve ser emitida."),
+  ("O MEI precisa destacar IBS e CBS na nota fiscal?","Não. A Resolução CGSN 190/2026 mantém o MEI dispensado de destacar IBS e CBS nos documentos fiscais, porque esses tributos são pagos em valor fixo dentro do DAS."),
+  ("O DAS do MEI vai aumentar em 2027?","Sim, principalmente por causa do novo salário mínimo, que define a parte do INSS. Além disso, a regulamentação prevê uma parcela fixa de R$ 1 de CBS e IBS. O valor exato aparece no Portal do Empreendedor depois do decreto do salário mínimo.")],
+ rel=["nota-fiscal-mei","das-mei-valor-vencimento","nfs-e-nacional-simples-nacional-novembro-2026-mei"]),
 "limite-mei-2027":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",gratis=True,
  resumo=["Em 2026 o limite continua em <strong>R$ 81 mil</strong>. Pela LC 238/2026, sobe para <strong>R$ 110 mil em 2027</strong> e <strong>R$ 140 mil em 2028</strong>.",
   "Não existe limite mensal. Quem abre o MEI em 2027 tem R$ 9.166,67 por mês de atividade.",
@@ -559,14 +608,14 @@ META={
   ("E se eu não faturei nada no mês?","O mais seguro é preencher o relatório com os valores zerados e guardá-lo, para manter a sequência de meses documentada."),
   ("O relatório mensal ajuda na declaração anual?","Sim. A soma dos 12 relatórios dá o faturamento do ano, separado em comércio, indústria e serviços, que é exatamente o que a DASN-SIMEI pede.")],
  rel=["planilha-relatorio-mensal-mei-gratis","dasn-simei-declaracao-anual-mei","limite-mei-2027"]),
-"das-mei-valor-vencimento":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",gratis=True,
+"das-mei-valor-vencimento":dict(grupo="obr",pub="2026-10-30",mod="2026-11-10",gratis=True,
  resumo=["Em 2026: <strong>R$ 82,05</strong> (comércio/indústria), <strong>R$ 86,05</strong> (serviços) ou <strong>R$ 87,05</strong> (os dois). Vence no <strong>dia 20</strong>.",
-  "Em 2027 o valor sobe com o novo salário mínimo; pela previsão do Orçamento, vai para R$ 88,05 a R$ 93,05.",
+  "Em 2027 o valor sobe com o novo salário mínimo (previsão de R$ 88,05 a R$ 93,05), mais uma parcela fixa de R$ 1 de CBS e IBS prevista pela Reforma.",
   "A parte do INSS das dívidas vencidas até 13/10/2026 será perdoada automaticamente em 2027, se você pagar em dia de janeiro a junho."],
  faq=[("Preciso pagar o DAS se não faturei nada?","Sim. O DAS é um valor fixo mensal e é devido mesmo nos meses sem faturamento."),
   ("Preciso pedir o perdão das dívidas do DAS?","Não. Segundo a PGFN e a Receita Federal, o cancelamento da parte do INSS vencida até 13/10/2026 é automático a partir de 1º de janeiro de 2027. Para manter o perdão, pague em dia o DAS de janeiro a junho de 2027."),
   ("Quando sai o valor oficial do DAS 2027?","Depois que o governo publicar o decreto do salário mínimo de 2027, o que costuma acontecer no fim de dezembro. O valor novo vale a partir da guia de janeiro, paga em fevereiro.")],
- rel=["relatorio-mensal-de-receitas-brutas-mei","limite-mei-2027","dasn-simei-declaracao-anual-mei"]),
+ rel=["mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal","relatorio-mensal-de-receitas-brutas-mei","dasn-simei-declaracao-anual-mei"]),
 "dasn-simei-declaracao-anual-mei":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",gratis=True,
  resumo=["A declaração do ano de 2026 vai até <strong>31 de maio de 2027</strong> e já pode ser enviada em janeiro.",
   "Informa a receita bruta do ano, a parte de comércio/indústria e se teve empregado. É obrigatória mesmo sem faturamento.",
@@ -576,14 +625,14 @@ META={
   ("A DASN-SIMEI substitui o imposto de renda da pessoa física?","Não. São declarações diferentes: a DASN-SIMEI é da empresa, e a obrigação de declarar o IR como pessoa física depende das suas rendas."),
   ("Errei a declaração. Dá para corrigir?","Sim. Envie uma declaração retificadora para o mesmo ano pelo Portal do Empreendedor, preenchendo todos os campos de novo.")],
  rel=["relatorio-mensal-de-receitas-brutas-mei","planilha-relatorio-mensal-mei-gratis","limite-mei-2027"]),
-"nota-fiscal-mei":dict(grupo="nf",pub="2026-10-30",mod="2026-11-08",gratis=True,
+"nota-fiscal-mei":dict(grupo="nf",pub="2026-10-30",mod="2026-11-10",gratis=True,
  resumo=["Hoje a nota é obrigatória para vendas e serviços a <strong>empresas (CNPJ)</strong> e órgãos públicos.",
-  "Para pessoa física, só se o cliente pedir. A Reforma Tributária prevê ampliar a exigência a partir de 2027.",
+  "Para pessoa física, só se o cliente pedir. Em 2027, a regra geral passa a exigir documento fiscal, mas a DASN-SIMEI poderá cumprir esse papel nessas vendas.",
   "A NFS-e de serviços é emitida de graça no <strong>Emissor Nacional</strong> (nfse.gov.br)."],
- faq=[("O MEI precisa emitir nota para pessoa física?","Pela regra atual, só se o cliente pedir. A Reforma Tributária prevê ampliar a exigência a partir de 2027, então vale acompanhar o Portal do Empreendedor."),
+ faq=[("O MEI precisa emitir nota para pessoa física?","Até 31/12/2026, só se o cliente pedir. A partir de 2027, a Resolução CGSN 190/2026 exige documento fiscal em toda venda, mas a Resolução CGSN 195/2026 permite que a DASN-SIMEI cumpra essa função nas vendas a pessoa física sem CNPJ. Se o cliente pedir a nota, ela deve ser emitida."),
   ("Emitir nota fiscal de serviço tem custo?","Não. O Emissor Nacional da NFS-e (site e app) é gratuito; basta a conta gov.br nível prata ou ouro."),
   ("Venda sem nota entra no faturamento?","Sim. Ela entra no relatório mensal e conta para o limite anual de faturamento.")],
- rel=["nfs-e-nacional-simples-nacional-novembro-2026-mei","relatorio-mensal-de-receitas-brutas-mei","limite-mei-2027"]),
+ rel=["mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal","nfs-e-nacional-simples-nacional-novembro-2026-mei","relatorio-mensal-de-receitas-brutas-mei"]),
 "mei-pode-ter-funcionario":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",
  resumo=["Em 2026 o MEI pode ter <strong>1 empregado</strong>. A partir de 1º/01/2027, pela LC 238/2026, até <strong>2</strong>.",
   "Cada um recebe salário mínimo ou piso da categoria. Encargos: <strong>3% de INSS + 8% de FGTS</strong>.",
