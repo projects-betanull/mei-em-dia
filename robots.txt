@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://projects-betanull.github.io/mei-em-dia/sitemap.xml
+Sitemap: https://projects-betanull.github.io/mei-em-dia/sitemap.txt

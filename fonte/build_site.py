@@ -895,5 +895,7 @@ open(f"{OUT}/sobre/index.html","w").write(page("sobre/","Sobre o MEI em Dia: fon
 ult=max(m for _,m in sm)
 sm_xml=f"<url><loc>{BASE}/</loc><lastmod>{ult}</lastmod></url><url><loc>{BASE}/sobre/</loc><lastmod>{SOBRE_MOD}</lastmod></url>"+"".join(f"<url><loc>{u}</loc><lastmod>{m}</lastmod></url>" for u,m in sm)
 open(f"{OUT}/sitemap.xml","w").write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm_xml}</urlset>')
-open(f"{OUT}/robots.txt","w").write(f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n")
+# sitemap em texto (uma URL por linha): formato mais simples, enviado ao Search Console como alternativa ao .xml
+open(f"{OUT}/sitemap.txt","w").write("\n".join([f"{BASE}/",f"{BASE}/sobre/"]+[u for u,_ in sm])+"\n")
+open(f"{OUT}/robots.txt","w").write(f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\nSitemap: {BASE}/sitemap.txt\n")
 print("ok", len(A))
