@@ -405,19 +405,42 @@ A.append(("separar-dinheiro-pessoal-e-da-empresa-mei","Como o MEI separa o dinhe
 <li>Registre essa transferência no controle como "retirada do dono", não como despesa do negócio, para enxergar o lucro real.</li></ul>
 """))
 A.append(("planilha-relatorio-mensal-mei-gratis","Planilha grátis: Relatório Mensal de Receitas Brutas do MEI",
-"Baixe grátis a planilha do Relatório Mensal de Receitas Brutas do MEI, pronta para preencher e imprimir, no Excel ou Google Planilhas.",
+"Baixe grátis a planilha do Relatório Mensal de Receitas Brutas do MEI: digite os valores do mês e imprima o relatório no modelo oficial. Excel e Google Planilhas, sem cadastro.",
 """<h1>Planilha grátis: Relatório Mensal de Receitas Brutas do MEI</h1>
-<p>Todo MEI precisa preencher e guardar o <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">Relatório Mensal de Receitas Brutas</a>. Para facilitar, montamos uma planilha gratuita com os 12 meses do ano: você digita os valores de cada mês e o relatório fica pronto para imprimir e assinar.</p>
+<p>Todo MEI precisa preencher e guardar o <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">Relatório Mensal de Receitas Brutas</a>. Para facilitar, montamos uma planilha gratuita: você digita os valores de cada mês em uma tabela e ela monta o relatório no modelo oficial, com os 10 campos, pronto para imprimir e assinar. O download é direto, sem cadastro.</p>
 <p><a class="btn" href="https://projects-betanull.github.io/mei-em-dia/arquivos/Relatorio_Mensal_MEI_Gratis.xlsx">Baixar planilha grátis (.xlsx)</a></p>
-<h2>O que tem na versão gratuita</h2>
-<ul><li>Uma aba para cada mês com o modelo oficial do relatório (comércio, indústria e serviços, com e sem nota fiscal).</li>
-<li>Totais calculados automaticamente.</li><li>Resumo anual com o total para a declaração DASN-SIMEI.</li></ul>
-<h2>Como usar</h2>
-<ol><li>Baixe o arquivo e abra no Excel ou importe no Google Planilhas (Arquivo → Importar).</li>
-<li>Na aba do mês, preencha os valores que você recebeu em cada tipo de receita.</li>
-<li>Imprima, assine e guarde junto com as notas fiscais do mês.</li></ol>
+<h2>O que tem na planilha</h2>
+<table><tr><th>Aba</th><th>Para que serve</th></tr>
+<tr><td><strong>Valores do ano</strong></td><td>Uma linha por mês, de janeiro a dezembro. Você digita quanto recebeu em comércio, indústria e serviços, com e sem nota fiscal. A planilha soma o total do mês, o acumulado do ano e os valores que a DASN-SIMEI pede.</td></tr>
+<tr><td><strong>Relatório para imprimir</strong></td><td>O relatório no modelo oficial. Você escolhe o mês (de 1 a 12) e os 10 campos são preenchidos sozinhos, com o nome da empresa e o CNPJ.</td></tr></table>
+<h2>Como usar, passo a passo</h2>
+<ol><li><strong>Baixe o arquivo</strong> e abra no Excel. No Google Planilhas, use Arquivo → Importar → Upload.</li>
+<li>Na aba "Valores do ano", preencha o <strong>nome da empresa, o CNPJ e o ano</strong>.</li>
+<li>Apague os valores de exemplo de janeiro e digite, nas células amarelas, <strong>o que você recebeu em cada mês</strong>, na coluna certa (veja a tabela abaixo).</li>
+<li>Vá para a aba "Relatório para imprimir" e digite o <strong>número do mês</strong> (3 para março, por exemplo).</li>
+<li><strong>Imprima</strong> (ou salve em PDF), preencha local e data e <strong>assine</strong>.</li>
+<li>Guarde o relatório com as notas fiscais do mês por <strong>5 anos</strong>.</li></ol>
+<p>O prazo para preencher o relatório de cada mês é o <strong>dia 20 do mês seguinte</strong>, o mesmo do <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">DAS</a>.</p>
+<h2>Em qual coluna lançar cada receita</h2>
+<table><tr><th>Você recebeu por...</th><th>Coluna</th></tr>
+<tr><td>Revenda de produtos que comprou prontos, sem emitir nota</td><td>Comércio sem NF</td></tr>
+<tr><td>Revenda de produtos, com nota fiscal emitida</td><td>Comércio com NF</td></tr>
+<tr><td>Venda de produtos que você mesmo fabrica (bolos, artesanato, roupas), sem nota</td><td>Indústria sem NF</td></tr>
+<tr><td>Venda de produtos que você fabrica, com nota</td><td>Indústria com NF</td></tr>
+<tr><td>Serviços prestados sem emitir nota</td><td>Serviços sem NF</td></tr>
+<tr><td>Serviços com NFS-e emitida</td><td>Serviços com NF</td></tr></table>
+<p>Lance o valor <strong>bruto</strong> recebido, sem descontar despesas, taxas de maquininha ou custo de mercadoria. Vendas por Pix e em dinheiro entram do mesmo jeito.</p>
+<h2>Exemplo preenchido</h2>
+<p>Uma MEI que faz unhas e revende esmaltes recebeu em março: R$ 2.800 de serviços sem nota (clientes pessoa física), R$ 1.500 de serviços com nota (um salão parceiro, com CNPJ) e R$ 900 de revenda sem nota. Na linha de março ela digita:</p>
+<table><tr><th>Comércio sem NF</th><th>Serviços sem NF</th><th>Serviços com NF</th><th>Total do mês</th></tr>
+<tr><td>R$ 900,00</td><td>R$ 2.800,00</td><td>R$ 1.500,00</td><td><strong>R$ 5.200,00</strong></td></tr></table>
+<p>No relatório impresso de março, a planilha preenche: campo 1 (revenda com dispensa de documento fiscal) R$ 900; campo 7 (serviços com dispensa) R$ 2.800; campo 8 (serviços com documento fiscal) R$ 1.500; e campo 10 (total geral) R$ 5.200. Os demais ficam zerados.</p>
+<h2>Os 10 campos do relatório</h2>
+<p>O modelo oficial tem três blocos (revenda de mercadorias, venda de produtos industrializados e prestação de serviços). Cada bloco tem três linhas: receita com dispensa de documento fiscal, receita com documento fiscal emitido e o total do bloco. O campo 10 é o total geral do mês. No fim, o relatório pede local, data e assinatura, e orienta a anexar as notas fiscais de compras e as notas emitidas no mês.</p>
+<h2>Como a planilha ajuda na declaração anual</h2>
+<p>Abaixo da tabela, a aba "Valores do ano" mostra três números: <strong>receita total</strong>, <strong>comércio + indústria</strong> e <strong>serviços</strong>. São os valores que a <a href="https://projects-betanull.github.io/mei-em-dia/dasn-simei-declaracao-anual-mei/">DASN-SIMEI</a> pede. A coluna "Acumulado" também mostra quanto você já faturou no ano, para comparar com o <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite do MEI</a> (R$ 81 mil em 2026 e R$ 110 mil em 2027).</p>
 <h2>Quer que a planilha some tudo sozinha?</h2>
-<p>Na versão gratuita você precisa somar suas vendas antes de digitar. Na versão completa você lança cada venda e despesa uma vez, e ela monta o relatório de qualquer mês, mostra o lucro, avisa quando você chega perto do limite anual e controla o DAS.</p>
+<p>Na versão gratuita você precisa somar suas vendas antes de digitar o total do mês. Na versão completa você lança cada venda e despesa uma vez, e ela monta o relatório de qualquer mês, mostra o lucro, avisa quando você chega perto do limite anual e controla o DAS.</p>
 """))
 
 A.append(("como-fazer-orcamento-pessoal","Como fazer um orçamento pessoal que funciona (método 50-30-20)",
@@ -749,11 +772,14 @@ META={
  faq=[("O MEI é obrigado a ter conta PJ?","Não há obrigação legal, mas a conta separada é a forma mais simples de saber o que é do negócio e o que é seu."),
   ("Quanto o MEI pode retirar por mês?","Não existe valor fixo por lei. Um ponto de partida é retirar de 60% a 70% do lucro médio dos últimos 3 meses e deixar o resto como reserva do negócio.")],
  rel=["controle-financeiro-mei","reserva-de-emergencia","como-fazer-orcamento-pessoal"]),
-"planilha-relatorio-mensal-mei-gratis":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",
- resumo=["Planilha <strong>gratuita</strong> com os 12 meses do relatório mensal, pronta para imprimir.",
-  "Totais automáticos e resumo anual para a DASN-SIMEI.","Funciona no Excel e no Google Planilhas. Download direto, sem cadastro."],
- faq=[("A planilha grátis funciona no celular?","Sim, pelo app do Google Planilhas ou do Excel."),
-  ("Preciso me cadastrar para baixar?","Não. O download é direto pelo botão da página.")],
+"planilha-relatorio-mensal-mei-gratis":dict(grupo="obr",pub="2026-10-30",mod="2026-11-12",tit="Planilha Relatório Mensal MEI grátis (Excel e Google)",
+ resumo=["Planilha <strong>gratuita</strong>: você digita os valores do mês e o relatório sai no modelo oficial, pronto para imprimir.",
+  "Soma o total do mês, o acumulado do ano e os valores da DASN-SIMEI.","Funciona no Excel e no Google Planilhas. Download direto, sem cadastro."],
+ faq=[("A planilha grátis funciona no celular?","Sim, pelo app do Google Planilhas ou do Excel. Para imprimir, é mais fácil pelo computador."),
+  ("Preciso me cadastrar para baixar?","Não. O download é direto pelo botão da página."),
+  ("Posso usar a planilha para 2026?","Sim. Basta mudar o ano na aba \"Valores do ano\". O modelo do relatório é o mesmo."),
+  ("Preciso imprimir o relatório ou posso guardar em PDF?","O relatório precisa ser assinado e guardado por 5 anos com as notas do mês. O caminho mais seguro é imprimir e assinar; se preferir o PDF, guarde também as notas e confirme com um contador se o formato atende ao seu caso."),
+  ("O que faço nos meses sem faturamento?","Deixe os valores zerados, imprima o relatório do mês e guarde, para manter a sequência documentada.")],
  rel=["relatorio-mensal-de-receitas-brutas-mei","dasn-simei-declaracao-anual-mei","controle-financeiro-mei"]),
 "como-fazer-orcamento-pessoal":dict(grupo="fin",pub="2026-10-30",mod="2026-11-08",
  resumo=["Parta da renda <strong>líquida</strong> e anote um mês inteiro de gastos.",
