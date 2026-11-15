@@ -597,7 +597,7 @@ A.append(("mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal","MEI na Reforma Trib
 
 
 A.append(("valor-aproximado-dos-tributos-nfs-e-mei","Valor aproximado dos tributos na NFS-e do MEI: qual opção marcar",
-"No Emissor Nacional, o MEI marca \"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\". Veja por quê, onde fica o campo e como deixar salvo.",
+"Preencher os valores em cada NFS-e, configurar percentuais ou não informar (Decreto 8.264/2014)? O MEI marca a 3ª opção. Veja por quê e como salvar.",
 """<h1>Valor aproximado dos tributos na NFS-e do MEI: qual opção marcar</h1>
 <p>Quem emite a nota de serviço pelo Emissor Nacional encontra um campo que confunde quase todo MEI: <strong>"Valor aproximado dos tributos"</strong>. Ele traz três opções, e uma delas cita um decreto. Para o MEI, a escolha é simples: marque <strong>"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)"</strong>. Este guia explica o motivo, mostra onde o campo aparece e como deixar a opção salva para as próximas notas.</p>
 <h2>As três opções do campo</h2>
@@ -683,11 +683,12 @@ A.append(("mei-2027-o-que-muda","MEI 2027: o que muda no limite, no DAS, na nota
 # ---------------------------------------------------------------------------
 GRUPOS=[("nf","Nota fiscal","mei"),("obr","Impostos, prazos e obrigações do MEI","mei"),("ctrl","Organização financeira do MEI","mei"),("fin","Finanças pessoais","financas")]
 META={
-"valor-aproximado-dos-tributos-nfs-e-mei":dict(grupo="nf",pub="2026-11-12",mod="2026-11-12",tit="Valor aproximado dos tributos na NFS-e do MEI: o que marcar",
+"valor-aproximado-dos-tributos-nfs-e-mei":dict(grupo="nf",pub="2026-11-12",mod="2026-11-15",tit="Valor aproximado dos tributos MEI: qual das 3 opções marcar",
  resumo=["O MEI marca <strong>\"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\"</strong>.",
   "O artigo 8º do Decreto 8.264/2014 torna essa informação <strong>facultativa para o MEI</strong>, que paga os impostos em valor fixo no DAS.",
   "A opção pode ficar salva nas configurações do Emissor Nacional (ícone de engrenagem)."],
- faq=[("O que o MEI coloca em valor aproximado dos tributos na nota fiscal?","A opção \"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\". O artigo 8º desse decreto torna a informação facultativa para o MEI."),
+ faq=[("Qual a diferença entre preencher os valores monetários, configurar os percentuais e não informar?","Na primeira, você digita em reais a estimativa de tributos de cada NFS-e. Na segunda, cadastra percentuais e o emissor calcula a estimativa sozinho. Na terceira, \"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\", a nota sai sem a estimativa, que é o indicado para o MEI."),
+  ("O que o MEI coloca em valor aproximado dos tributos na nota fiscal?","A opção \"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\". O artigo 8º desse decreto torna a informação facultativa para o MEI."),
   ("O MEI é obrigado a informar os tributos na NFS-e?","Não. A Lei 12.741/2012 exige a informação nas vendas ao consumidor, mas o Decreto 8.264/2014 tornou a regra facultativa para o MEI."),
   ("Informei um valor de tributos por engano. Vou pagar mais imposto?","Não. O campo é só informativo para o cliente. O imposto do MEI é o valor fixo mensal do DAS, que não muda com o que aparece nesse campo.")],
  rel=["nota-fiscal-mei","nfs-e-nacional-simples-nacional-novembro-2026-mei","mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal"]),
