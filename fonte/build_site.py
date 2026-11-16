@@ -18,17 +18,22 @@ table{border-collapse:collapse;width:100%;margin:16px 0;display:block;overflow-x
 .hero{padding:10px 0 4px}.hero p{font-size:1.1rem;color:#374151}.dest{background:#fff;border:2px solid #1f6f5c;border-radius:12px;padding:16px 18px;margin:22px 0}.dest small{color:#1f6f5c;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.dest a{display:block;font-weight:700;font-size:1.1rem;text-decoration:none;margin:4px 0}
 footer{text-align:center;color:#6b7280;font-size:.85rem;padding:30px 20px;border-top:1px solid #e5e7eb}footer a{color:#6b7280}.aviso{font-size:.85rem;color:#6b7280}"""
 CHECKOUT2="https://pay.kiwify.com.br/YThmb2o"
+# Combo (MEI + Financeira). Preço: R$ 39,90 até 30/11/2026; a partir de 1º/12/2026, R$ 44,90.
+CHECKOUT3="https://pay.kiwify.com.br/JJkSEmX"; COMBO_PRECO="39,90"
 GRATIS=f"{BASE}/planilha-relatorio-mensal-mei-gratis/"
 MESES=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"]
 def data_br(iso):
     a,m,d=iso.split("-"); return f"{int(d)} de {MESES[int(m)-1]} de {a}"
+def combo_linha(prod="mei"):
+    abre="Também é MEI?" if prod=="fin" else "Quer organizar também o dinheiro de casa?"
+    return f'<p style="margin:14px 0 0;font-size:.95rem">{abre} <a href="{CHECKOUT3}" rel="nofollow"><strong>Leve as 2 planilhas no combo por R$ {COMBO_PRECO}</strong></a> (separadas saem por R$ 54,80).</p>'
 def cta(prod="mei"):
     if prod=="fin": return f"""<div class="cta" id="oferta" style="background:#e8ebf7;border-color:#c5cbeb"><strong>Planilha Financeira Pessoal 2027: faça isso no automático</strong>
 <p>Orçamento por categoria com alerta quando estoura, controle de dívidas, metas de economia e painel com gráficos. Funciona no Excel e no Google Planilhas.</p>
-<a class="btn" style="background:#3b4a9c" href="{CHECKOUT2}" rel="nofollow">Quero a planilha por R$ 24,90</a></div>"""
+<a class="btn" style="background:#3b4a9c" href="{CHECKOUT2}" rel="nofollow">Quero a planilha por R$ 24,90</a>"""+combo_linha("fin")+"</div>"
     return f"""<div class="cta" id="oferta"><strong>Planilha MEI 2027: controle tudo isso automaticamente</strong>
 <p>Relatório mensal pronto para imprimir, alerta do limite anual de faturamento, controle do DAS e valores da DASN-SIMEI calculados. Funciona no Excel e no Google Planilhas.</p>
-<a class="btn" href="{CHECKOUT}" rel="nofollow">Quero a planilha por R$ 29,90</a></div>"""
+<a class="btn" href="{CHECKOUT}" rel="nofollow">Quero a planilha por R$ 29,90</a>"""+combo_linha()+"</div>"
 def mini_cta(prod):
     if prod=="fin": return '<p class="mini">Prefere que as contas se façam sozinhas? A <a href="#oferta">Planilha Financeira Pessoal 2027</a> monta o orçamento por categoria e avisa quando um gasto estoura.</p>'
     return '<p class="mini">Quer que o relatório mensal, o lucro e o limite sejam calculados sozinhos? Veja a <a href="#oferta">Planilha MEI 2027</a>.</p>'
