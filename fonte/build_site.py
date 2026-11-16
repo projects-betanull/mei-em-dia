@@ -37,6 +37,8 @@ def cta(prod="mei"):
 def mini_cta(prod):
     if prod=="fin": return '<p class="mini">Prefere que as contas se façam sozinhas? A <a href="#oferta">Planilha Financeira Pessoal 2027</a> monta o orçamento por categoria e avisa quando um gasto estoura.</p>'
     return '<p class="mini">Quer que o relatório mensal, o lucro e o limite sejam calculados sozinhos? Veja a <a href="#oferta">Planilha MEI 2027</a>.</p>'
+def sim_box():
+    return f'<div class="dest"><small>Ferramenta grátis</small><a href="{BASE}/simulador-limite-mei/">Simulador do limite do MEI</a>Digite quanto já faturou e veja quanto ainda pode faturar e se vai estourar o limite até dezembro.</div>'
 def gratis_box():
     return f'<div class="gratis"><strong>Grátis: planilha do Relatório Mensal de Receitas Brutas</strong><br>Os 12 meses prontos para preencher e imprimir, com o total anual para a DASN-SIMEI. <a href="{GRATIS}">Baixar a planilha grátis</a></div>'
 ORG={"@type":"Organization","name":SITE,"url":f"{BASE}/","logo":f"{BASE}/apple-touch-icon.png"}
@@ -50,7 +52,7 @@ def page(slug,title,desc,body,schemas=(),og_img=None,tipo="article"):
 <link rel="icon" href="{BASE}/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="{BASE}/apple-touch-icon.png"><meta name="theme-color" content="#1f6f5c">
 <meta property="og:title" content="{t}"><meta property="og:description" content="{d}"><meta property="og:type" content="{tipo}"><meta property="og:url" content="{url}"><meta property="og:site_name" content="{SITE}"><meta property="og:locale" content="pt_BR">
 <meta property="og:image" content="{img}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<style>{CSS}</style>{ld}</head><body><header><div class="in"><a class="logo" href="{BASE}/">{SITE}</a><nav><a href="{BASE}/#mei">Guias do MEI</a><a href="{BASE}/#financas">Finanças pessoais</a><a href="{GRATIS}">Planilha grátis</a></nav></div></header><main>{body}</main>
+<style>{CSS}</style>{ld}</head><body><header><div class="in"><a class="logo" href="{BASE}/">{SITE}</a><nav><a href="{BASE}/#mei">Guias do MEI</a><a href="{BASE}/simulador-limite-mei/">Simulador do limite</a><a href="{BASE}/#financas">Finanças pessoais</a><a href="{GRATIS}">Planilha grátis</a></nav></div></header><main>{body}</main>
 <footer>{SITE} — guias práticos para o Microempreendedor Individual.<br>Conteúdo informativo; confirme sempre no Portal do Empreendedor (gov.br/mei) ou com um contador.<br><a href="{BASE}/sobre/">Sobre o site e fontes</a> · <a href="{GRATIS}">Planilha grátis</a></footer></body></html>"""
 
 def og_image(nome,titulo):
@@ -697,7 +699,7 @@ META={
   ("O MEI é obrigado a informar os tributos na NFS-e?","Não. A Lei 12.741/2012 exige a informação nas vendas ao consumidor, mas o Decreto 8.264/2014 tornou a regra facultativa para o MEI."),
   ("Informei um valor de tributos por engano. Vou pagar mais imposto?","Não. O campo é só informativo para o cliente. O imposto do MEI é o valor fixo mensal do DAS, que não muda com o que aparece nesse campo.")],
  rel=["nota-fiscal-mei","nfs-e-nacional-simples-nacional-novembro-2026-mei","mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal"]),
-"mei-2027-o-que-muda":dict(grupo="obr",pub="2026-11-12",mod="2026-11-12",gratis=True,tit="MEI 2027: o que muda no limite, DAS, nota fiscal e prazos",
+"mei-2027-o-que-muda":dict(grupo="obr",sim=True,pub="2026-11-12",mod="2026-11-12",gratis=True,tit="MEI 2027: o que muda no limite, DAS, nota fiscal e prazos",
  resumo=["Limite sobe para <strong>R$ 110 mil</strong> e o MEI pode ter <strong>até 2 empregados</strong> (LC 238/2026).",
   "O DAS muda com o novo salário mínimo e ganha uma parcela fixa de R$ 1 de CBS e IBS.",
   "Nas vendas a pessoa física, a DASN-SIMEI poderá servir de documento fiscal. Dívidas do INSS do DAS vencidas até 13/10/2026 são perdoadas."],
@@ -714,7 +716,7 @@ META={
   ("O MEI precisa destacar IBS e CBS na nota fiscal?","Não. A Resolução CGSN 190/2026 mantém o MEI dispensado de destacar IBS e CBS nos documentos fiscais, porque esses tributos são pagos em valor fixo dentro do DAS."),
   ("O DAS do MEI vai aumentar em 2027?","Sim, principalmente por causa do novo salário mínimo, que define a parte do INSS. Além disso, a regulamentação prevê uma parcela fixa de R$ 1 de CBS e IBS. O valor exato aparece no Portal do Empreendedor depois do decreto do salário mínimo.")],
  rel=["nota-fiscal-mei","das-mei-valor-vencimento","nfs-e-nacional-simples-nacional-novembro-2026-mei"]),
-"limite-mei-2027":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",tit="Limite do MEI 2027: R$ 110 mil (e R$ 81 mil em 2026)",gratis=True,
+"limite-mei-2027":dict(grupo="obr",sim=True,pub="2026-10-30",mod="2026-11-08",tit="Limite do MEI 2027: R$ 110 mil (e R$ 81 mil em 2026)",gratis=True,
  resumo=["Em 2026 o limite continua em <strong>R$ 81 mil</strong>. Pela LC 238/2026, sobe para <strong>R$ 110 mil em 2027</strong> e <strong>R$ 140 mil em 2028</strong>.",
   "Não existe limite mensal. Quem abre o MEI em 2027 tem R$ 9.166,67 por mês de atividade.",
   "Passou até 20% (R$ 132 mil em 2027): DAS complementar e vira ME em janeiro. Acima disso, o desenquadramento volta a janeiro."],
@@ -755,14 +757,14 @@ META={
   ("Emitir nota fiscal de serviço tem custo?","Não. O Emissor Nacional da NFS-e (site e app) é gratuito; basta a conta gov.br nível prata ou ouro."),
   ("Venda sem nota entra no faturamento?","Sim. Ela entra no relatório mensal e conta para o limite anual de faturamento.")],
  rel=["valor-aproximado-dos-tributos-nfs-e-mei","mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal","nfs-e-nacional-simples-nacional-novembro-2026-mei"]),
-"mei-pode-ter-funcionario":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",tit="MEI pode ter funcionário? Regras e custo em 2026 e 2027",
+"mei-pode-ter-funcionario":dict(grupo="obr",sim=True,pub="2026-10-30",mod="2026-11-08",tit="MEI pode ter funcionário? Regras e custo em 2026 e 2027",
  resumo=["Em 2026 o MEI pode ter <strong>1 empregado</strong>. A partir de 1º/01/2027, pela LC 238/2026, até <strong>2</strong>.",
   "Cada um recebe salário mínimo ou piso da categoria. Encargos: <strong>3% de INSS + 8% de FGTS</strong>.",
   "Custo direto em 2026: cerca de R$ 1.799 por empregado, mais 20% a 25% de 13º, férias e reservas."],
  faq=[("Posso contratar o segundo funcionário ainda em 2026?","Não. Em 2026 o limite continua sendo de 1 empregado, e contratar o segundo tira a empresa do MEI. A regra de até 2 vale a partir de 1º de janeiro de 2027."),
   ("Onde registro o funcionário do MEI?","No eSocial, no módulo simplificado, antes de a pessoa começar a trabalhar. Os encargos são pagos em uma guia única (DAE).")],
  rel=["limite-mei-2027","controle-financeiro-mei","das-mei-valor-vencimento"]),
-"controle-financeiro-mei":dict(grupo="ctrl",pub="2026-10-30",mod="2026-11-08",tit="Controle financeiro para MEI: passo a passo com exemplo",
+"controle-financeiro-mei":dict(grupo="ctrl",sim=True,pub="2026-10-30",mod="2026-11-08",tit="Controle financeiro para MEI: passo a passo com exemplo",
  resumo=["Separe a conta da empresa da pessoal e registre <strong>toda</strong> entrada e saída, com ou sem nota.",
   "Feche o mês até o dia 20: pague o DAS, preencha o relatório mensal e veja lucro, margem e uso do limite.",
   "Defina uma retirada fixa para você, com base no lucro médio."],
@@ -822,6 +824,11 @@ def com_resumo(b,itens):
     box='<div class="resumo"><strong>Resposta rápida</strong><ul>'+"".join(f"<li>{i}</li>" for i in itens)+"</ul></div>"
     k=b.index("</p>",b.index("</p>",b.index('<p class="data">'))+4)+4  # depois do 1º parágrafo do texto
     return b[:k]+box+b[k:]
+def com_sim(b):
+    """Quadro do simulador logo depois da Resposta rápida (ou do 1º parágrafo)."""
+    k=b.find('</ul></div>',b.find('<div class="resumo">'))
+    k=k+11 if k>=0 else b.index("</p>",b.index('<p class="data">'))+4
+    return b[:k]+sim_box()+b[k:]
 def com_mini_cta(b,prod):
     pos=[]; k=-1
     while True:
@@ -849,6 +856,7 @@ for art in A:
     corpo=com_mini_cta(corpo,prod)
     if m.get("faq"):
         corpo+="<h2>Perguntas frequentes</h2>"+"".join(f"<h3>{q}</h3><p>{r}</p>" for q,r in m["faq"])
+    if m.get("sim"): corpo=com_sim(corpo)
     if m.get("gratis"): corpo+=gratis_box()
     aviso='Conteúdo informativo, não é recomendação financeira individual.' if prod=='fin' else 'Conteúdo informativo. Regras podem mudar: confirme no Portal do Empreendedor ou com um contador.'
     corpo+=cta(prod)+'<p class="aviso">'+aviso+'</p>'
@@ -875,7 +883,7 @@ for g,nome,anc in GRUPOS:
     if g=="fin": secoes+=cta("fin").replace(' id="oferta"','')
 dest=f'<div class="dest"><small>Em destaque</small><a href="{BASE}/{DESTAQUE}/">{html.escape(TITULOS[DESTAQUE])}</a>{html.escape(DESCS[DESTAQUE])}</div>' if DESTAQUE in TITULOS else ""
 home=f"""<div class="hero"><h1>Guias práticos para o MEI e para o seu dinheiro</h1><p>Limite de faturamento, DAS, nota fiscal, relatório mensal, declaração anual e organização financeira, explicados sem complicação.</p>
-<a class="btn" href="{GRATIS}">Baixar a planilha grátis do relatório mensal</a></div>{dest}{secoes.replace('</div><h2 id="financas">','</div>'+cta().replace(' id="oferta"','')+'<h2 id="financas">',1)}"""
+<a class="btn" href="{GRATIS}">Baixar a planilha grátis do relatório mensal</a> <a class="btn btn2" href="{BASE}/simulador-limite-mei/">Simular meu limite do MEI</a></div>{dest}{secoes.replace('</div><h2 id="financas">','</div>'+cta().replace(' id="oferta"','')+'<h2 id="financas">',1)}"""
 hsch=[{"@context":"https://schema.org","@type":"WebSite","name":SITE,"url":f"{BASE}/","inLanguage":"pt-BR","publisher":ORG},dict(ORG,**{"@context":"https://schema.org"})]
 open(f"{OUT}/index.html","w").write(page("","MEI em Dia: guias práticos para o Microempreendedor Individual","Limite do MEI, DAS, nota fiscal, relatório mensal e DASN-SIMEI explicados de forma simples, além de guias de finanças pessoais.",home,hsch,tipo="website"))
 
@@ -898,10 +906,82 @@ sobre=f"""<nav class="crumbs"><a href="{BASE}/">Início</a></nav><h1>Sobre o MEI
 os.makedirs(f"{OUT}/sobre",exist_ok=True)
 open(f"{OUT}/sobre/index.html","w").write(page("sobre/","Sobre o MEI em Dia: fontes e como os guias são feitos","O que é o MEI em Dia, de onde vêm as informações dos guias do MEI em Dia, como são atualizados e como o site se mantém.",sobre,[{"@context":"https://schema.org","@type":"AboutPage","name":"Sobre o MEI em Dia","url":f"{BASE}/sobre/","dateModified":SOBRE_MOD,"publisher":ORG}],tipo="website"))
 
+# ---------------------------------------------------------------------------
+# Simulador do limite do MEI (isca): página com calculadora em JavaScript.
+# Limites por ano (LC 238/2026): ajuste LIMITES_SIM se a lei mudar.
+# ---------------------------------------------------------------------------
+SIM_MOD="2026-11-16"
+SIM_CSS="""<style>.sim{background:#fff;border:1px solid #d1d5db;border-radius:12px;padding:18px;margin:20px 0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.sim label{display:block;font-weight:600;margin:12px 0 4px}.sim select,.sim input{width:100%;font-size:1.05rem;padding:10px;border:1px solid #9ca3af;border-radius:8px;background:#fff}
+.sim .ln{display:flex;gap:10px}.sim .ln>div{flex:1}.sim button{margin-top:16px;width:100%;font-size:1.05rem;border:0;cursor:pointer}
+#res{display:none;margin-top:18px}.barra{height:16px;background:#e5e7eb;border-radius:8px;overflow:hidden;margin:8px 0}.barra i{display:block;height:100%;background:#1f6f5c}
+.st{border-radius:10px;padding:12px 14px;margin:10px 0;font-weight:600}.ok{background:#e3f1ec}.at{background:#fff8e6}.ex{background:#fde8e8}
+.num{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.num div{background:#f3f4f6;border-radius:8px;padding:10px}.num small{display:block;color:#6b7280;font-size:.8rem}.num b{font-size:1.1rem}</style>"""
+SIM_JS="""<script>
+(function(){
+var LIM={2026:81000,2027:110000};
+var M=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto","setembro","outubro","novembro","dezembro"];
+function br(v){return v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});}
+function num(s){s=(s||"").replace(/[^0-9,.]/g,"");if(s.indexOf(",")>=0){s=s.replace(/\\./g,"").replace(",",".");}else if(/\\.\\d{3}$/.test(s)){s=s.replace(/\\./g,"");}return parseFloat(s)||0;}
+var hoje=new Date(),ano=document.getElementById("ano"),ab=document.getElementById("abertura"),ate=document.getElementById("ate");
+function opcoes(sel,ini,pad){sel.innerHTML="";for(var i=ini;i<12;i++){var o=document.createElement("option");o.value=i;o.textContent=M[i];sel.appendChild(o);}sel.value=Math.max(ini,Math.min(11,pad));}
+ab.innerHTML='<option value="-1">Antes deste ano (ano inteiro)</option>';for(var i=0;i<12;i++){var o=document.createElement("option");o.value=i;o.textContent="Em "+M[i];ab.appendChild(o);}
+ano.value=hoje.getFullYear()>=2027?"2027":"2026";
+function ajusta(){var a=parseInt(ab.value),ini=a<0?0:a,pad=(parseInt(ano.value)===hoje.getFullYear())?hoje.getMonth():11;opcoes(ate,ini,Math.max(ini,pad));}
+ab.onchange=ajusta;ano.onchange=ajusta;ajusta();
+document.getElementById("calc").onclick=function(){
+ var y=parseInt(ano.value),a=parseInt(ab.value),ini=a<0?0:a,fim=parseInt(ate.value),fat=num(document.getElementById("fat").value);
+ var meses=12-ini,lim=LIM[y]*meses/12,tol=lim*1.2,dec=fim-ini+1,rest=11-fim;
+ var pct=lim>0?fat/lim*100:0,falta=Math.max(0,lim-fat),media=dec>0?fat/dec:0,proj=fat+media*rest,cabe=rest>0?falta/rest:0;
+ var st,cl,dica;
+ if(fat>tol){cl="ex";st="Você passou mais de 20% do limite.";dica="Nesse caso o desenquadramento do MEI volta a janeiro (ou ao mês de abertura) e os impostos são recalculados como microempresa. Procure um contador o quanto antes.";}
+ else if(fat>lim){cl="ex";st="Você passou do limite, mas dentro da tolerância de 20%.";dica="Você paga um DAS complementar sobre o excesso e passa a ser microempresa (ME) a partir de janeiro do ano seguinte. Converse com um contador.";}
+ else if(proj>tol){cl="ex";st="No ritmo atual, você vai passar mais de 20% do limite até dezembro.";dica="Projeção de "+br(proj)+" no ano. Acompanhe mês a mês e planeje com um contador antes de estourar.";}
+ else if(proj>lim){cl="at";st="Atenção: no ritmo atual, você passa do limite até dezembro.";dica="Projeção de "+br(proj)+" no ano. Para caber, a média dos próximos meses precisa ficar em até "+br(cabe)+".";}
+ else if(pct>=80){cl="at";st="Atenção: você já usou mais de 80% do limite.";dica=rest>0?"Ainda cabem, em média, "+br(cabe)+" por mês até dezembro.":"Feche o ano dentro do que falta.";}
+ else{cl="ok";st="Tudo certo: você está dentro do limite.";dica=rest>0?"No ritmo atual, você fecha o ano com cerca de "+br(proj)+". Ainda cabem, em média, "+br(cabe)+" por mês.":"Você fecha o ano dentro do limite.";}
+ var r=document.getElementById("res");r.style.display="block";
+ r.innerHTML='<div class="st '+cl+'">'+st+'</div><div class="barra"><i style="width:'+Math.min(100,pct).toFixed(1)+'%"></i></div><p style="margin:0;font-size:.9rem">'+pct.toFixed(1).replace(".",",")+'% do limite de '+br(lim)+(meses<12?' (proporcional a '+meses+' meses)':'')+'</p>'+
+ '<div class="num"><div><small>Já faturou</small><b>'+br(fat)+'</b></div><div><small>Ainda pode faturar</small><b>'+br(falta)+'</b></div><div><small>Média por mês até agora</small><b>'+br(media)+'</b></div><div><small>Projeção para o ano</small><b>'+br(proj)+'</b></div></div>'+
+ '<p>'+dica+'</p><p class="mini" style="margin:12px 0 0">Quer esse alerta todo mês sem refazer a conta? A <a href="#oferta">Planilha MEI 2027</a> calcula o limite (inclusive o proporcional), avisa a partir de 80% e ainda monta o relatório mensal e o controle do DAS.</p>';
+ r.scrollIntoView({behavior:"smooth",block:"start"});
+};
+})();
+</script>"""
+SIM_FAQ=[("Qual é o limite do MEI em 2026 e em 2027?","Em 2026 o limite é de R$ 81 mil no ano. Pela LC 238/2026, sobe para R$ 110 mil em 2027 e R$ 140 mil em 2028."),
+ ("Como funciona o limite proporcional?","Quem abre o MEI durante o ano tem um limite proporcional aos meses de atividade, contando o mês de abertura inteiro: R$ 6.750 por mês em 2026 e R$ 9.166,67 por mês em 2027."),
+ ("O que acontece se eu passar do limite?","Se passar até 20%, você paga um DAS complementar sobre o excesso e vira microempresa em janeiro do ano seguinte. Acima de 20%, o desenquadramento volta a janeiro do próprio ano (ou ao mês de abertura)."),
+ ("O simulador vale para o MEI Caminhoneiro?","Não. O MEI Transportador Autônomo de Cargas tem um limite próprio, maior que o do MEI comum."),
+ ("Os dados que eu digito ficam salvos?","Não. A conta é feita no seu próprio navegador e nada é enviado ou guardado.")]
+sim=f"""{SIM_CSS}<nav class="crumbs"><a href="{BASE}/">Início</a> › <a href="{BASE}/#mei">Impostos, prazos e obrigações do MEI</a></nav><h1>Simulador do limite do MEI 2026 e 2027</h1><p class="data">Atualizado em {data_br(SIM_MOD)}</p>
+<p>Descubra em 30 segundos quanto do limite de faturamento você já usou, quanto ainda pode faturar e se, no ritmo atual, vai passar do teto até dezembro. Grátis, sem cadastro.</p>
+<div class="sim"><label for="ano">Ano</label><select id="ano"><option value="2026">2026 (limite de R$ 81 mil)</option><option value="2027">2027 (limite de R$ 110 mil)</option></select>
+<label for="abertura">Quando você abriu o MEI?</label><select id="abertura"></select>
+<div class="ln"><div><label for="fat">Quanto já faturou no ano (R$)</label><input id="fat" inputmode="decimal" placeholder="Ex.: 45.000,00"></div>
+<div><label for="ate">Até o fim de qual mês?</label><select id="ate"></select></div></div>
+<button id="calc" class="btn">Calcular meu limite</button><div id="res" aria-live="polite"></div></div>
+<p class="aviso">Some tudo o que recebeu com vendas e serviços no ano, com ou sem nota fiscal. A conta é feita no seu navegador; nenhum dado é enviado.</p>
+<h2>Como o simulador calcula</h2>
+<ul><li><strong>Limite do ano:</strong> R$ 81 mil em 2026 e R$ 110 mil em 2027 (LC 238/2026).</li>
+<li><strong>Limite proporcional:</strong> se você abriu o MEI no ano, o limite é dividido por 12 e multiplicado pelos meses de atividade, contando o mês de abertura.</li>
+<li><strong>Projeção:</strong> a média mensal até agora repetida nos meses que faltam até dezembro.</li>
+<li><strong>Tolerância de 20%:</strong> mostra se o excesso leva só ao DAS complementar ou ao desenquadramento retroativo.</li></ul>
+<p>Quer entender as regras em detalhe? Leia o guia <a href="{BASE}/limite-mei-2027/">Limite do MEI 2027</a>.</p>
+<h2>Perguntas frequentes</h2>{"".join(f"<h3>{q}</h3><p>{r}</p>" for q,r in SIM_FAQ)}
+{gratis_box()}{cta()}<p class="aviso">Ferramenta informativa. Regras podem mudar: confirme no Portal do Empreendedor ou com um contador.</p>
+<p><a href="{BASE}/">← Todos os guias</a></p>{SIM_JS}"""
+og_image("simulador-limite-mei","Simulador do limite do MEI 2026 e 2027")
+os.makedirs(f"{OUT}/simulador-limite-mei",exist_ok=True)
+SIM_URL=f"{BASE}/simulador-limite-mei/"
+open(f"{OUT}/simulador-limite-mei/index.html","w").write(page("simulador-limite-mei/","Simulador do limite do MEI 2026 e 2027 (grátis)","Calcule grátis quanto do limite do MEI você já usou, quanto ainda pode faturar e se vai estourar até dezembro. Inclui limite proporcional e as regras de 2027.",sim,
+ [{"@context":"https://schema.org","@type":"WebApplication","name":"Simulador do limite do MEI","url":SIM_URL,"applicationCategory":"FinanceApplication","operatingSystem":"Any","inLanguage":"pt-BR","offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"},"publisher":ORG},
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":q,"acceptedAnswer":{"@type":"Answer","text":r}} for q,r in SIM_FAQ]}],
+ f"{BASE}/og/simulador-limite-mei.png",tipo="website"))
+
 ult=max(m for _,m in sm)
-sm_xml=f"<url><loc>{BASE}/</loc><lastmod>{ult}</lastmod></url><url><loc>{BASE}/sobre/</loc><lastmod>{SOBRE_MOD}</lastmod></url>"+"".join(f"<url><loc>{u}</loc><lastmod>{m}</lastmod></url>" for u,m in sm)
+sm_xml=f"<url><loc>{BASE}/</loc><lastmod>{ult}</lastmod></url><url><loc>{BASE}/sobre/</loc><lastmod>{SOBRE_MOD}</lastmod></url><url><loc>{SIM_URL}</loc><lastmod>{SIM_MOD}</lastmod></url>"+"".join(f"<url><loc>{u}</loc><lastmod>{m}</lastmod></url>" for u,m in sm)
 open(f"{OUT}/sitemap.xml","w").write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm_xml}</urlset>')
 # sitemap em texto (uma URL por linha): formato mais simples, enviado ao Search Console como alternativa ao .xml
-open(f"{OUT}/sitemap.txt","w").write("\n".join([f"{BASE}/",f"{BASE}/sobre/"]+[u for u,_ in sm])+"\n")
+open(f"{OUT}/sitemap.txt","w").write("\n".join([f"{BASE}/",f"{BASE}/sobre/",SIM_URL]+[u for u,_ in sm])+"\n")
 open(f"{OUT}/robots.txt","w").write(f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\nSitemap: {BASE}/sitemap.txt\n")
 print("ok", len(A))

@@ -1,5 +1,6 @@
 https://projects-betanull.github.io/mei-em-dia/
 https://projects-betanull.github.io/mei-em-dia/sobre/
+https://projects-betanull.github.io/mei-em-dia/simulador-limite-mei/
 https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/
 https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/
 https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/
