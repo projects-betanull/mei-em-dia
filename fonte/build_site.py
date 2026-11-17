@@ -16,6 +16,11 @@ table{border-collapse:collapse;width:100%;margin:16px 0;display:block;overflow-x
 .lista a{display:block;padding:14px 0;border-bottom:1px solid #e5e7eb;font-weight:600;text-decoration:none}.lista span{display:block;font-weight:400;color:#6b7280;font-size:.95rem}
 .rel{margin:36px 0 10px;padding-top:8px;border-top:2px solid #e5e7eb}.rel h2{margin-top:.6em}
 .hero{padding:10px 0 4px}.hero p{font-size:1.1rem;color:#374151}.dest{background:#fff;border:2px solid #1f6f5c;border-radius:12px;padding:16px 18px;margin:22px 0}.dest small{color:#1f6f5c;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.dest a{display:block;font-weight:700;font-size:1.1rem;text-decoration:none;margin:4px 0}
+.chips{margin:18px 0 6px}.chips a{display:inline-block;background:#fff;border:1px solid #b7dccd;border-radius:999px;padding:6px 13px;margin:0 6px 8px 0;text-decoration:none;font-size:.93rem}.chips a:hover{background:#e3f1ec}
+.prazos{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0 4px}.prazos>div{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:12px 16px;font-size:.92rem}.prazos small{display:block;color:#1f6f5c;font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:.75rem}.prazos b{display:block;font-size:1.15rem}.prazos span{color:#4b5563}
+.planos{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:16px 0}.plano{background:#fff;border:1px solid #d1d5db;border-radius:12px;padding:16px;display:flex;flex-direction:column}.plano.top{border:2px solid #1f6f5c;box-shadow:0 2px 8px rgba(31,111,92,.15)}.plano small{color:#1f6f5c;font-weight:700;text-transform:uppercase;font-size:.75rem;letter-spacing:.04em}.plano strong{font-size:1.05rem;line-height:1.3}.preco{font-size:1.5rem;font-weight:800;margin:6px 0}.preco small{display:block;font-size:.8rem;text-transform:none;letter-spacing:0;color:#6b7280;font-weight:400}.plano ul{padding-left:18px;margin:4px 0 8px;font-size:.92rem;flex:1}.plano .btn{text-align:center}
+.novo{font-style:normal;background:#fff3cd;color:#8a5a00;border-radius:6px;padding:1px 7px;font-size:.75rem;font-weight:700;vertical-align:middle}
+@media(max-width:560px){.prazos{grid-template-columns:1fr}h1{font-size:1.6rem}.chips a{font-size:.85rem;padding:5px 10px;margin:0 4px 6px 0}header nav{gap:4px 12px}}
 footer{text-align:center;color:#6b7280;font-size:.85rem;padding:30px 20px;border-top:1px solid #e5e7eb}footer a{color:#6b7280}.aviso{font-size:.85rem;color:#6b7280}"""
 CHECKOUT2="https://pay.kiwify.com.br/YThmb2o"
 # Combo (MEI + Financeira). Preço: R$ 39,90 até 30/11/2026; a partir de 1º/12/2026, R$ 44,90.
@@ -52,7 +57,7 @@ def page(slug,title,desc,body,schemas=(),og_img=None,tipo="article"):
 <link rel="icon" href="{BASE}/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="{BASE}/apple-touch-icon.png"><meta name="theme-color" content="#1f6f5c">
 <meta property="og:title" content="{t}"><meta property="og:description" content="{d}"><meta property="og:type" content="{tipo}"><meta property="og:url" content="{url}"><meta property="og:site_name" content="{SITE}"><meta property="og:locale" content="pt_BR">
 <meta property="og:image" content="{img}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<style>{CSS}</style>{ld}</head><body><header><div class="in"><a class="logo" href="{BASE}/">{SITE}</a><nav><a href="{BASE}/#mei">Guias do MEI</a><a href="{BASE}/simulador-limite-mei/">Simulador do limite</a><a href="{BASE}/#financas">Finanças pessoais</a><a href="{GRATIS}">Planilha grátis</a></nav></div></header><main>{body}</main>
+<style>{CSS}</style>{ld}</head><body><header><div class="in"><a class="logo" href="{BASE}/">{SITE}</a><nav><a href="{BASE}/#mei">Guias do MEI</a><a href="{BASE}/simulador-limite-mei/">Simulador do limite</a><a href="{BASE}/#financas">Finanças pessoais</a><a href="{GRATIS}">Planilha grátis</a><a href="{BASE}/#planilhas">Planilhas 2027</a></nav></div></header><main>{body}</main>
 <footer>{SITE} — guias práticos para o Microempreendedor Individual.<br>Conteúdo informativo; confirme sempre no Portal do Empreendedor (gov.br/mei) ou com um contador.<br><a href="{BASE}/sobre/">Sobre o site e fontes</a> · <a href="{GRATIS}">Planilha grátis</a></footer></body></html>"""
 
 def og_image(nome,titulo):
@@ -142,14 +147,18 @@ A.append(("relatorio-mensal-de-receitas-brutas-mei","Relatório Mensal de Receit
 <h2>Prazo</h2>
 <p>O relatório de cada mês deve ser preenchido até o <strong>dia 20 do mês seguinte</strong>. Guarde os relatórios e as notas por <strong>5 anos</strong>: em caso de fiscalização, eles são a prova do seu faturamento. O prazo é o mesmo do <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">DAS</a>, então dá para resolver os dois no mesmo dia.</p>
 <h2>Como o relatório é dividido</h2>
-<p>São três blocos, um para cada tipo de receita. Em cada bloco você informa quanto recebeu com nota fiscal e sem nota fiscal:</p>
-<table><tr><th>Bloco</th><th>Para quem</th></tr>
-<tr><td>Revenda de mercadorias (comércio)</td><td>Quem compra e revende produtos</td></tr>
-<tr><td>Venda de produtos industrializados (indústria)</td><td>Quem fabrica o que vende</td></tr>
-<tr><td>Prestação de serviços</td><td>Quem vende serviços</td></tr></table>
-<p>No final vem o <strong>total geral do mês</strong>, que é a soma dos três blocos. Se você só presta serviços, deixa os outros zerados.</p>
+<p>O modelo oficial tem três blocos, um para cada tipo de receita, e cada bloco tem três linhas: o que você recebeu <strong>sem documento fiscal</strong> (dispensado de nota), o que recebeu <strong>com nota emitida</strong> e o total do bloco. Ao todo são 10 campos:</p>
+<table><tr><th>Campo</th><th>O que informar</th></tr>
+<tr><td>I. Revenda de mercadorias (comércio)</td><td>Campos 1 (sem documento fiscal), 2 (com documento fiscal) e 3 (total)</td></tr>
+<tr><td>II. Venda de produtos industrializados (indústria)</td><td>Campos 4 (sem documento fiscal), 5 (com documento fiscal) e 6 (total)</td></tr>
+<tr><td>III. Prestação de serviços</td><td>Campos 7 (sem documento fiscal), 8 (com documento fiscal) e 9 (total)</td></tr>
+<tr><td>Total geral</td><td>Campo 10: soma dos campos 3, 6 e 9</td></tr></table>
+<p>Revenda é o que você compra pronto e revende. Indústria é o que você mesmo fabrica (bolos, roupas, artesanato). Se você só presta serviços, deixa os blocos I e II zerados. No fim, o relatório pede local, data e assinatura.</p>
+<h2>Exemplo preenchido</h2>
+<p>Uma MEI manicure que também revende esmaltes recebeu em março R$ 2.800 de serviços para clientes pessoa física (sem nota), R$ 1.500 de serviços para um salão com CNPJ (com NFS-e) e R$ 900 de revenda de produtos (sem nota). O relatório de março fica assim: campo 1 = R$ 900, campo 3 = R$ 900, campo 7 = R$ 2.800, campo 8 = R$ 1.500, campo 9 = R$ 4.300 e campo 10 = <strong>R$ 5.200</strong>. Os demais ficam zerados.</p>
+<p>Se não quiser montar à mão, a <a href="https://projects-betanull.github.io/mei-em-dia/planilha-relatorio-mensal-mei-gratis/">planilha grátis do relatório mensal</a> preenche os 10 campos a partir dos totais do mês.</p>
 <h2>Com ou sem nota fiscal?</h2>
-<p>Hoje o MEI não precisa emitir nota fiscal quando vende para pessoa física (consumidor final), a não ser que o cliente peça. Para empresas (CNPJ), a nota é obrigatória. Na prestação de serviços, a nota é a NFS-e no padrão nacional. Mesmo sem nota, a receita entra no relatório e conta para o limite anual. Atenção: a Reforma Tributária prevê ampliar a exigência de nota a partir de 2027 (veja o <a href="https://projects-betanull.github.io/mei-em-dia/nota-fiscal-mei/">guia de nota fiscal</a>).</p>
+<p>Hoje o MEI não precisa emitir nota fiscal quando vende para pessoa física (consumidor final), a não ser que o cliente peça. Para empresas (CNPJ), a nota é obrigatória. Na prestação de serviços, a nota é a NFS-e no padrão nacional. Mesmo sem nota, a receita entra no relatório e conta para o limite anual. Em 2027, com a Reforma Tributária, a regra geral passa a exigir documento fiscal em toda venda, mas nas vendas a pessoa física a própria DASN-SIMEI poderá cumprir esse papel (veja o <a href="https://projects-betanull.github.io/mei-em-dia/mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal/">guia da Reforma Tributária para o MEI</a>). Por isso, separar no relatório o que foi vendido com e sem nota fica ainda mais importante.</p>
 <h2>Erros comuns</h2>
 <ul><li>Lançar só o que teve nota e esquecer as vendas em dinheiro ou Pix.</li><li>Descontar despesas: o relatório é de receita <em>bruta</em>.</li><li>Deixar para preencher tudo em maio, na hora da <a href="https://projects-betanull.github.io/mei-em-dia/dasn-simei-declaracao-anual-mei/">declaração anual (DASN-SIMEI)</a>.</li></ul>
 """))
@@ -174,7 +183,7 @@ A.append(('das-mei-valor-vencimento','DAS MEI 2026 e 2027: valor, vencimento, at
 <p>O valor novo vale a partir da guia de <strong>janeiro de 2027</strong>, paga em fevereiro. Como 20 de fevereiro de 2027 cai num sábado, essa primeira guia vence em 22 de fevereiro. Esta página será atualizada quando o decreto sair.</p>
 <p>Há ainda um detalhe da Reforma Tributária: a Resolução CGSN 190/2026 prevê, a partir de 2027, uma parcela fixa de <strong>CBS e IBS de R$ 1,00 por mês</strong> (R$ 0,994 + R$ 0,006) no DAS do MEI, ao lado do ICMS e do ISS. Se ela entrar em todas as guias, cada valor da tabela acima sobe R$ 1. A composição exata por atividade será confirmada na guia gerada no Portal do Empreendedor. Veja o que mais muda no guia <a href="https://projects-betanull.github.io/mei-em-dia/mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal/">MEI na Reforma Tributária em 2027</a>.</p>
 <h2>Vencimento</h2>
-<p>O DAS vence no <strong>dia 20 de cada mês</strong> e se refere ao mês anterior: o DAS de março vence em 20 de abril. Se o dia 20 cair em fim de semana ou feriado, o prazo passa para o dia útil seguinte. Aproveite a data para preencher também o <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal de receitas</a> do mês anterior, que tem o mesmo prazo.</p>
+<p>O DAS vence no <strong>dia 20 de cada mês</strong> e se refere ao mês anterior: o DAS de março vence em 20 de abril. Se o dia 20 cair em fim de semana ou feriado, o prazo passa para o dia útil seguinte. Em novembro de 2026, por exemplo, o dia 20 é feriado nacional (Dia da Consciência Negra) e cai numa sexta-feira, então o DAS de outubro vence na <strong>segunda-feira, 23 de novembro</strong>. Aproveite a data para preencher também o <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal de receitas</a> do mês anterior, que tem o mesmo prazo.</p>
 <h2>Como pagar</h2>
 <ol><li>Acesse o Portal do Empreendedor (gov.br/mei) ou o app MEI e entre em "Pagamento de contribuição mensal (DAS)".</li>
 <li>Informe o CNPJ, escolha o ano e marque os meses que quer pagar.</li>
@@ -190,7 +199,8 @@ A.append(('das-mei-valor-vencimento','DAS MEI 2026 e 2027: valor, vencimento, at
 <p>A Lei Complementar 238/2026 perdoou as dívidas da <strong>parte do INSS do DAS vencidas até 13 de outubro de 2026</strong>, com juros e multas, estejam ou não na Dívida Ativa, inclusive as que estão em parcelamento ou em cobrança na Justiça. Pontos importantes:</p>
 <ul><li><strong>É automático.</strong> Segundo a PGFN e a Receita Federal (Portaria nº 740/2026), não é preciso fazer pedido: o cancelamento será feito nos sistemas a partir de 1º de janeiro de 2027.</li>
 <li><strong>ICMS e ISS não entram.</strong> Essas partes continuam sendo cobradas.</li>
-<li><strong>Há uma condição:</strong> quem continuar MEI precisa pagar em dia o DAS de janeiro a junho de 2027. Atrasar nesse período pode cancelar o perdão.</li>
+<li><strong>Há uma condição:</strong> quem continuar MEI precisa pagar em dia o DAS das <strong>competências de janeiro a junho de 2027</strong>, ou seja, as guias que vencem de fevereiro a julho de 2027. Atrasar nesse período pode cancelar o perdão, e a dívida antiga volta a ser cobrada.</li>
+<li><strong>A data é 13 de outubro.</strong> Algumas manchetes publicadas em 13 de novembro falaram em dívidas "vencidas até esta sexta-feira (13)", o que fez muita gente entender 13 de novembro. A lei e a portaria falam em 13 de outubro de 2026: o DAS de setembro, que venceu em 20 de outubro, já fica de fora.</li>
 <li>Quem já pagou não recebe o dinheiro de volta.</li>
 <li>Perdoar a dívida não é o mesmo que pagar a contribuição. Se esses meses fazem diferença para a sua aposentadoria ou para algum benefício, consulte o INSS antes de contar com eles.</li></ul>
 <p>Você pode consultar suas pendências no Portal de Serviços da Receita Federal (dívidas ainda não inscritas) e no Regularize, da PGFN (dívidas em Dívida Ativa).</p>
@@ -241,7 +251,7 @@ A.append(('dasn-simei-declaracao-anual-mei','DASN-SIMEI 2027: prazo, passo a pas
 <h2>Errei a declaração. Como corrigir?</h2>
 <p>É só enviar uma <strong>declaração retificadora</strong> para o mesmo ano, pelo mesmo serviço. Ela substitui a anterior por completo, então preencha todos os campos de novo, não só o que mudou.</p>
 <h2>DASN-SIMEI não é imposto de renda</h2>
-<p>A DASN-SIMEI é a declaração da empresa. A declaração de imposto de renda da pessoa física é outra obrigação, com prazo próprio, e depende das suas rendas como pessoa (inclusive a parte do lucro do MEI que não é isenta). Veja como separar as duas coisas no guia <a href="https://projects-betanull.github.io/mei-em-dia/separar-dinheiro-pessoal-e-da-empresa-mei/">dinheiro pessoal e da empresa</a>.</p>
+<p>A DASN-SIMEI é a declaração da empresa. A declaração de imposto de renda da pessoa física é outra obrigação, com prazo próprio, e depende das suas rendas como pessoa (inclusive a parte do lucro do MEI que não é isenta). Veja como calcular essa parte no guia <a href="https://projects-betanull.github.io/mei-em-dia/imposto-de-renda-mei-parcela-isenta-2027/">parcela isenta do MEI no Imposto de Renda 2027</a>.</p>
 <h2>Erros que mais acontecem</h2>
 <ul><li>Informar só o valor das notas emitidas e esquecer vendas em dinheiro e Pix.</li><li>Informar o lucro em vez do faturamento bruto.</li>
 <li>Misturar receitas de comércio e de serviços.</li><li>Deixar para o último dia e enfrentar o portal lento.</li>
@@ -270,7 +280,10 @@ A.append(("nota-fiscal-mei","Nota fiscal MEI: quando é obrigatória e como emit
 <li>Confira tudo e emita. O PDF e o XML ficam salvos no sistema.</li></ol>
 <p>Dica: cadastre como favoritos os clientes e serviços que se repetem. A emissão cai para menos de um minuto.</p>
 <h2>O que muda em 2027</h2>
-<p>Com a Reforma Tributária, a <strong>Resolução CGSN 190/2026</strong> retirou, a partir de 1º/1/2027, a dispensa de nota nas vendas a consumidor final: em regra, o MEI passa a emitir documento fiscal em toda venda (NFS-e nacional para serviços e, de preferência, a Nota Fiscal Fácil para mercadorias). Em outubro, porém, a <strong>Resolução CGSN 195/2026</strong> e o Decreto 13.140/2026 permitiram usar a <strong>DASN-SIMEI como documento fiscal</strong> nas vendas a pessoa física sem CNPJ. Para empresas e órgãos públicos, a nota continua obrigatória. Os detalhes de como isso vai funcionar ainda dependem de orientação do Comitê Gestor; veja tudo no guia <a href="https://projects-betanull.github.io/mei-em-dia/mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal/">MEI na Reforma Tributária em 2027</a>. Na prática, quem registra toda venda no controle mensal, separando clientes pessoa física e empresa, vai sentir muito menos a mudança.</p>
+<table><tr><th>Cliente</th><th>Até 31/12/2026</th><th>A partir de 1º/1/2027</th></tr>
+<tr><td>Empresa (CNPJ) ou órgão público</td><td>Nota obrigatória</td><td>Nota obrigatória</td></tr>
+<tr><td>Pessoa física (CPF)</td><td>Só se o cliente pedir</td><td>Regra geral exige documento fiscal, mas a DASN-SIMEI poderá cumprir esse papel; se o cliente pedir a nota, emita</td></tr></table>
+<p>A mudança vem da Resolução CGSN 190/2026, ajustada em outubro pela Resolução CGSN 195/2026. Para mercadorias, a recomendação passa a ser a Nota Fiscal Fácil. A explicação completa, com o que ainda depende de regulamentação, está no guia <a href="https://projects-betanull.github.io/mei-em-dia/mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal/">MEI na Reforma Tributária em 2027</a>. Na prática, quem registra toda venda no controle mensal, separando clientes pessoa física e empresa, vai sentir muito menos a mudança.</p>
 <h2>Erros comuns</h2>
 <ul><li>Não emitir para empresas por achar que é opcional.</li><li>Usar um código de serviço que não corresponde à atividade.</li>
 <li>Lançar no controle só o que teve nota e esquecer vendas por Pix ou dinheiro.</li></ul>
@@ -405,7 +418,7 @@ A.append(("separar-dinheiro-pessoal-e-da-empresa-mei","Como o MEI separa o dinhe
 <li>Deixe o restante na conta da empresa como reserva e capital de giro.</li></ol>
 <p>Exemplo: lucro médio de R$ 4.000 → retirada de R$ 2.600, com R$ 1.400 ficando no negócio. Revise o valor a cada trimestre.</p>
 <h2>A retirada paga imposto de renda?</h2>
-<p>Parte do lucro do MEI é isenta de imposto de renda na pessoa física, conforme percentuais que variam com a atividade (8% para comércio e indústria, 32% para serviços em geral, aplicados sobre a receita bruta), e essa parte pode crescer se você comprovar o lucro com escrituração. O que passar disso pode ser tributável. Se você tem outras rendas ou retiradas altas, vale conferir com um contador na época da declaração.</p>
+<p>A retirada em si não paga imposto na hora. Na declaração do IR da pessoa física, parte do lucro do MEI é isenta (um percentual da receita bruta: 8% no comércio e na indústria, 16% no transporte de passageiros e 32% nos serviços) e o que passar disso é tributável. Para a maioria dos MEIs a conta fecha em imposto zero, mas pode haver obrigação de declarar. O cálculo completo, com exemplos, está no guia <a href="https://projects-betanull.github.io/mei-em-dia/imposto-de-renda-mei-parcela-isenta-2027/">parcela isenta do MEI no Imposto de Renda 2027</a>.</p>
 <h2>Como organizar na prática</h2>
 <ul><li>Receba sempre na conta PJ, inclusive o Pix dos clientes.</li><li>Pague as contas do negócio sempre pela conta PJ.</li>
 <li>Faça uma única transferência por mês para a sua conta pessoal: sua retirada.</li>
@@ -441,9 +454,8 @@ A.append(("planilha-relatorio-mensal-mei-gratis","Planilha grátis: Relatório M
 <p>Uma MEI que faz unhas e revende esmaltes recebeu em março: R$ 2.800 de serviços sem nota (clientes pessoa física), R$ 1.500 de serviços com nota (um salão parceiro, com CNPJ) e R$ 900 de revenda sem nota. Na linha de março ela digita:</p>
 <table><tr><th>Comércio sem NF</th><th>Serviços sem NF</th><th>Serviços com NF</th><th>Total do mês</th></tr>
 <tr><td>R$ 900,00</td><td>R$ 2.800,00</td><td>R$ 1.500,00</td><td><strong>R$ 5.200,00</strong></td></tr></table>
-<p>No relatório impresso de março, a planilha preenche: campo 1 (revenda com dispensa de documento fiscal) R$ 900; campo 7 (serviços com dispensa) R$ 2.800; campo 8 (serviços com documento fiscal) R$ 1.500; e campo 10 (total geral) R$ 5.200. Os demais ficam zerados.</p>
-<h2>Os 10 campos do relatório</h2>
-<p>O modelo oficial tem três blocos (revenda de mercadorias, venda de produtos industrializados e prestação de serviços). Cada bloco tem três linhas: receita com dispensa de documento fiscal, receita com documento fiscal emitido e o total do bloco. O campo 10 é o total geral do mês. No fim, o relatório pede local, data e assinatura, e orienta a anexar as notas fiscais de compras e as notas emitidas no mês.</p>
+<p>No relatório impresso de março, a planilha preenche: campo 1 (revenda com dispensa de documento fiscal) R$ 900; campo 7 (serviços com dispensa) R$ 2.800; campo 8 (serviços com documento fiscal) R$ 1.500; e campo 10 (total geral) R$ 5.200. Os totais dos blocos (campo 3 = R$ 900 e campo 9 = R$ 4.300) são somados sozinhos, e os demais ficam zerados.</p>
+<p>O que significa cada um dos 10 campos, e quem é obrigado a fazer o relatório, está explicado no guia <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">Relatório Mensal de Receitas Brutas: o que é e como preencher</a>.</p>
 <h2>Como a planilha ajuda na declaração anual</h2>
 <p>Abaixo da tabela, a aba "Valores do ano" mostra três números: <strong>receita total</strong>, <strong>comércio + indústria</strong> e <strong>serviços</strong>. São os valores que a <a href="https://projects-betanull.github.io/mei-em-dia/dasn-simei-declaracao-anual-mei/">DASN-SIMEI</a> pede. A coluna "Acumulado" também mostra quanto você já faturou no ano, para comparar com o <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite do MEI</a> (R$ 81 mil em 2026 e R$ 110 mil em 2027).</p>
 <h2>Quer que a planilha some tudo sozinha?</h2>
@@ -516,7 +528,7 @@ A.append(("nfs-e-nacional-simples-nacional-novembro-2026-mei","NFS-e Nacional ob
 <tr><td>Desde set/2023</td><td>MEI emite NFS-e só pelo Emissor Nacional</td></tr>
 <tr><td>1º/11/2026</td><td>ME e EPP do Simples também passam a emitir só pelo Emissor Nacional</td></tr>
 <tr><td>1º/1/2027</td><td>Começam a valer as regras de IBS e CBS para o Simples Nacional nos documentos fiscais</td></tr></table>
-<p>Para o MEI, o ponto de atenção em 2027 é a <strong>ampliação da exigência de nota fiscal</strong> prevista pela Reforma, inclusive em vendas para pessoa física. Veja os detalhes no <a href="https://projects-betanull.github.io/mei-em-dia/nota-fiscal-mei/">guia de nota fiscal do MEI</a> e acompanhe as regras finais no Portal do Empreendedor.</p>
+<p>Para o MEI, o ponto de atenção em 2027 é a regra de documento fiscal da Reforma: a Resolução CGSN 190/2026 passa a exigir documento em toda venda, mas a Resolução CGSN 195/2026 permite que a DASN-SIMEI cumpra esse papel nas vendas a pessoa física. Veja os detalhes no guia <a href="https://projects-betanull.github.io/mei-em-dia/mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal/">MEI na Reforma Tributária em 2027</a> e o passo a passo de emissão no <a href="https://projects-betanull.github.io/mei-em-dia/nota-fiscal-mei/">guia de nota fiscal do MEI</a>.</p>
 <h2>Checklist rápido para o MEI</h2>
 <ul><li>Sua conta gov.br está no nível prata ou ouro? É ela que dá acesso ao Emissor Nacional.</li>
 <li>Seus clientes e serviços frequentes estão salvos como favoritos no emissor?</li>
@@ -596,7 +608,7 @@ A.append(("mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal","MEI na Reforma Trib
 <li><strong>Se vende produtos</strong>, verifique se a Nota Fiscal Fácil está disponível no seu estado e faça o credenciamento na Secretaria da Fazenda, se ainda não tiver.</li>
 <li><strong>Separe os clientes</strong>: quais são empresas (nota obrigatória) e quais são pessoas físicas.</li>
 <li><strong>Organize o registro de vendas</strong> por tipo de cliente e por tipo de receita (comércio ou serviço), mês a mês.</li>
-<li><strong>Pague o DAS em dia de janeiro a junho de 2027</strong>: é a condição para manter o perdão das dívidas do INSS previsto na LC 238/2026.</li>
+<li><strong>Pague em dia o DAS das competências de janeiro a junho de 2027</strong> (guias que vencem de fevereiro a julho): é a condição para manter o perdão das dívidas do INSS previsto na LC 238/2026.</li>
 <li><strong>Atualize o teto</strong> do seu controle para o novo <a href="https://projects-betanull.github.io/mei-em-dia/limite-mei-2027/">limite de R$ 110 mil em 2027</a>.</li></ol>
 <h2>O que ainda pode mudar</h2>
 <p>A Reforma está em plena fase de regulamentação, e as regras do Simples já foram ajustadas várias vezes em 2026. Os pontos que mais merecem atenção nas próximas semanas são o formato da DASN-SIMEI com as vendas a pessoa física, o valor final do DAS de 2027 e eventuais calendários estaduais da Nota Fiscal Fácil. Este guia será atualizado quando essas orientações forem publicadas.</p>
@@ -655,7 +667,7 @@ A.append(("mei-2027-o-que-muda","MEI 2027: o que muda no limite, no DAS, na nota
 <h2>DAS: valor novo a partir da guia de janeiro</h2>
 <p>A parte do INSS é de 5% do salário mínimo. Com a projeção de R$ 1.741 da proposta de Orçamento, o DAS ficaria entre R$ 88,05 e R$ 93,05, conforme a atividade. O valor oficial depende do decreto do salário mínimo, que sai no fim de dezembro. A regulamentação da Reforma prevê ainda uma parcela fixa de R$ 1 de CBS e IBS. A primeira guia com o valor novo vence em <strong>22 de fevereiro de 2027</strong>. Contas completas no guia do <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">DAS MEI 2026 e 2027</a>.</p>
 <h2>Perdão das dívidas do DAS</h2>
-<p>A LC 238/2026 perdoou a <strong>parte do INSS do DAS vencida até 13 de outubro de 2026</strong>. O cancelamento é automático, a partir de 1º de janeiro de 2027, sem pedido. ICMS e ISS não entram. Para manter o perdão, quem continua MEI precisa pagar em dia o DAS de janeiro a junho de 2027. Veja as condições no <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">guia do DAS</a>.</p>
+<p>A LC 238/2026 perdoou a <strong>parte do INSS do DAS vencida até 13 de outubro de 2026</strong>. O cancelamento é automático, a partir de 1º de janeiro de 2027, sem pedido. ICMS e ISS não entram. Para manter o perdão, quem continua MEI precisa pagar em dia o DAS das competências de janeiro a junho de 2027, com vencimentos de fevereiro a julho. Veja as condições no <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">guia do DAS</a>.</p>
 <h2>Nota fiscal e Reforma Tributária</h2>
 <p>Pela Resolução CGSN 190/2026, a regra geral passa a exigir documento fiscal em toda venda a partir de 2027. Para aliviar quem vende a pessoa física, a Resolução CGSN 195/2026 e o Decreto 13.140/2026 permitem que a <strong>DASN-SIMEI sirva de documento fiscal</strong> nessas vendas. Para empresas e órgãos públicos, a nota continua obrigatória, e o MEI segue dispensado de destacar IBS e CBS. Entenda no guia <a href="https://projects-betanull.github.io/mei-em-dia/mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal/">MEI na Reforma Tributária em 2027</a> e veja como emitir no guia de <a href="https://projects-betanull.github.io/mei-em-dia/nota-fiscal-mei/">nota fiscal do MEI</a>.</p>
 <h2>Calendário do MEI em 2027</h2>
@@ -666,11 +678,13 @@ A.append(("mei-2027-o-que-muda","MEI 2027: o que muda no limite, no DAS, na nota
 <tr><td>22 de fevereiro</td><td>Vence o primeiro DAS com o valor novo (competência de janeiro)</td></tr>
 <tr><td>Todo dia 20</td><td>DAS do mês anterior e <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal de receitas</a></td></tr>
 <tr><td>31 de maio</td><td>Fim do prazo da <a href="https://projects-betanull.github.io/mei-em-dia/dasn-simei-declaracao-anual-mei/">DASN-SIMEI</a> referente a 2026</td></tr>
-<tr><td>Julho</td><td>Vence o DAS de junho, último do período exigido para manter o perdão</td></tr></table>
+<tr><td>Março a maio (datas a confirmar)</td><td>Declaração do <a href="https://projects-betanull.github.io/mei-em-dia/imposto-de-renda-mei-parcela-isenta-2027/">Imposto de Renda 2027</a> da pessoa física, com a parcela isenta do lucro do MEI</td></tr>
+<tr><td>Fevereiro a julho</td><td>Vencem os DAS das competências de janeiro a junho, que precisam ser pagos em dia para manter o perdão</td></tr></table>
 <h2>O que fazer ainda em 2026</h2>
 <ol><li><strong>Confira o faturamento do ano.</strong> Em 2026 o limite ainda é R$ 81 mil; planeje novembro e dezembro se estiver perto.</li>
 <li><strong>Não contrate o segundo empregado antes de janeiro.</strong> Em 2026 isso ainda tira a empresa do MEI.</li>
-<li><strong>Consulte suas pendências</strong> na Receita Federal e no Regularize para saber o que entra no perdão.</li>
+<li><strong>Consulte suas pendências</strong> na Receita Federal e no Regularize para saber o que entra no perdão (só o que venceu até 13/10/2026).</li>
+<li><strong>Pague o DAS de outubro até 23 de novembro</strong> (o dia 20 é feriado nacional) e o de novembro até 21 de dezembro (o dia 20 cai num domingo). Guias vencidas depois de 13/10/2026 não entram no perdão.</li>
 <li><strong>Teste seu acesso</strong> ao Emissor Nacional da NFS-e com a conta gov.br prata ou ouro.</li>
 <li><strong>Atualize seu <a href="https://projects-betanull.github.io/mei-em-dia/controle-financeiro-mei/">controle financeiro</a></strong> para o teto de R$ 110 mil em janeiro.</li></ol>
 """))
@@ -699,11 +713,11 @@ A.append(("imposto-de-renda-mei-parcela-isenta-2027","Quanto do lucro do MEI é 
 <p>Repare que as despesas não aumentam a isenção: elas só diminuem o lucro. Por isso, quem tem poucas despesas e fatura bem costuma ter parte tributável, e quem revende mercadoria com margem pequena costuma ter pouca.</p>
 <h2>Exemplos</h2>
 <table><tr><th></th><th>Ana (serviços)</th><th>Bruno (comércio)</th><th>Carla (comércio e serviços)</th></tr>
-<tr><td>Receita bruta</td><td>R$ 60.000</td><td>R$ 90.000</td><td>R$ 40.000 + R$ 30.000</td></tr>
-<tr><td>Despesas</td><td>R$ 12.000</td><td>R$ 60.000</td><td>R$ 28.000</td></tr>
-<tr><td>Lucro apurado</td><td>R$ 48.000</td><td>R$ 30.000</td><td>R$ 42.000</td></tr>
-<tr><td>Parcela isenta</td><td>32% de 60.000 = <strong>R$ 19.200</strong></td><td>8% de 90.000 = <strong>R$ 7.200</strong></td><td>8% de 40.000 + 32% de 30.000 = <strong>R$ 12.800</strong></td></tr>
-<tr><td>Parcela tributável</td><td><strong>R$ 28.800</strong></td><td><strong>R$ 22.800</strong></td><td><strong>R$ 29.200</strong></td></tr></table>
+<tr><td>Receita bruta</td><td>R$ 60.000</td><td>R$ 80.000</td><td>R$ 40.000 + R$ 30.000</td></tr>
+<tr><td>Despesas</td><td>R$ 12.000</td><td>R$ 52.000</td><td>R$ 28.000</td></tr>
+<tr><td>Lucro apurado</td><td>R$ 48.000</td><td>R$ 28.000</td><td>R$ 42.000</td></tr>
+<tr><td>Parcela isenta</td><td>32% de 60.000 = <strong>R$ 19.200</strong></td><td>8% de 80.000 = <strong>R$ 6.400</strong></td><td>8% de 40.000 + 32% de 30.000 = <strong>R$ 12.800</strong></td></tr>
+<tr><td>Parcela tributável</td><td><strong>R$ 28.800</strong></td><td><strong>R$ 21.600</strong></td><td><strong>R$ 29.200</strong></td></tr></table>
 <p>Outro caso: Diego presta serviços, faturou R$ 50.000 e teve R$ 40.000 de despesas. O lucro de R$ 10.000 é menor que 32% da receita (R$ 16.000), então todo o lucro é isento e não há parte tributável.</p>
 <h2>E com contabilidade completa?</h2>
 <p>O teto de 8%, 16% ou 32% não se aplica se a empresa mantiver escrituração contábil (livro diário, balanço) que mostre um lucro maior. Nesse caso, todo o lucro comprovado pode ser isento. Para o MEI, isso exige um contador e um custo mensal; só costuma valer a pena para quem fatura perto do limite e tem pouca despesa. Um controle em planilha ajuda a calcular e comprovar o lucro, mas não é escrituração contábil.</p>
@@ -725,7 +739,7 @@ A.append(("imposto-de-renda-mei-parcela-isenta-2027","Quanto do lucro do MEI é 
 <li><strong>Parcela tributável:</strong> ficha "Rendimentos Tributáveis Recebidos de Pessoa Jurídica", com o CNPJ do MEI como fonte pagadora e imposto retido igual a zero.</li></ul>
 <p>Não confunda com a DASN-SIMEI: ela é a declaração da empresa, entregue até 31 de maio, e informa só o faturamento. O IRPF é a declaração da pessoa física e tem prazo próprio (em 2026, foi até 29 de maio).</p>
 <h2>E as dívidas do DAS?</h2>
-<p>A Lei Complementar 238/2026 perdoou a parte do INSS do DAS vencida até <strong>13 de outubro de 2026</strong>. Algumas manchetes falaram em dívidas "vencidas até sexta-feira, 13", o que confundiu muita gente com 13 de novembro, mas a data da lei é 13 de outubro. O cancelamento é automático a partir de 1º de janeiro de 2027, e quem continuar MEI precisa pagar em dia o DAS de janeiro a junho de 2027. O perdão não muda o cálculo do IR. Veja as condições no guia do <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">DAS MEI 2026 e 2027</a>.</p>
+<p>O perdão da parte do INSS do DAS vencida até 13 de outubro de 2026 (LC 238/2026) não muda o cálculo do Imposto de Renda: ele mexe só nas dívidas da empresa. Datas, condições e o que fica de fora estão no guia do <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">DAS MEI 2026 e 2027</a>.</p>
 <h2>O que separar desde já</h2>
 <ol><li>Some a receita de 2026 por tipo (comércio/indústria e serviços), mês a mês, a partir dos seus <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatórios mensais</a>.</li>
 <li>Junte os comprovantes das despesas do ano: são eles que provam o lucro.</li>
@@ -747,7 +761,7 @@ A.append(("imposto-de-renda-mei-parcela-isenta-2027","Quanto do lucro do MEI é 
 #        O h1 da página continua sendo o título completo do guia.
 # Guia novo sem META ainda funciona, mas sem esses blocos e com a data de hoje.
 # ---------------------------------------------------------------------------
-GRUPOS=[("nf","Nota fiscal","mei"),("obr","Impostos, prazos e obrigações do MEI","mei"),("ctrl","Organização financeira do MEI","mei"),("fin","Finanças pessoais","financas")]
+GRUPOS=[("obr","Impostos, prazos e obrigações do MEI","mei"),("nf","Nota fiscal","mei"),("ctrl","Organização financeira do MEI","mei"),("fin","Finanças pessoais","financas")]
 META={
 "imposto-de-renda-mei-parcela-isenta-2027":dict(grupo="obr",pub="2026-11-17",mod="2026-11-17",gratis=True,tit="Parcela isenta do MEI no IR 2027: como calcular",
  resumo=["A parcela isenta é um percentual da receita bruta do ano: <strong>8%</strong> no comércio e na indústria, <strong>16%</strong> no transporte de passageiros e <strong>32%</strong> nos serviços.",
@@ -758,7 +772,7 @@ META={
   ("O MEI precisa declarar Imposto de Renda em 2027?","Só se cumprir algum critério de obrigatoriedade, que a Receita divulga no começo de 2027. Na declaração de 2026, o principal era ter mais de R$ 35.584 de rendimentos tributáveis, contando a parcela tributável do MEI e outras rendas."),
   ("A isenção de até R$ 5 mil vale para o MEI?","Vale para a pessoa física. Na declaração de 2027, rendimentos tributáveis de até R$ 60 mil no ano, incluindo a parte tributável do lucro do MEI, ficam com imposto zero, e há desconto parcial até R$ 88.200."),
   ("A DASN-SIMEI substitui a declaração do Imposto de Renda?","Não. A DASN-SIMEI é a declaração anual da empresa e informa o faturamento. O IRPF é a declaração da pessoa física, com regras e prazo próprios.")],
- rel=["dasn-simei-declaracao-anual-mei","controle-financeiro-mei","das-mei-valor-vencimento"]),
+ rel=["dasn-simei-declaracao-anual-mei","separar-dinheiro-pessoal-e-da-empresa-mei","das-mei-valor-vencimento"]),
 "valor-aproximado-dos-tributos-nfs-e-mei":dict(grupo="nf",pub="2026-11-12",mod="2026-11-15",tit="Valor aproximado dos tributos MEI: qual das 3 opções marcar",
  resumo=["O MEI marca <strong>\"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\"</strong>.",
   "O artigo 8º do Decreto 8.264/2014 torna essa informação <strong>facultativa para o MEI</strong>, que paga os impostos em valor fixo no DAS.",
@@ -768,16 +782,15 @@ META={
   ("O MEI é obrigado a informar os tributos na NFS-e?","Não. A Lei 12.741/2012 exige a informação nas vendas ao consumidor, mas o Decreto 8.264/2014 tornou a regra facultativa para o MEI."),
   ("Informei um valor de tributos por engano. Vou pagar mais imposto?","Não. O campo é só informativo para o cliente. O imposto do MEI é o valor fixo mensal do DAS, que não muda com o que aparece nesse campo.")],
  rel=["nota-fiscal-mei","nfs-e-nacional-simples-nacional-novembro-2026-mei","mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal"]),
-"mei-2027-o-que-muda":dict(grupo="obr",sim=True,pub="2026-11-12",mod="2026-11-12",gratis=True,tit="MEI 2027: o que muda no limite, DAS, nota fiscal e prazos",
+"mei-2027-o-que-muda":dict(grupo="obr",sim=True,pub="2026-11-12",mod="2026-11-17",gratis=True,tit="Tabela MEI 2027: tudo o que muda e o calendário do ano",
  resumo=["Limite sobe para <strong>R$ 110 mil</strong> e o MEI pode ter <strong>até 2 empregados</strong> (LC 238/2026).",
   "O DAS muda com o novo salário mínimo e ganha uma parcela fixa de R$ 1 de CBS e IBS.",
   "Nas vendas a pessoa física, a DASN-SIMEI poderá servir de documento fiscal. Dívidas do INSS do DAS vencidas até 13/10/2026 são perdoadas."],
- faq=[("Qual é o limite do MEI em 2027?","R$ 110 mil no ano, pela LC 238/2026, com média de R$ 9.166,67 por mês. Em 2026 o limite continua sendo de R$ 81 mil."),
-  ("Qual vai ser o valor do DAS MEI em 2027?","Depende do salário mínimo, definido por decreto no fim de dezembro. Com a projeção de R$ 1.741, ficaria entre R$ 88,05 e R$ 93,05, mais uma parcela fixa de R$ 1 de CBS e IBS prevista na regulamentação."),
-  ("Quantos funcionários o MEI pode ter em 2027?","Até dois, a partir de 1º de janeiro de 2027. Em 2026 o limite ainda é de um empregado."),
+ faq=[("Quando começam a valer as mudanças do MEI em 2027?","Em 1º de janeiro de 2027: limite de R$ 110 mil, até 2 empregados, perdão das dívidas do INSS do DAS e regras da Reforma Tributária. O DAS com o novo salário mínimo começa na guia de janeiro, que vence em 22 de fevereiro."),
+  ("O que o MEI deve fazer ainda em 2026?","Conferir o faturamento do ano contra o limite de R$ 81 mil, não contratar o segundo empregado antes de janeiro, consultar as dívidas que entram no perdão e testar o acesso gov.br ao Emissor Nacional da NFS-e."),
   ("O MEI vai acabar com a Reforma Tributária?","Não. O MEI continua existindo e pagando os impostos em valor fixo no DAS, que passa a incluir uma parcela de CBS e IBS.")],
- rel=["limite-mei-2027","das-mei-valor-vencimento","mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal"]),
-"mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal":dict(grupo="nf",pub="2026-11-10",mod="2026-11-10",tit="MEI na Reforma Tributária 2027: DAS, IBS, CBS e nota",gratis=True,
+ rel=["limite-mei-2027","das-mei-valor-vencimento","imposto-de-renda-mei-parcela-isenta-2027"]),
+"mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal":dict(grupo="nf",pub="2026-11-10",mod="2026-11-17",tit="MEI na Reforma Tributária 2027: DAS, IBS, CBS e nota",gratis=True,
  resumo=["A partir de <strong>1º/1/2027</strong>, o DAS ganha uma parcela fixa de CBS e IBS (R$ 0,994 + R$ 0,006). O MEI não calcula imposto por venda.",
   "A Resolução CGSN 190/2026 passa a exigir documento fiscal em toda venda, mas a <strong>DASN-SIMEI poderá servir de documento fiscal</strong> nas vendas a pessoa física (Resolução CGSN 195/2026).",
   "Para empresas e órgãos públicos, a nota continua obrigatória. O MEI segue dispensado de destacar IBS e CBS na nota."],
@@ -793,7 +806,7 @@ META={
   ("Quanto o MEI pode faturar por mês em 2027?","Não existe limite mensal, só o anual de R$ 110 mil. A média é de R$ 9.166,67 por mês, mas você pode faturar mais em um mês e menos em outro."),
   ("Vendas sem nota fiscal contam para o limite?","Sim. O limite considera o faturamento bruto: tudo o que você recebeu com vendas e serviços, com ou sem nota fiscal.")],
  rel=["mei-2027-o-que-muda","mei-pode-ter-funcionario","das-mei-valor-vencimento"]),
-"relatorio-mensal-de-receitas-brutas-mei":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",tit="Relatório mensal do MEI: o que é e como preencher",gratis=True,
+"relatorio-mensal-de-receitas-brutas-mei":dict(grupo="obr",pub="2026-10-30",mod="2026-11-17",tit="Relatório mensal do MEI: o que é e como preencher",gratis=True,
  resumo=["É obrigatório para todo MEI, mas <strong>não é enviado ao governo</strong>: você preenche, assina e guarda.",
   "Prazo: até o <strong>dia 20 do mês seguinte</strong>.",
   "Guarde os relatórios e as notas fiscais por <strong>5 anos</strong>."],
@@ -801,15 +814,15 @@ META={
   ("E se eu não faturei nada no mês?","O mais seguro é preencher o relatório com os valores zerados e guardá-lo, para manter a sequência de meses documentada."),
   ("O relatório mensal ajuda na declaração anual?","Sim. A soma dos 12 relatórios dá o faturamento do ano, separado em comércio, indústria e serviços, que é exatamente o que a DASN-SIMEI pede.")],
  rel=["planilha-relatorio-mensal-mei-gratis","dasn-simei-declaracao-anual-mei","limite-mei-2027"]),
-"das-mei-valor-vencimento":dict(grupo="obr",pub="2026-10-30",mod="2026-11-10",tit="DAS MEI 2026 e 2027: valor, vencimento e atraso",gratis=True,
+"das-mei-valor-vencimento":dict(grupo="obr",pub="2026-10-30",mod="2026-11-17",tit="DAS MEI 2026 e 2027: valor, vencimento e atraso",gratis=True,
  resumo=["Em 2026: <strong>R$ 82,05</strong> (comércio/indústria), <strong>R$ 86,05</strong> (serviços) ou <strong>R$ 87,05</strong> (os dois). Vence no <strong>dia 20</strong>.",
   "Em 2027 o valor sobe com o novo salário mínimo (previsão de R$ 88,05 a R$ 93,05), mais uma parcela fixa de R$ 1 de CBS e IBS prevista pela Reforma.",
-  "A parte do INSS das dívidas vencidas até 13/10/2026 será perdoada automaticamente em 2027, se você pagar em dia de janeiro a junho."],
+  "A parte do INSS das dívidas vencidas até 13/10/2026 será perdoada automaticamente em 2027, se você pagar em dia as guias das competências de janeiro a junho de 2027."],
  faq=[("Preciso pagar o DAS se não faturei nada?","Sim. O DAS é um valor fixo mensal e é devido mesmo nos meses sem faturamento."),
-  ("Preciso pedir o perdão das dívidas do DAS?","Não. Segundo a PGFN e a Receita Federal, o cancelamento da parte do INSS vencida até 13/10/2026 é automático a partir de 1º de janeiro de 2027. Para manter o perdão, pague em dia o DAS de janeiro a junho de 2027."),
+  ("Preciso pedir o perdão das dívidas do DAS?","Não. Segundo a PGFN e a Receita Federal, o cancelamento da parte do INSS vencida até 13/10/2026 é automático a partir de 1º de janeiro de 2027. Para manter o perdão, pague em dia o DAS das competências de janeiro a junho de 2027 (guias que vencem de fevereiro a julho)."),
   ("Quando sai o valor oficial do DAS 2027?","Depois que o governo publicar o decreto do salário mínimo de 2027, o que costuma acontecer no fim de dezembro. O valor novo vale a partir da guia de janeiro, paga em fevereiro.")],
  rel=["mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal","relatorio-mensal-de-receitas-brutas-mei","dasn-simei-declaracao-anual-mei"]),
-"dasn-simei-declaracao-anual-mei":dict(grupo="obr",pub="2026-10-30",mod="2026-11-08",tit="DASN-SIMEI 2027: prazo e passo a passo da declaração",gratis=True,
+"dasn-simei-declaracao-anual-mei":dict(grupo="obr",pub="2026-10-30",mod="2026-11-17",tit="DASN-SIMEI 2027: prazo e passo a passo da declaração",gratis=True,
  resumo=["A declaração do ano de 2026 vai até <strong>31 de maio de 2027</strong> e já pode ser enviada em janeiro.",
   "Informa a receita bruta do ano, a parte de comércio/indústria e se teve empregado. É obrigatória mesmo sem faturamento.",
   "Atraso gera multa de 2% ao mês sobre os impostos, com mínimo de <strong>R$ 50</strong>."],
@@ -817,12 +830,12 @@ META={
   ("Na declaração de 2027 já vale o limite de R$ 110 mil?","Não. A declaração de 2027 é sobre o faturamento de 2026, cujo limite é de R$ 81 mil. O teto de R$ 110 mil vale para o faturamento de 2027, declarado em 2028."),
   ("A DASN-SIMEI substitui o imposto de renda da pessoa física?","Não. São declarações diferentes: a DASN-SIMEI é da empresa, e a obrigação de declarar o IR como pessoa física depende das suas rendas."),
   ("Errei a declaração. Dá para corrigir?","Sim. Envie uma declaração retificadora para o mesmo ano pelo Portal do Empreendedor, preenchendo todos os campos de novo.")],
- rel=["relatorio-mensal-de-receitas-brutas-mei","planilha-relatorio-mensal-mei-gratis","limite-mei-2027"]),
-"nota-fiscal-mei":dict(grupo="nf",pub="2026-10-30",mod="2026-11-12",tit="Como emitir nota fiscal MEI e quando ela é obrigatória",gratis=True,
+ rel=["relatorio-mensal-de-receitas-brutas-mei","imposto-de-renda-mei-parcela-isenta-2027","limite-mei-2027"]),
+"nota-fiscal-mei":dict(grupo="nf",pub="2026-10-30",mod="2026-11-17",tit="Como emitir nota fiscal MEI e quando ela é obrigatória",gratis=True,
  resumo=["Hoje a nota é obrigatória para vendas e serviços a <strong>empresas (CNPJ)</strong> e órgãos públicos.",
   "Para pessoa física, só se o cliente pedir. Em 2027, a regra geral passa a exigir documento fiscal, mas a DASN-SIMEI poderá cumprir esse papel nessas vendas.",
   "A NFS-e de serviços é emitida de graça no <strong>Emissor Nacional</strong> (nfse.gov.br)."],
- faq=[("O MEI precisa emitir nota para pessoa física?","Até 31/12/2026, só se o cliente pedir. A partir de 2027, a Resolução CGSN 190/2026 exige documento fiscal em toda venda, mas a Resolução CGSN 195/2026 permite que a DASN-SIMEI cumpra essa função nas vendas a pessoa física sem CNPJ. Se o cliente pedir a nota, ela deve ser emitida."),
+ faq=[("O MEI precisa emitir nota para pessoa física?","Em 2026, só se o cliente pedir. Para 2027, veja a seção \"O que muda em 2027\" acima: a regra geral passa a exigir documento fiscal, mas a DASN-SIMEI poderá cumprir esse papel nessas vendas."),
   ("Emitir nota fiscal de serviço tem custo?","Não. O Emissor Nacional da NFS-e (site e app) é gratuito; basta a conta gov.br nível prata ou ouro."),
   ("Venda sem nota entra no faturamento?","Sim. Ela entra no relatório mensal e conta para o limite anual de faturamento.")],
  rel=["valor-aproximado-dos-tributos-nfs-e-mei","mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal","nfs-e-nacional-simples-nacional-novembro-2026-mei"]),
@@ -842,14 +855,14 @@ META={
   ("Posso usar minha conta pessoal para o MEI?","Pode, mas não é recomendado. Com uma conta só, fica muito difícil separar o que é do negócio, e o controle perde a utilidade."),
   ("Quanto tempo leva por mês?","Lançando as vendas no dia a dia, o fechamento do mês leva de 15 a 30 minutos.")],
  rel=["separar-dinheiro-pessoal-e-da-empresa-mei","relatorio-mensal-de-receitas-brutas-mei","limite-mei-2027"]),
-"separar-dinheiro-pessoal-e-da-empresa-mei":dict(grupo="ctrl",pub="2026-10-30",mod="2026-11-08",tit="MEI: como separar o dinheiro pessoal do da empresa",
+"separar-dinheiro-pessoal-e-da-empresa-mei":dict(grupo="ctrl",pub="2026-10-30",mod="2026-11-17",tit="MEI: como separar o dinheiro pessoal do da empresa",
  resumo=["Receba e pague tudo do negócio por uma <strong>conta PJ</strong> separada.",
   "Defina uma retirada mensal fixa de cerca de <strong>60% a 70% do lucro médio</strong>.",
   "Registre a retirada como \"retirada do dono\", não como despesa."],
  faq=[("O MEI é obrigado a ter conta PJ?","Não há obrigação legal, mas a conta separada é a forma mais simples de saber o que é do negócio e o que é seu."),
   ("Quanto o MEI pode retirar por mês?","Não existe valor fixo por lei. Um ponto de partida é retirar de 60% a 70% do lucro médio dos últimos 3 meses e deixar o resto como reserva do negócio.")],
- rel=["controle-financeiro-mei","reserva-de-emergencia","como-fazer-orcamento-pessoal"]),
-"planilha-relatorio-mensal-mei-gratis":dict(grupo="obr",pub="2026-10-30",mod="2026-11-12",tit="Planilha Relatório Mensal MEI grátis (Excel e Google)",
+ rel=["controle-financeiro-mei","imposto-de-renda-mei-parcela-isenta-2027","reserva-de-emergencia"]),
+"planilha-relatorio-mensal-mei-gratis":dict(grupo="obr",pub="2026-10-30",mod="2026-11-17",tit="Planilha Relatório Mensal MEI grátis (Excel e Google)",
  resumo=["Planilha <strong>gratuita</strong>: você digita os valores do mês e o relatório sai no modelo oficial, pronto para imprimir.",
   "Soma o total do mês, o acumulado do ano e os valores da DASN-SIMEI.","Funciona no Excel e no Google Planilhas. Download direto, sem cadastro."],
  faq=[("A planilha grátis funciona no celular?","Sim, pelo app do Google Planilhas ou do Excel. Para imprimir, é mais fácil pelo computador."),
@@ -872,7 +885,7 @@ META={
  faq=[("Posso deixar a reserva na poupança?","A poupança é segura e tem resgate imediato, mas costuma render menos que Tesouro Selic ou CDB com liquidez diária."),
   ("Monto a reserva ou quito as dívidas primeiro?","Dívidas de juros altos, como rotativo do cartão e cheque especial, vêm primeiro, mantendo uma reserva mínima para não voltar ao crédito no próximo imprevisto.")],
  rel=["como-fazer-orcamento-pessoal","como-sair-das-dividas","separar-dinheiro-pessoal-e-da-empresa-mei"]),
-"nfs-e-nacional-simples-nacional-novembro-2026-mei":dict(grupo="nf",pub="2026-10-31",mod="2026-11-08",tit="NFS-e Nacional: o que muda para o MEI em novembro de 2026",
+"nfs-e-nacional-simples-nacional-novembro-2026-mei":dict(grupo="nf",pub="2026-10-31",mod="2026-11-17",tit="NFS-e Nacional: o que muda para o MEI em novembro de 2026",
  resumo=["Desde <strong>1º/11/2026</strong>, ME e EPP do Simples emitem a nota de serviço só pelo Emissor Nacional.",
   "O MEI já usa o Emissor Nacional desde setembro de 2023: para você, <strong>nada muda agora</strong>.",
   "O ISS continua municipal e, no MEI, segue dentro do DAS."],
@@ -941,20 +954,72 @@ for art in A:
     open(f"{OUT}/{slug}/index.html","w").write(page(slug+"/",m.get("tit",t),d,corpo,sch,img))
     sm.append((url,mod))
 
-# página inicial, organizada por seções
-def item(s): return f'<a href="{BASE}/{s}/">{html.escape(TITULOS[s])}<span>{html.escape(DESCS[s])}</span></a>'
+# página inicial: ferramentas grátis, próximos prazos, planilhas e guias por seção
+FERIADOS=["01-01","04-21","05-01","09-07","10-12","11-02","11-15","11-20","12-25"]  # feriados nacionais fixos
+def proximo_das(hoje):
+    """Próximo vencimento do DAS (dia 20 ou o dia útil seguinte) a partir de hoje."""
+    a,m=hoje.year,hoje.month
+    while True:
+        v=datetime.date(a,m,20)
+        while v.weekday()>=5 or v.strftime("%m-%d") in FERIADOS: v+=datetime.timedelta(days=1)
+        if v>=hoje: return v
+        a,m=(a+1,1) if m==12 else (a,m+1)
+def comp_txt(v):
+    a,m=(v.year-1,12) if v.month==1 else (v.year,v.month-1)
+    return f"{MESES[m-1]} de {a}"
+HOJE_D=datetime.date.fromisoformat(HOJE); PDAS=proximo_das(HOJE_D)
+DIAS=["segunda-feira","terça-feira","quarta-feira","quinta-feira","sexta-feira","sábado","domingo"]
+def novo(s):
+    pub=META.get(s,{}).get("pub")
+    return pub and (HOJE_D-datetime.date.fromisoformat(pub)).days<=10
+def item(s):
+    selo='<em class="novo">Novo</em> ' if novo(s) else ""
+    return f'<a href="{BASE}/{s}/">{selo}{html.escape(TITULOS[s])}<span>{html.escape(DESCS[s])}</span></a>'
 secoes=""; anc_feita=set()
 for g,nome,anc in GRUPOS:
-    slugs=[a[0] for a in A if META.get(a[0],{}).get("grupo","fin" if (len(a)>4 and a[4]=="fin") else "obr")==g]
+    slugs=[a[0] for a in A if META.get(a[0],{}).get("grupo","fin" if (len(a)>4 and a[4]=="fin") else "obr")==g and a[0]!="planilha-relatorio-mensal-mei-gratis"]  # a planilha grátis já aparece em "Ferramentas grátis"
     if not slugs: continue
     idattr=f' id="{anc}"' if anc not in anc_feita else ""; anc_feita.add(anc)
     secoes+=f'<h2{idattr}>{nome}</h2><div class="lista">'+"".join(item(s) for s in slugs)+"</div>"
-    if g=="fin": secoes+=cta("fin").replace(' id="oferta"','')
 dest=f'<div class="dest"><small>Em destaque</small><a href="{BASE}/{DESTAQUE}/">{html.escape(TITULOS[DESTAQUE])}</a>{html.escape(DESCS[DESTAQUE])}</div>' if DESTAQUE in TITULOS else ""
-home=f"""<div class="hero"><h1>Guias práticos para o MEI e para o seu dinheiro</h1><p>Limite de faturamento, DAS, nota fiscal, relatório mensal, declaração anual e organização financeira, explicados sem complicação.</p>
-<a class="btn" href="{GRATIS}">Baixar a planilha grátis do relatório mensal</a> <a class="btn btn2" href="{BASE}/simulador-limite-mei/">Simular meu limite do MEI</a></div>{dest}{secoes.replace('</div><h2 id="financas">','</div>'+cta().replace(' id="oferta"','')+'<h2 id="financas">',1)}"""
-hsch=[{"@context":"https://schema.org","@type":"WebSite","name":SITE,"url":f"{BASE}/","inLanguage":"pt-BR","publisher":ORG},dict(ORG,**{"@context":"https://schema.org"})]
-open(f"{OUT}/index.html","w").write(page("","MEI em Dia: guias práticos para o Microempreendedor Individual","Limite do MEI, DAS, nota fiscal, relatório mensal e DASN-SIMEI explicados de forma simples, além de guias de finanças pessoais.",home,hsch,tipo="website"))
+ATALHOS=[("Quanto pago de DAS?","das-mei-valor-vencimento"),("Quanto posso faturar?","limite-mei-2027"),("Como emitir nota fiscal?","nota-fiscal-mei"),
+ ("Prazo da declaração anual","dasn-simei-declaracao-anual-mei"),("MEI paga Imposto de Renda?","imposto-de-renda-mei-parcela-isenta-2027"),("O que muda em 2027","mei-2027-o-que-muda"),("Posso ter funcionário?","mei-pode-ter-funcionario")]
+atalhos='<nav class="chips" aria-label="Dúvidas mais comuns">'+"".join(f'<a href="{BASE}/{s}/">{t}</a>' for t,s in ATALHOS if s in TITULOS)+"</nav>"
+prazos=f'''<div class="prazos"><div><small>Próximo DAS</small><b id="pdas">{PDAS.day} de {MESES[PDAS.month-1]} ({DIAS[PDAS.weekday()]})</b><span id="pcomp">Guia de {comp_txt(PDAS)}. Vence todo dia 20 ou no dia útil seguinte.</span> <a href="{BASE}/das-mei-valor-vencimento/">Valores do DAS</a></div>
+<div><small>Declaração anual (DASN-SIMEI)</small><b>Até 31 de maio de 2027</b><span>Referente ao faturamento de 2026. Já pode ser enviada em janeiro.</span> <a href="{BASE}/dasn-simei-declaracao-anual-mei/">Passo a passo</a></div></div>'''
+PRAZO_JS="""<script>(function(){var F=%s,M=%s,D=["domingo","segunda-feira","terça-feira","quarta-feira","quinta-feira","sexta-feira","sábado"];
+function p(n){return (n<10?"0":"")+n}var h=new Date();h.setHours(0,0,0,0);var a=h.getFullYear(),m=h.getMonth();
+for(var k=0;k<3;k++){var v=new Date(a,m,20);while(v.getDay()===0||v.getDay()===6||F.indexOf(p(v.getMonth()+1)+"-"+p(v.getDate()))>=0)v.setDate(v.getDate()+1);
+if(v>=h){var c=new Date(v.getFullYear(),v.getMonth()-1,1);document.getElementById("pdas").textContent=v.getDate()+" de "+M[v.getMonth()]+" ("+D[v.getDay()]+")";
+document.getElementById("pcomp").textContent="Guia de "+M[c.getMonth()]+" de "+c.getFullYear()+". Vence todo dia 20 ou no dia útil seguinte.";break;}m++;if(m>11){m=0;a++;}}})();</script>"""%(json.dumps(FERIADOS),json.dumps(MESES,ensure_ascii=False))
+ate_30=HOJE<"2026-12-01"
+combo_preco_txt=f'R$ {COMBO_PRECO}'+(' <small>até 30/11; depois, R$ 44,90</small>' if ate_30 else '')
+planos=f'''<h2 id="planilhas">Planilhas prontas para 2027</h2>
+<p>Pagamento único, sem mensalidade. Funcionam no Excel e no Google Planilhas, inclusive no celular, e têm garantia de 7 dias.</p>
+<div class="planos">
+<div class="plano"><small>Para o MEI</small><strong>Planilha MEI 2027</strong><span class="preco">R$ 29,90</span><ul><li>Relatório mensal pronto para imprimir</li><li>Alerta do limite (R$ 81 mil em 2026, R$ 110 mil em 2027, inclusive proporcional)</li><li>Controle do DAS e valores da DASN-SIMEI</li><li>Lucro e margem do mês, com gráfico</li></ul><a class="btn" href="{CHECKOUT}" rel="nofollow">Quero a Planilha MEI</a></div>
+<div class="plano top"><small>Mais vantajoso</small><strong>Combo: MEI + Financeira</strong><span class="preco">{combo_preco_txt}</span><ul><li>As duas planilhas: a da empresa e a da casa</li><li>Separadas saem por R$ 54,80</li><li>Ideal para separar o dinheiro pessoal do dinheiro do MEI</li></ul><a class="btn" href="{CHECKOUT3}" rel="nofollow">Quero o combo</a></div>
+<div class="plano"><small>Para o seu dinheiro</small><strong>Planilha Financeira Pessoal 2027</strong><span class="preco">R$ 24,90</span><ul><li>Orçamento por categoria com alerta quando estoura</li><li>Controle de dívidas e do cartão</li><li>Metas de economia e painel com gráficos</li></ul><a class="btn" style="background:#3b4a9c" href="{CHECKOUT2}" rel="nofollow">Quero a Financeira</a></div>
+</div>
+<p class="aviso">Ainda não quer comprar? Comece pela <a href="{GRATIS}">planilha grátis do relatório mensal</a>.</p>'''
+gratis_ferr=f'''<h2 id="gratis">Ferramentas grátis</h2><div class="lista">
+<a href="{BASE}/simulador-limite-mei/">Simulador do limite do MEI<span>Digite quanto já faturou e veja quanto ainda pode faturar, inclusive no limite proporcional de quem abriu no meio do ano.</span></a>
+<a href="{GRATIS}">Planilha grátis do Relatório Mensal de Receitas Brutas<span>Os 12 meses prontos para preencher e imprimir no modelo oficial, com o total para a DASN-SIMEI. Sem cadastro.</span></a></div>'''
+home=f"""<div class="hero"><h1>MEI em dia em 2027: limite, DAS, nota fiscal e declarações sem complicação</h1><p>Guias gratuitos e atualizados com as regras novas (LC 238/2026 e Reforma Tributária), um simulador do limite e planilhas para você controlar tudo sem pagar sistema.</p>
+<a class="btn" href="{BASE}/simulador-limite-mei/">Simular meu limite grátis</a> <a class="btn btn2" href="{GRATIS}">Baixar a planilha grátis</a></div>
+{atalhos}{prazos}{dest}{gratis_ferr}{planos}{secoes}
+<p class="data" style="margin-top:28px">Guias revisados em {data_br(max(m for _,m in sm))}. Conteúdo informativo; confirme sempre no Portal do Empreendedor ou com um contador. <a href="{BASE}/sobre/">Fontes e como os guias são feitos</a>.</p>{PRAZO_JS}"""
+guias_ld=[{"@type":"ListItem","position":i+1,"url":f"{BASE}/{a[0]}/","name":a[1]} for i,a in enumerate(A)]
+def produto(nome,desc,preco,url,img):
+    return {"@context":"https://schema.org","@type":"Product","name":nome,"description":desc,"image":f"{BASE}/{img}","brand":{"@type":"Brand","name":SITE},
+            "offers":{"@type":"Offer","price":preco,"priceCurrency":"BRL","availability":"https://schema.org/InStock","url":url,"seller":ORG}}
+hsch=[{"@context":"https://schema.org","@type":"WebSite","name":SITE,"url":f"{BASE}/","inLanguage":"pt-BR","publisher":ORG,"description":"Guias práticos para o Microempreendedor Individual: limite, DAS, nota fiscal, DASN-SIMEI e Imposto de Renda."},
+      dict(ORG,**{"@context":"https://schema.org"}),
+      {"@context":"https://schema.org","@type":"ItemList","name":"Guias do MEI em Dia","itemListElement":guias_ld},
+      produto("Planilha MEI 2027","Relatório mensal, alerta do limite do MEI, controle do DAS e valores da DASN-SIMEI. Excel e Google Planilhas.","29.90",CHECKOUT,"afiliados/capa_planilha_mei_2027.png"),
+      produto("Planilha Financeira Pessoal 2027","Orçamento por categoria, controle de dívidas, metas e painel com gráficos. Excel e Google Planilhas.","24.90",CHECKOUT2,"afiliados-financeira/capa_planilha_financeira_2027.png"),
+      produto("Combo 2027: Planilha MEI + Planilha Financeira Pessoal","As duas planilhas para organizar a empresa e a casa em 2027.",COMBO_PRECO.replace(",","."),CHECKOUT3,"afiliados-combo/capa_combo_2027.png")]
+open(f"{OUT}/index.html","w").write(page("","MEI 2027: limite, DAS, nota fiscal e planilhas | MEI em Dia","Guias grátis e atualizados para o MEI: limite de R$ 110 mil em 2027, valor do DAS, nota fiscal, DASN-SIMEI e IR. Simulador do limite e planilha grátis.",home,hsch,tipo="website"))
 
 # página Sobre (confiança e fontes)
 SOBRE_MOD="2026-11-08"
