@@ -675,6 +675,65 @@ A.append(("mei-2027-o-que-muda","MEI 2027: o que muda no limite, no DAS, na nota
 <li><strong>Atualize seu <a href="https://projects-betanull.github.io/mei-em-dia/controle-financeiro-mei/">controle financeiro</a></strong> para o teto de R$ 110 mil em janeiro.</li></ol>
 """))
 
+A.append(("imposto-de-renda-mei-parcela-isenta-2027","Quanto do lucro do MEI é isento no Imposto de Renda 2027: como calcular a parcela isenta",
+"Como calcular a parcela isenta do lucro do MEI (8%, 16% ou 32% da receita), a parte tributável e quando o MEI precisa declarar o IRPF 2027, com exemplos e a nova faixa de isenção.",
+"""<h1>Quanto do lucro do MEI é isento no Imposto de Renda 2027: como calcular a parcela isenta</h1>
+<p>O MEI não paga Imposto de Renda pela empresa: o DAS mensal já cobre os tributos do CNPJ. Mas o dinheiro que sobra e vai para o seu bolso é renda da pessoa física, e só uma parte dele é isenta. Este guia mostra como calcular essa parte, chamada de <strong>parcela isenta</strong>, quanto fica tributável e quando você precisa entregar a declaração do IRPF em 2027, que se refere ao que você ganhou em 2026.</p>
+<h2>Por que o assunto voltou: o MEI e os "penduricalhos"</h2>
+<p>A nova lei do Imposto de Renda (Lei 15.270/2025) zerou o imposto de quem ganha até R$ 5 mil por mês desde janeiro de 2026 e criou um imposto mínimo para quem recebe mais de R$ 600 mil por ano. Junto com ela, ganhou força a comparação entre o pequeno empreendedor e as verbas extras de juízes e promotores, os chamados "penduricalhos": pagamentos como auxílio-moradia são classificados como indenização e, por isso, não pagam Imposto de Renda, como mostrou a <a href="https://www.gazetadopovo.com.br/economia/nova-lei-do-imposto-de-renda-poupara-penduricalhos-que-duplicam-salarios-de-juizes/" rel="nofollow">Gazeta do Povo</a>. Já o MEI tem isenção só até um limite, e o lucro que passa dele entra na tabela do IR como um salário.</p>
+<p>A boa notícia é que, para a maioria dos MEIs, a conta termina em imposto zero: a parcela isenta somada à nova faixa de isenção cobre quase todo o lucro de quem fatura dentro do limite. Mas, para saber se você precisa declarar e como preencher, é preciso fazer o cálculo.</p>
+<h2>O que é a parcela isenta</h2>
+<p>A Lei Complementar 123/2006 (artigo 14) torna isentos de IR os lucros que a empresa do Simples Nacional, incluindo o MEI, paga ao dono, exceto o que for pró-labore, aluguel ou pagamento por serviços. Sem contabilidade completa, essa isenção tem um teto: um percentual da receita bruta do ano, o mesmo usado no Lucro Presumido (artigo 15 da Lei 9.249/1995).</p>
+<table><tr><th>Atividade do MEI</th><th>Percentual isento sobre a receita bruta</th></tr>
+<tr><td>Comércio e indústria</td><td><strong>8%</strong></td></tr>
+<tr><td>Transporte de cargas</td><td><strong>8%</strong></td></tr>
+<tr><td>Transporte de passageiros</td><td><strong>16%</strong></td></tr>
+<tr><td>Serviços em geral</td><td><strong>32%</strong></td></tr></table>
+<p>Se você vende produtos e também presta serviços, aplique cada percentual à receita da sua atividade e some os resultados. Os valores separados por tipo são os mesmos que você informa na <a href="https://projects-betanull.github.io/mei-em-dia/dasn-simei-declaracao-anual-mei/">DASN-SIMEI</a>.</p>
+<h2>Como calcular, passo a passo</h2>
+<ol><li><strong>Receita bruta de 2026:</strong> tudo o que entrou no CNPJ no ano, separado em comércio/indústria e serviços.</li>
+<li><strong>Despesas de 2026:</strong> tudo o que a empresa pagou e você consegue comprovar com nota, recibo ou extrato (mercadorias, material, aluguel do ponto, DAS, internet, combustível de trabalho).</li>
+<li><strong>Lucro apurado</strong> = receita bruta − despesas.</li>
+<li><strong>Parcela isenta</strong> = receita bruta × percentual da atividade. Se o lucro for menor do que isso, a parcela isenta é o próprio lucro.</li>
+<li><strong>Parcela tributável</strong> = lucro apurado − parcela isenta. Se der zero ou negativo, não há parte tributável.</li></ol>
+<p>Repare que as despesas não aumentam a isenção: elas só diminuem o lucro. Por isso, quem tem poucas despesas e fatura bem costuma ter parte tributável, e quem revende mercadoria com margem pequena costuma ter pouca.</p>
+<h2>Exemplos</h2>
+<table><tr><th></th><th>Ana (serviços)</th><th>Bruno (comércio)</th><th>Carla (comércio e serviços)</th></tr>
+<tr><td>Receita bruta</td><td>R$ 60.000</td><td>R$ 90.000</td><td>R$ 40.000 + R$ 30.000</td></tr>
+<tr><td>Despesas</td><td>R$ 12.000</td><td>R$ 60.000</td><td>R$ 28.000</td></tr>
+<tr><td>Lucro apurado</td><td>R$ 48.000</td><td>R$ 30.000</td><td>R$ 42.000</td></tr>
+<tr><td>Parcela isenta</td><td>32% de 60.000 = <strong>R$ 19.200</strong></td><td>8% de 90.000 = <strong>R$ 7.200</strong></td><td>8% de 40.000 + 32% de 30.000 = <strong>R$ 12.800</strong></td></tr>
+<tr><td>Parcela tributável</td><td><strong>R$ 28.800</strong></td><td><strong>R$ 22.800</strong></td><td><strong>R$ 29.200</strong></td></tr></table>
+<p>Outro caso: Diego presta serviços, faturou R$ 50.000 e teve R$ 40.000 de despesas. O lucro de R$ 10.000 é menor que 32% da receita (R$ 16.000), então todo o lucro é isento e não há parte tributável.</p>
+<h2>E com contabilidade completa?</h2>
+<p>O teto de 8%, 16% ou 32% não se aplica se a empresa mantiver escrituração contábil (livro diário, balanço) que mostre um lucro maior. Nesse caso, todo o lucro comprovado pode ser isento. Para o MEI, isso exige um contador e um custo mensal; só costuma valer a pena para quem fatura perto do limite e tem pouca despesa. Um controle em planilha ajuda a calcular e comprovar o lucro, mas não é escrituração contábil.</p>
+<h2>A parte tributável paga imposto?</h2>
+<p>A parcela tributável é somada aos seus outros rendimentos tributáveis do ano, como salário de um emprego com carteira, aluguel ou aposentadoria, e o total passa pela tabela progressiva. Com a Lei 15.270/2025, na declaração de 2027 (ano de 2026):</p>
+<ul><li>até <strong>R$ 60.000</strong> de rendimentos tributáveis no ano, o imposto é <strong>zerado</strong>;</li>
+<li>de R$ 60.000,01 a <strong>R$ 88.200</strong>, há um desconto que diminui conforme a renda sobe;</li>
+<li>acima de R$ 88.200, vale a tabela normal.</li></ul>
+<p>Nos exemplos acima, Ana, Bruno e Carla, se não tiverem outra renda tributável, ficam abaixo de R$ 60 mil e não pagam nada. Um MEI de serviços que faturou o limite de 2026 (R$ 81 mil) com R$ 6 mil de despesas teria R$ 75.000 de lucro, R$ 25.920 isentos e R$ 49.080 tributáveis: também imposto zero. Quem tem salário além do MEI precisa somar tudo antes de concluir.</p>
+<h2>Quando o MEI precisa declarar o IRPF 2027</h2>
+<p>Ser MEI, sozinho, não obriga a declarar. A Receita Federal divulga as regras do IRPF 2027 no começo do ano. Como referência, na declaração de 2026 era obrigado quem, entre outros casos:</p>
+<ul><li>recebeu mais de <strong>R$ 35.584</strong> em rendimentos tributáveis (aqui entra a parcela tributável do MEI, somada a salário e outras rendas);</li>
+<li>recebeu mais de <strong>R$ 200 mil</strong> em rendimentos isentos, como a parcela isenta do MEI;</li>
+<li>tinha bens acima de <strong>R$ 800 mil</strong> em 31 de dezembro;</li>
+<li>vendeu ações acima de R$ 40 mil no ano ou teve ganho de capital.</li></ul>
+<p>O que conta é a parte tributável, não o faturamento. Ana, com R$ 28.800 tributáveis e sem outra renda, não seria obrigada pelo critério da renda. O MEI do exemplo de R$ 81 mil, com R$ 49.080 tributáveis, seria obrigado a declarar, mesmo sem imposto a pagar. Se os limites de 2027 mudarem, esta página será atualizada.</p>
+<h2>Como informar na declaração</h2>
+<ul><li><strong>Parcela isenta:</strong> ficha "Rendimentos Isentos e Não Tributáveis", item "Rendimento de sócio ou titular de microempresa ou empresa de pequeno porte optante pelo Simples Nacional, exceto pró-labore", com o CNPJ do MEI.</li>
+<li><strong>Parcela tributável:</strong> ficha "Rendimentos Tributáveis Recebidos de Pessoa Jurídica", com o CNPJ do MEI como fonte pagadora e imposto retido igual a zero.</li></ul>
+<p>Não confunda com a DASN-SIMEI: ela é a declaração da empresa, entregue até 31 de maio, e informa só o faturamento. O IRPF é a declaração da pessoa física e tem prazo próprio (em 2026, foi até 29 de maio).</p>
+<h2>E as dívidas do DAS?</h2>
+<p>A Lei Complementar 238/2026 perdoou a parte do INSS do DAS vencida até <strong>13 de outubro de 2026</strong>. Algumas manchetes falaram em dívidas "vencidas até sexta-feira, 13", o que confundiu muita gente com 13 de novembro, mas a data da lei é 13 de outubro. O cancelamento é automático a partir de 1º de janeiro de 2027, e quem continuar MEI precisa pagar em dia o DAS de janeiro a junho de 2027. O perdão não muda o cálculo do IR. Veja as condições no guia do <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">DAS MEI 2026 e 2027</a>.</p>
+<h2>O que separar desde já</h2>
+<ol><li>Some a receita de 2026 por tipo (comércio/indústria e serviços), mês a mês, a partir dos seus <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatórios mensais</a>.</li>
+<li>Junte os comprovantes das despesas do ano: são eles que provam o lucro.</li>
+<li>Calcule lucro, parcela isenta e parcela tributável com a fórmula acima.</li>
+<li>Some os outros rendimentos da pessoa física e confira os critérios de obrigatoriedade quando a Receita divulgar as regras de 2027.</li>
+<li>Para 2027, mantenha o <a href="https://projects-betanull.github.io/mei-em-dia/controle-financeiro-mei/">controle financeiro</a> em dia e o dinheiro da empresa <a href="https://projects-betanull.github.io/mei-em-dia/separar-dinheiro-pessoal-e-da-empresa-mei/">separado do pessoal</a>: a conta do ano seguinte fica pronta sozinha.</li></ol>
+"""))
+
 # ---------------------------------------------------------------------------
 # META: dados extras de cada guia.
 #   grupo: nf | obr | ctrl | fin  (seção na página inicial)
@@ -690,6 +749,16 @@ A.append(("mei-2027-o-que-muda","MEI 2027: o que muda no limite, no DAS, na nota
 # ---------------------------------------------------------------------------
 GRUPOS=[("nf","Nota fiscal","mei"),("obr","Impostos, prazos e obrigações do MEI","mei"),("ctrl","Organização financeira do MEI","mei"),("fin","Finanças pessoais","financas")]
 META={
+"imposto-de-renda-mei-parcela-isenta-2027":dict(grupo="obr",pub="2026-11-17",mod="2026-11-17",gratis=True,tit="Parcela isenta do MEI no IR 2027: como calcular",
+ resumo=["A parcela isenta é um percentual da receita bruta do ano: <strong>8%</strong> no comércio e na indústria, <strong>16%</strong> no transporte de passageiros e <strong>32%</strong> nos serviços.",
+  "Parcela tributável = lucro (receita − despesas comprovadas) − parcela isenta. Se o lucro for menor, ele é todo isento.",
+  "Com a Lei 15.270/2025, quem tem até <strong>R$ 60 mil</strong> de rendimentos tributáveis em 2026 não paga IR, mas pode ser obrigado a declarar."],
+ faq=[("Quanto do lucro do MEI é isento de Imposto de Renda?","Sem contabilidade completa, é isento o valor de 8% da receita bruta anual no comércio e na indústria, 16% no transporte de passageiros e 32% nos serviços, limitado ao lucro. O que passar disso é rendimento tributável."),
+  ("Como calcular a parte tributável do MEI?","Lucro apurado (receita bruta menos despesas comprovadas) menos a parcela isenta. Exemplo: serviços com R$ 60 mil de receita e R$ 12 mil de despesas têm R$ 48 mil de lucro, R$ 19.200 isentos e R$ 28.800 tributáveis."),
+  ("O MEI precisa declarar Imposto de Renda em 2027?","Só se cumprir algum critério de obrigatoriedade, que a Receita divulga no começo de 2027. Na declaração de 2026, o principal era ter mais de R$ 35.584 de rendimentos tributáveis, contando a parcela tributável do MEI e outras rendas."),
+  ("A isenção de até R$ 5 mil vale para o MEI?","Vale para a pessoa física. Na declaração de 2027, rendimentos tributáveis de até R$ 60 mil no ano, incluindo a parte tributável do lucro do MEI, ficam com imposto zero, e há desconto parcial até R$ 88.200."),
+  ("A DASN-SIMEI substitui a declaração do Imposto de Renda?","Não. A DASN-SIMEI é a declaração anual da empresa e informa o faturamento. O IRPF é a declaração da pessoa física, com regras e prazo próprios.")],
+ rel=["dasn-simei-declaracao-anual-mei","controle-financeiro-mei","das-mei-valor-vencimento"]),
 "valor-aproximado-dos-tributos-nfs-e-mei":dict(grupo="nf",pub="2026-11-12",mod="2026-11-15",tit="Valor aproximado dos tributos MEI: qual das 3 opções marcar",
  resumo=["O MEI marca <strong>\"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\"</strong>.",
   "O artigo 8º do Decreto 8.264/2014 torna essa informação <strong>facultativa para o MEI</strong>, que paga os impostos em valor fixo no DAS.",
