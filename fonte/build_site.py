@@ -616,7 +616,7 @@ A.append(("mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal","MEI na Reforma Trib
 
 
 A.append(("valor-aproximado-dos-tributos-nfs-e-mei","Valor aproximado dos tributos na NFS-e do MEI: qual opção marcar",
-"Preencher os valores em cada NFS-e, configurar percentuais ou não informar (Decreto 8.264/2014)? O MEI marca a 3ª opção. Veja por quê e como salvar.",
+"MEI marca \"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\". Entenda as 3 opções do emissor da NFS-e e deixe a escolha salva.",
 """<h1>Valor aproximado dos tributos na NFS-e do MEI: qual opção marcar</h1>
 <p>Quem emite a nota de serviço pelo Emissor Nacional encontra um campo que confunde quase todo MEI: <strong>"Valor aproximado dos tributos"</strong>. Ele traz três opções, e uma delas cita um decreto. Para o MEI, a escolha é simples: marque <strong>"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)"</strong>. Este guia explica o motivo, mostra onde o campo aparece e como deixar a opção salva para as próximas notas.</p>
 <h2>As três opções do campo</h2>
@@ -773,7 +773,7 @@ META={
   ("A isenção de até R$ 5 mil vale para o MEI?","Vale para a pessoa física. Na declaração de 2027, rendimentos tributáveis de até R$ 60 mil no ano, incluindo a parte tributável do lucro do MEI, ficam com imposto zero, e há desconto parcial até R$ 88.200."),
   ("A DASN-SIMEI substitui a declaração do Imposto de Renda?","Não. A DASN-SIMEI é a declaração anual da empresa e informa o faturamento. O IRPF é a declaração da pessoa física, com regras e prazo próprios.")],
  rel=["dasn-simei-declaracao-anual-mei","separar-dinheiro-pessoal-e-da-empresa-mei","das-mei-valor-vencimento"]),
-"valor-aproximado-dos-tributos-nfs-e-mei":dict(grupo="nf",pub="2026-11-12",mod="2026-11-15",tit="Valor aproximado dos tributos MEI: qual das 3 opções marcar",
+"valor-aproximado-dos-tributos-nfs-e-mei":dict(grupo="nf",pub="2026-11-12",mod="2026-11-23",tit="Valor aproximado dos tributos MEI na NFS-e: qual marcar",
  resumo=["O MEI marca <strong>\"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\"</strong>.",
   "O artigo 8º do Decreto 8.264/2014 torna essa informação <strong>facultativa para o MEI</strong>, que paga os impostos em valor fixo no DAS.",
   "A opção pode ficar salva nas configurações do Emissor Nacional (ícone de engrenagem)."],
