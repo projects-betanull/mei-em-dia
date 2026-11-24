@@ -748,6 +748,47 @@ A.append(("imposto-de-renda-mei-parcela-isenta-2027","Quanto do lucro do MEI é 
 <li>Para 2027, mantenha o <a href="https://projects-betanull.github.io/mei-em-dia/controle-financeiro-mei/">controle financeiro</a> em dia e o dinheiro da empresa <a href="https://projects-betanull.github.io/mei-em-dia/separar-dinheiro-pessoal-e-da-empresa-mei/">separado do pessoal</a>: a conta do ano seguinte fica pronta sozinha.</li></ol>
 """))
 
+A.append(("tributacao-do-issqn-nfs-e-mei","Tributação do ISSQN na NFS-e do MEI: o que marcar e por que o campo vem travado",
+"MEI que presta serviço no Brasil fica em \"Operação tributável\". Entenda a mensagem \"não podem ser alteradas\", as 4 opções do ISSQN e a retenção na NFS-e.",
+"""<h1>Tributação do ISSQN na NFS-e do MEI: o que marcar e por que o campo vem travado</h1>
+<p>Na etapa <strong>Valores</strong> do Emissor Nacional da NFS-e aparece o bloco <strong>"Tributação Municipal"</strong>, com a pergunta sobre a <strong>"Tributação do ISSQN sobre o serviço prestado"</strong>. Muitos MEIs travam aqui: o campo vem marcado, não deixa mudar e mostra um aviso dizendo que as informações <strong>"não podem ser alteradas"</strong>. Isso é normal. Este guia explica o que cada opção significa, por que o sistema decide sozinho para o MEI e o que fazer quando o cliente fala em ISS retido.</p>
+<h2>Resposta curta</h2>
+<p>Se você é MEI e prestou um serviço para um cliente no Brasil, a situação é <strong>"Operação tributável"</strong>. O ISS do MEI já está pago no <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">DAS</a>, em valor fixo de <strong>R$ 5 por mês</strong> para quem presta serviço, por isso a nota não calcula ISS nenhum. Você não precisa preencher alíquota, base de cálculo nem valor do imposto.</p>
+<h2>O aviso "As informações de Tributação Municipal abaixo não podem ser alteradas"</h2>
+<p>Quando o emissor reconhece que o CNPJ é de um MEI, ele preenche o bloco de tributação municipal sozinho e mostra um aviso parecido com este: <em>"As informações de Tributação Municipal abaixo não podem ser alteradas, pois o tributo (ISSQN) será apurado pelo Simples Nacional"</em>. O texto exato pode variar um pouco entre versões do emissor, mas a ideia é a mesma:</p>
+<ul><li>o ISS do MEI não é calculado nota a nota;</li>
+<li>ele é cobrado no DAS mensal, junto com o INSS (e o ICMS, se houver comércio ou indústria);</li>
+<li>por isso o sistema trava os campos e não deixa você informar alíquota ou valor.</li></ul>
+<p>Não é erro de cadastro nem bloqueio do seu CNPJ. Siga para a próxima etapa.</p>
+<h2>As 4 opções de tributação do ISSQN</h2>
+<p>O campo existe para todas as empresas, não só para o MEI. Pelo manual da NFS-e Nacional, as opções são:</p>
+<table><tr><th>Opção</th><th>Quando se usa</th><th>Para o MEI</th></tr>
+<tr><td><strong>Operação tributável</strong></td><td>Serviço comum, prestado no Brasil, sobre o qual o ISS incide normalmente</td><td><strong>É o caso de quase todo MEI</strong></td></tr>
+<tr><td>Imunidade</td><td>Casos em que a Constituição proíbe cobrar o imposto (por exemplo, certos serviços de entidades e templos)</td><td>Raríssimo</td></tr>
+<tr><td>Exportação de serviço</td><td>Serviço prestado para cliente no exterior, com resultado lá fora</td><td>Só se o cliente for de fora do país</td></tr>
+<tr><td>Não incidência</td><td>Atividade que não é serviço tributado pelo ISS</td><td>Não se aplica a quem emite nota de serviço do próprio CNPJ</td></tr></table>
+<p>Na prática, o MEI quase nunca escolhe: o emissor já deixa marcada a situação compatível com o regime do MEI. Se você tem uma situação especial (cliente no exterior, por exemplo) e o emissor não aceitar a opção, procure a prefeitura ou um contador antes de emitir.</p>
+<h2>"Há retenção do ISSQN pelo Tomador/Adquirente ou pelo Intermediário?"</h2>
+<p>Essa é outra pergunta da etapa Valores. <strong>Retenção</strong> é quando o cliente desconta o ISS do pagamento e recolhe o imposto no seu lugar. Para o MEI, isso não faz sentido: o ISS já está no DAS, em valor fixo, e o MEI não tem alíquota de ISS sobre a nota. Por isso, a resposta do MEI é que <strong>não há retenção</strong> (ISSQN não retido), e o sistema nacional não aceita nota de MEI com ISS retido.</p>
+<p>Se uma empresa cliente quiser reter ISS do seu pagamento por costume, explique que você é MEI e recolhe o ISS em valor fixo pelo DAS. Se o desconto já foi feito, peça a devolução ao cliente; se ele insistir, vale consultar a prefeitura do município dele.</p>
+<h2>Outros campos do bloco de tributação</h2>
+<ul><li><strong>Benefício municipal</strong> ("Este serviço prestado está amparado por algum benefício municipal?"): o normal para o MEI é não.</li>
+<li><strong>Regime especial de tributação:</strong> é para casos como cooperativas e sociedades de profissionais. Para o MEI, "Nenhum".</li>
+<li><strong>Valor aproximado dos tributos:</strong> logo abaixo, marque "Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)". O motivo está no guia <a href="https://projects-betanull.github.io/mei-em-dia/valor-aproximado-dos-tributos-nfs-e-mei/">valor aproximado dos tributos na NFS-e do MEI</a>.</li></ul>
+<h2>Passo a passo da etapa Valores para o MEI</h2>
+<ol><li>Informe o <strong>valor do serviço prestado</strong> (o total cobrado do cliente).</li>
+<li>Se houver desconto já combinado, use o campo de desconto incondicionado; se não, deixe zerado.</li>
+<li>No bloco "Tributação Municipal", confira o aviso e siga sem mudar nada.</li>
+<li>Na pergunta de retenção, deixe sem retenção.</li>
+<li>Em "Valor aproximado dos tributos", escolha a opção do Decreto 8.264/2014.</li>
+<li>Avance, confira a prévia e emita.</li></ol>
+<p>As etapas anteriores (cliente, código do serviço e descrição) estão no guia <a href="https://projects-betanull.github.io/mei-em-dia/nota-fiscal-mei/">nota fiscal MEI: quando é obrigatória e como emitir</a>.</p>
+<h2>E em 2027, com IBS e CBS?</h2>
+<p>A Reforma Tributária cria o IBS e a CBS, mas o MEI continua pagando tudo no DAS e segue dispensado de destacar esses valores na nota. O ISS do MEI também continua no DAS. Veja os detalhes em <a href="https://projects-betanull.github.io/mei-em-dia/mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal/">MEI na Reforma Tributária em 2027</a>.</p>
+<h2>Depois de emitir</h2>
+<p>Lance o valor da nota no seu <a href="https://projects-betanull.github.io/mei-em-dia/controle-financeiro-mei/">controle financeiro</a>. Ele entra no <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal de receitas brutas</a> e conta para o limite do ano: R$ 81 mil em 2026 e R$ 110 mil em 2027.</p>
+"""))
+
 # ---------------------------------------------------------------------------
 # META: dados extras de cada guia.
 #   grupo: nf | obr | ctrl | fin  (seção na página inicial)
@@ -763,6 +804,14 @@ A.append(("imposto-de-renda-mei-parcela-isenta-2027","Quanto do lucro do MEI é 
 # ---------------------------------------------------------------------------
 GRUPOS=[("obr","Impostos, prazos e obrigações do MEI","mei"),("nf","Nota fiscal","mei"),("ctrl","Organização financeira do MEI","mei"),("fin","Finanças pessoais","financas")]
 META={
+"tributacao-do-issqn-nfs-e-mei":dict(grupo="nf",pub="2026-11-24",mod="2026-11-24",gratis=True,tit="Tributação do ISSQN MEI na NFS-e: o que marcar",
+ resumo=["MEI que presta serviço no Brasil fica em <strong>\"Operação tributável\"</strong>; o emissor costuma preencher e travar esse bloco sozinho.",
+  "O aviso de que as informações de Tributação Municipal <strong>não podem ser alteradas</strong> é normal: o ISS do MEI é pago no DAS, em valor fixo de R$ 5 por mês.",
+  "Na pergunta de retenção, o MEI fica <strong>sem retenção</strong> do ISSQN."],
+ faq=[("Por que a tributação municipal da NFS-e do MEI não pode ser alterada?","Porque o ISS do MEI não é calculado em cada nota. Ele é pago no DAS mensal, em valor fixo, pelo Simples Nacional. Por isso o Emissor Nacional preenche e trava o bloco de tributação municipal."),
+  ("Qual a tributação do ISSQN do MEI na nota fiscal de serviço?","Para serviço prestado no Brasil, \"Operação tributável\". As outras opções (imunidade, exportação de serviço e não incidência) são para casos especiais."),
+  ("O cliente pode reter ISS da nota do MEI?","Não. O MEI recolhe o ISS em valor fixo no DAS e a NFS-e de MEI sai sem retenção do ISSQN. Se um cliente descontar o ISS por engano, peça a devolução.")],
+ rel=["valor-aproximado-dos-tributos-nfs-e-mei","nota-fiscal-mei","nfs-e-nacional-simples-nacional-novembro-2026-mei"]),
 "imposto-de-renda-mei-parcela-isenta-2027":dict(grupo="obr",pub="2026-11-17",mod="2026-11-17",gratis=True,tit="Parcela isenta do MEI no IR 2027: como calcular",
  resumo=["A parcela isenta é um percentual da receita bruta do ano: <strong>8%</strong> no comércio e na indústria, <strong>16%</strong> no transporte de passageiros e <strong>32%</strong> nos serviços.",
   "Parcela tributável = lucro (receita − despesas comprovadas) − parcela isenta. Se o lucro for menor, ele é todo isento.",
@@ -781,7 +830,7 @@ META={
   ("O que o MEI coloca em valor aproximado dos tributos na nota fiscal?","A opção \"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\". O artigo 8º desse decreto torna a informação facultativa para o MEI."),
   ("O MEI é obrigado a informar os tributos na NFS-e?","Não. A Lei 12.741/2012 exige a informação nas vendas ao consumidor, mas o Decreto 8.264/2014 tornou a regra facultativa para o MEI."),
   ("Informei um valor de tributos por engano. Vou pagar mais imposto?","Não. O campo é só informativo para o cliente. O imposto do MEI é o valor fixo mensal do DAS, que não muda com o que aparece nesse campo.")],
- rel=["nota-fiscal-mei","nfs-e-nacional-simples-nacional-novembro-2026-mei","mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal"]),
+ rel=["tributacao-do-issqn-nfs-e-mei","nota-fiscal-mei","mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal"]),
 "mei-2027-o-que-muda":dict(grupo="obr",sim=True,pub="2026-11-12",mod="2026-11-17",gratis=True,tit="Tabela MEI 2027: tudo o que muda e o calendário do ano",
  resumo=["Limite sobe para <strong>R$ 110 mil</strong> e o MEI pode ter <strong>até 2 empregados</strong> (LC 238/2026).",
   "O DAS muda com o novo salário mínimo e ganha uma parcela fixa de R$ 1 de CBS e IBS.",
@@ -838,7 +887,7 @@ META={
  faq=[("O MEI precisa emitir nota para pessoa física?","Em 2026, só se o cliente pedir. Para 2027, veja a seção \"O que muda em 2027\" acima: a regra geral passa a exigir documento fiscal, mas a DASN-SIMEI poderá cumprir esse papel nessas vendas."),
   ("Emitir nota fiscal de serviço tem custo?","Não. O Emissor Nacional da NFS-e (site e app) é gratuito; basta a conta gov.br nível prata ou ouro."),
   ("Venda sem nota entra no faturamento?","Sim. Ela entra no relatório mensal e conta para o limite anual de faturamento.")],
- rel=["valor-aproximado-dos-tributos-nfs-e-mei","mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal","nfs-e-nacional-simples-nacional-novembro-2026-mei"]),
+ rel=["valor-aproximado-dos-tributos-nfs-e-mei","tributacao-do-issqn-nfs-e-mei","nfs-e-nacional-simples-nacional-novembro-2026-mei"]),
 "mei-pode-ter-funcionario":dict(grupo="obr",sim=True,pub="2026-10-30",mod="2026-11-08",tit="MEI pode ter funcionário? Regras e custo em 2026 e 2027",
  resumo=["Em 2026 o MEI pode ter <strong>1 empregado</strong>. A partir de 1º/01/2027, pela LC 238/2026, até <strong>2</strong>.",
   "Cada um recebe salário mínimo ou piso da categoria. Encargos: <strong>3% de INSS + 8% de FGTS</strong>.",
@@ -891,7 +940,7 @@ META={
   "O ISS continua municipal e, no MEI, segue dentro do DAS."],
  faq=[("O MEI precisa fazer algo novo por causa da mudança de novembro?","Não. O MEI já emite a NFS-e pelo Emissor Nacional desde setembro de 2023. A mudança vale para ME e EPP."),
   ("Onde o MEI emite a nota de serviço?","No site nfse.gov.br ou no app NFS-e Mobile, com a conta gov.br nível prata ou ouro.")],
- rel=["nota-fiscal-mei","valor-aproximado-dos-tributos-nfs-e-mei","limite-mei-2027"]),
+ rel=["nota-fiscal-mei","valor-aproximado-dos-tributos-nfs-e-mei","tributacao-do-issqn-nfs-e-mei"]),
 "como-sair-das-dividas":dict(grupo="fin",pub="2026-11-03",mod="2026-11-08",tit="Como sair das dívidas: plano em 7 passos",
  resumo=["Liste todas as dívidas (o Registrato e a Serasa ajudam a achar as esquecidas).",
   "Quite primeiro as de <strong>juros mais altos</strong>: rotativo do cartão e cheque especial.",
