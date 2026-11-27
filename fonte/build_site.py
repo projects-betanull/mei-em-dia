@@ -789,6 +789,59 @@ A.append(("tributacao-do-issqn-nfs-e-mei","Tributação do ISSQN na NFS-e do MEI
 <p>Lance o valor da nota no seu <a href="https://projects-betanull.github.io/mei-em-dia/controle-financeiro-mei/">controle financeiro</a>. Ele entra no <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal de receitas brutas</a> e conta para o limite do ano: R$ 81 mil em 2026 e R$ 110 mil em 2027.</p>
 """))
 
+A.append(("cancelar-nfs-e-mei-emissor-nacional","Como cancelar NFS-e do MEI no Emissor Nacional (ou substituir a nota errada)",
+"Para cancelar NFS-e do MEI: notas emitidas, 3 pontinhos, cancelar ou substituir. Veja o prazo da sua cidade e o que fazer com \"Solicitar Análise Fiscal\".",
+"""<h1>Como cancelar NFS-e do MEI no Emissor Nacional (ou substituir a nota errada)</h1>
+<p>Errou o valor, o cliente ou a descrição da nota fiscal de serviço? No Emissor Nacional da NFS-e, que todo MEI usa para notas de serviço desde setembro de 2023, uma nota emitida não pode ser editada. Existem dois caminhos: <strong>cancelar</strong> a nota ou <strong>substituir</strong> por uma nova. Este guia mostra onde ficam as opções, qual escolher, o que significa a opção <strong>"Solicitar Análise Fiscal"</strong> e o que muda no seu controle de MEI depois.</p>
+<h2>Resposta curta</h2>
+<p>Entre no Emissor Nacional, abra a lista de <strong>notas emitidas</strong>, clique nos <strong>três pontinhos</strong> à direita da nota e escolha <strong>cancelar</strong> ou <strong>substituir</strong>. Se a nota ainda estiver dentro das regras do seu município, o cancelamento sai na hora, com motivo e justificativa. Se não estiver, o sistema troca o botão por <strong>"Solicitar Análise Fiscal"</strong>, e quem decide é a prefeitura.</p>
+<h2>Cancelar ou substituir: qual escolher</h2>
+<table><tr><th>Situação</th><th>O que fazer</th></tr>
+<tr><td>O serviço não foi prestado ou a venda foi desfeita</td><td><strong>Cancelar</strong></td></tr>
+<tr><td>Nota emitida em duplicidade</td><td><strong>Cancelar</strong> a repetida</td></tr>
+<tr><td>Serviço prestado, mas com erro na descrição, no código do serviço ou em outro dado da nota</td><td><strong>Substituir</strong></td></tr>
+<tr><td>Nota emitida para o cliente errado</td><td>Substituir, se o seu município permitir trocar o tomador; se não, cancelar e emitir outra</td></tr></table>
+<p>A regra prática é simples: se o serviço aconteceu, a nota precisa continuar existindo de alguma forma, e o caminho é substituir. Algumas prefeituras recusam o cancelamento justamente quando há prova de que o serviço foi prestado e o caso pedia substituição.</p>
+<h2>Passo a passo para cancelar a NFS-e</h2>
+<ol><li>Acesse o Emissor Nacional (nfse.gov.br, opção do emissor web) com o login gov.br ou o certificado digital.</li>
+<li>Abra a consulta de <strong>notas emitidas</strong> e localize a nota pelo número, pela data ou pelo cliente.</li>
+<li>Clique nos <strong>três pontinhos</strong> na linha da nota e escolha a opção de cancelamento.</li>
+<li>Escolha o <strong>motivo</strong>. O sistema nacional trabalha com três: erro na emissão, serviço não prestado e outros.</li>
+<li>Escreva a <strong>justificativa</strong>, que é obrigatória. Seja objetivo, por exemplo: "Nota emitida em duplicidade; a nota correta é a de número 15".</li>
+<li>Confirme. A nota passa a aparecer como cancelada, e o cliente consegue ver a situação ao consultar a chave de acesso.</li></ol>
+<p>Avise o cliente por mensagem ou e-mail. Se ele já tinha lançado a nota na contabilidade dele, precisa saber que ela não vale mais.</p>
+<h2>Qual é o prazo para cancelar</h2>
+<p>Aqui está a dúvida que mais gera confusão: <strong>o prazo não é igual no Brasil inteiro</strong>. O Sistema Nacional permite cancelamento automático por até 730 dias (cerca de 2 anos) da emissão, mas cada município configura as próprias regras dentro desse teto. Alguns exemplos de 2026:</p>
+<ul><li><strong>Belo Horizonte:</strong> cancelamento automático para notas emitidas há no máximo 730 dias, desde que a prefeitura não tenha bloqueado a nota.</li>
+<li><strong>Várzea Grande (MT):</strong> o pedido precisa ser feito até o quinto dia do mês seguinte ao da emissão, e o cancelamento sem análise vale só para notas de até R$ 5 mil emitidas há até 5 dias.</li></ul>
+<p>Por isso, o melhor é cancelar <strong>assim que perceber o erro</strong>. Se quiser saber a regra exata da sua cidade, procure "NFS-e Nacional cancelamento" no site da prefeitura ou pergunte no setor de ISS.</p>
+<h2>O que é "Solicitar Análise Fiscal"</h2>
+<p>Quando a nota não cumpre as condições do cancelamento automático (prazo vencido, valor acima do limite da cidade ou outra regra local), o emissor não mostra mais o botão de cancelar. No lugar dele aparece <strong>"Solicitar Análise Fiscal"</strong>. Você informa o motivo e a justificativa, e o pedido vai para a prefeitura.</p>
+<ul><li>A prefeitura pode <strong>deferir</strong> (a nota é cancelada) ou <strong>indeferir</strong> (a nota continua valendo).</li>
+<li>Ela pode pedir documentos, como a conversa com o cliente ou o comprovante de que o serviço não aconteceu.</li>
+<li>Enquanto o pedido estiver em análise, a nota não pode ser substituída.</li>
+<li>Depois de um indeferimento, o sistema não aceita novo pedido de cancelamento nem a substituição daquela nota pelo emissor.</li></ul>
+<p>Justificativa bem escrita faz diferença. Explique o que aconteceu, com data, e diga qual nota ficou valendo, se houver outra.</p>
+<h2>Como substituir uma NFS-e</h2>
+<p>A substituição emite uma nota nova que <strong>cancela a anterior automaticamente</strong>, e as duas ficam ligadas no sistema. Pela mesma lista de notas emitidas, use os três pontinhos e escolha substituir. O emissor abre a nota preenchida para você corrigir e pede o motivo, que na maioria dos casos do MEI é "outros", com uma explicação curta.</p>
+<p>Alguns cuidados:</p>
+<ul><li><strong>A competência (mês da nota) não muda</strong> na substituição.</li>
+<li>Para empresas do Simples Nacional, incluindo o MEI, o leiaute nacional costuma travar a troca do tomador identificado e do valor do serviço; se for isso que está errado, o caminho pode ser cancelar e emitir outra nota. Algumas prefeituras liberam a troca do tomador.</li>
+<li>O prazo da substituição também é definido pelo município. Há cidades com até 2 anos e cidades com apenas 2 dias.</li></ul>
+<p>Se precisar emitir a nota correta do zero, o passo a passo está no guia <a href="https://projects-betanull.github.io/mei-em-dia/nota-fiscal-mei/">nota fiscal MEI: quando é obrigatória e como emitir</a>.</p>
+<h2>Quando não dá mais para cancelar</h2>
+<ul><li><strong>O cliente já confirmou a nota</strong> no sistema: a partir daí não cabe cancelamento, análise fiscal nem substituição pelo emissor. Só a prefeitura pode cancelar.</li>
+<li><strong>O cliente rejeitou a nota:</strong> a rejeição sozinha não cancela nada. Você ainda precisa cancelar ou substituir dentro do prazo.</li>
+<li><strong>A prefeitura bloqueou a nota:</strong> nenhuma das opções fica disponível; procure o setor de ISS.</li></ul>
+<h2>E o DAS, o ISS e o relatório mensal?</h2>
+<p>Para o MEI, cancelar uma nota não gera imposto a devolver. O ISS do MEI não é calculado nota a nota: ele já está no <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">DAS mensal</a>, em valor fixo. É por isso que a nota do MEI sai com o bloco de tributação travado, como explica o guia <a href="https://projects-betanull.github.io/mei-em-dia/tributacao-do-issqn-nfs-e-mei/">tributação do ISSQN na NFS-e do MEI</a>. O DAS do mês continua igual, com ou sem a nota.</p>
+<p>O que muda é o seu controle:</p>
+<ul><li><strong>Nota cancelada porque o serviço não aconteceu:</strong> tire o valor do faturamento do mês. Ele não entra no <a href="https://projects-betanull.github.io/mei-em-dia/relatorio-mensal-de-receitas-brutas-mei/">relatório mensal de receitas brutas</a>, na DASN-SIMEI nem na conta do limite (R$ 81 mil em 2026 e R$ 110 mil em 2027).</li>
+<li><strong>Nota substituída:</strong> conte só a nota nova. Se você lançar as duas, o faturamento do ano fica inflado.</li>
+<li><strong>Dinheiro devolvido ao cliente:</strong> registre a devolução no controle, para o saldo do caixa bater.</li></ul>
+<p>Cancelar nota não serve para esconder faturamento. Se o serviço foi prestado e pago, a receita existe e precisa ser declarada, com nota ou sem.</p>
+"""))
+
 # ---------------------------------------------------------------------------
 # META: dados extras de cada guia.
 #   grupo: nf | obr | ctrl | fin  (seção na página inicial)
@@ -804,6 +857,14 @@ A.append(("tributacao-do-issqn-nfs-e-mei","Tributação do ISSQN na NFS-e do MEI
 # ---------------------------------------------------------------------------
 GRUPOS=[("obr","Impostos, prazos e obrigações do MEI","mei"),("nf","Nota fiscal","mei"),("ctrl","Organização financeira do MEI","mei"),("fin","Finanças pessoais","financas")]
 META={
+"cancelar-nfs-e-mei-emissor-nacional":dict(grupo="nf",pub="2026-11-27",mod="2026-11-27",gratis=True,tit="Como cancelar NFS-e MEI no Emissor Nacional (e substituir)",
+ resumo=["Nas notas emitidas do Emissor Nacional, clique nos <strong>três pontinhos</strong> da nota e escolha cancelar ou substituir.",
+  "O prazo de cancelamento é definido pelo <strong>município</strong>, até 730 dias. Fora das regras, aparece <strong>\"Solicitar Análise Fiscal\"</strong> e a prefeitura decide.",
+  "Se o serviço foi prestado e só há erro na nota, <strong>substitua</strong>. Nota cancelada sai do faturamento do mês; o DAS não muda."],
+ faq=[("Qual o prazo para cancelar NFS-e do MEI no Emissor Nacional?","Depende do município. O Sistema Nacional aceita cancelamento automático por até 730 dias da emissão, mas cada prefeitura pode fixar prazo e valor menores. Em Várzea Grande (MT), por exemplo, o pedido vai até o quinto dia do mês seguinte ao da emissão. Fora das regras, o emissor mostra \"Solicitar Análise Fiscal\"."),
+  ("Por que não aparece a opção de cancelar a NFS-e?","Quando a nota não cumpre as condições de cancelamento automático do município, o emissor troca a opção por \"Solicitar Análise Fiscal\". Também não dá para cancelar se o cliente já confirmou a nota, se há análise pendente ou se a prefeitura bloqueou a nota."),
+  ("Cancelar NFS-e muda o DAS do MEI?","Não. O MEI paga valor fixo no DAS, sem ISS calculado por nota. O que muda é o controle: a nota cancelada sai do faturamento do mês, do relatório mensal e da conta do limite anual.")],
+ rel=["nota-fiscal-mei","tributacao-do-issqn-nfs-e-mei","relatorio-mensal-de-receitas-brutas-mei"]),
 "tributacao-do-issqn-nfs-e-mei":dict(grupo="nf",pub="2026-11-24",mod="2026-11-24",gratis=True,tit="Tributação do ISSQN MEI na NFS-e: o que marcar",
  resumo=["MEI que presta serviço no Brasil fica em <strong>\"Operação tributável\"</strong>; o emissor costuma preencher e travar esse bloco sozinho.",
   "O aviso de que as informações de Tributação Municipal <strong>não podem ser alteradas</strong> é normal: o ISS do MEI é pago no DAS, em valor fixo de R$ 5 por mês.",
@@ -811,7 +872,7 @@ META={
  faq=[("Por que a tributação municipal da NFS-e do MEI não pode ser alterada?","Porque o ISS do MEI não é calculado em cada nota. Ele é pago no DAS mensal, em valor fixo, pelo Simples Nacional. Por isso o Emissor Nacional preenche e trava o bloco de tributação municipal."),
   ("Qual a tributação do ISSQN do MEI na nota fiscal de serviço?","Para serviço prestado no Brasil, \"Operação tributável\". As outras opções (imunidade, exportação de serviço e não incidência) são para casos especiais."),
   ("O cliente pode reter ISS da nota do MEI?","Não. O MEI recolhe o ISS em valor fixo no DAS e a NFS-e de MEI sai sem retenção do ISSQN. Se um cliente descontar o ISS por engano, peça a devolução.")],
- rel=["valor-aproximado-dos-tributos-nfs-e-mei","nota-fiscal-mei","nfs-e-nacional-simples-nacional-novembro-2026-mei"]),
+ rel=["valor-aproximado-dos-tributos-nfs-e-mei","nota-fiscal-mei","cancelar-nfs-e-mei-emissor-nacional"]),
 "imposto-de-renda-mei-parcela-isenta-2027":dict(grupo="obr",pub="2026-11-17",mod="2026-11-17",gratis=True,tit="Parcela isenta do MEI no IR 2027: como calcular",
  resumo=["A parcela isenta é um percentual da receita bruta do ano: <strong>8%</strong> no comércio e na indústria, <strong>16%</strong> no transporte de passageiros e <strong>32%</strong> nos serviços.",
   "Parcela tributável = lucro (receita − despesas comprovadas) − parcela isenta. Se o lucro for menor, ele é todo isento.",
@@ -887,7 +948,7 @@ META={
  faq=[("O MEI precisa emitir nota para pessoa física?","Em 2026, só se o cliente pedir. Para 2027, veja a seção \"O que muda em 2027\" acima: a regra geral passa a exigir documento fiscal, mas a DASN-SIMEI poderá cumprir esse papel nessas vendas."),
   ("Emitir nota fiscal de serviço tem custo?","Não. O Emissor Nacional da NFS-e (site e app) é gratuito; basta a conta gov.br nível prata ou ouro."),
   ("Venda sem nota entra no faturamento?","Sim. Ela entra no relatório mensal e conta para o limite anual de faturamento.")],
- rel=["valor-aproximado-dos-tributos-nfs-e-mei","tributacao-do-issqn-nfs-e-mei","nfs-e-nacional-simples-nacional-novembro-2026-mei"]),
+ rel=["valor-aproximado-dos-tributos-nfs-e-mei","tributacao-do-issqn-nfs-e-mei","cancelar-nfs-e-mei-emissor-nacional"]),
 "mei-pode-ter-funcionario":dict(grupo="obr",sim=True,pub="2026-10-30",mod="2026-11-08",tit="MEI pode ter funcionário? Regras e custo em 2026 e 2027",
  resumo=["Em 2026 o MEI pode ter <strong>1 empregado</strong>. A partir de 1º/01/2027, pela LC 238/2026, até <strong>2</strong>.",
   "Cada um recebe salário mínimo ou piso da categoria. Encargos: <strong>3% de INSS + 8% de FGTS</strong>.",
