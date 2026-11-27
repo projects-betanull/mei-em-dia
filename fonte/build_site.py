@@ -616,14 +616,16 @@ A.append(("mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal","MEI na Reforma Trib
 
 
 A.append(("valor-aproximado-dos-tributos-nfs-e-mei","Valor aproximado dos tributos na NFS-e do MEI: qual opção marcar",
-"MEI marca \"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\". Entenda as 3 opções do emissor da NFS-e e deixe a escolha salva.",
+"MEI marca \"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\": é facultativo (art. 8º). Veja as outras opções e a alíquota do Simples.",
 """<h1>Valor aproximado dos tributos na NFS-e do MEI: qual opção marcar</h1>
-<p>Quem emite a nota de serviço pelo Emissor Nacional encontra um campo que confunde quase todo MEI: <strong>"Valor aproximado dos tributos"</strong>. Ele traz três opções, e uma delas cita um decreto. Para o MEI, a escolha é simples: marque <strong>"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)"</strong>. Este guia explica o motivo, mostra onde o campo aparece e como deixar a opção salva para as próximas notas.</p>
-<h2>As três opções do campo</h2>
+<p>Quem emite a nota de serviço pelo Emissor Nacional encontra um campo que confunde quase todo MEI: <strong>"Valor aproximado dos tributos"</strong>. Ele traz três opções (em alguns perfis, quatro), e uma delas cita um decreto. Para o MEI, a escolha é simples: marque <strong>"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)"</strong>. Este guia explica o motivo, mostra onde o campo aparece e como deixar a opção salva para as próximas notas.</p>
+<h2>As opções do campo</h2>
 <table><tr><th>Opção</th><th>O que faz</th><th>Para o MEI</th></tr>
 <tr><td>Preencher os valores monetários em cada NFS-e emitida</td><td>Você digita, em reais, a estimativa de tributos federais, estaduais e municipais de cada nota</td><td>Não é necessário</td></tr>
 <tr><td>Configurar os valores percentuais correspondentes</td><td>Você cadastra percentuais e o sistema calcula a estimativa em cada nota</td><td>Não é necessário</td></tr>
-<tr><td><strong>Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)</strong></td><td>A nota sai sem a estimativa de tributos</td><td><strong>É a opção indicada</strong></td></tr></table>
+<tr><td><strong>Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)</strong></td><td>A nota sai sem a estimativa de tributos</td><td><strong>É a opção indicada</strong></td></tr>
+<tr><td>Informar alíquota do Simples Nacional</td><td>A nota mostra só a alíquota do Simples a que a empresa está sujeita (regra facilitada do artigo 9º do decreto)</td><td>Feita para ME e EPP do Simples; o MEI não tem alíquota, paga valor fixo</td></tr></table>
+<p>O campo costuma aparecer como obrigatório, mas isso só quer dizer que você precisa <strong>escolher uma das opções</strong>. Marcar "Não informar" já resolve: não é preciso digitar valor nenhum.</p>
 <h2>Por que o MEI pode não informar</h2>
 <p>O campo existe por causa da <strong>Lei 12.741/2012</strong>, conhecida como Lei da Transparência Fiscal, que manda mostrar ao consumidor quanto do preço corresponde, aproximadamente, a impostos. O <strong>Decreto 8.264/2014</strong> regulamentou essa lei e, no <strong>artigo 8º</strong>, tornou a regra <strong>facultativa para o MEI</strong>. Por isso o emissor oferece uma opção que cita justamente esse decreto.</p>
 <p>Faz sentido: o MEI não calcula imposto sobre cada venda. Tudo o que ele paga está no valor fixo mensal do <a href="https://projects-betanull.github.io/mei-em-dia/das-mei-valor-vencimento/">DAS</a>, que é o mesmo emitindo uma nota ou cem. Não existe um percentual de imposto "embutido" em cada serviço para mostrar ao cliente.</p>
@@ -883,13 +885,14 @@ META={
   ("A isenção de até R$ 5 mil vale para o MEI?","Vale para a pessoa física. Na declaração de 2027, rendimentos tributáveis de até R$ 60 mil no ano, incluindo a parte tributável do lucro do MEI, ficam com imposto zero, e há desconto parcial até R$ 88.200."),
   ("A DASN-SIMEI substitui a declaração do Imposto de Renda?","Não. A DASN-SIMEI é a declaração anual da empresa e informa o faturamento. O IRPF é a declaração da pessoa física, com regras e prazo próprios.")],
  rel=["dasn-simei-declaracao-anual-mei","separar-dinheiro-pessoal-e-da-empresa-mei","das-mei-valor-vencimento"]),
-"valor-aproximado-dos-tributos-nfs-e-mei":dict(grupo="nf",pub="2026-11-12",mod="2026-11-23",tit="Valor aproximado dos tributos MEI na NFS-e: qual marcar",
+"valor-aproximado-dos-tributos-nfs-e-mei":dict(grupo="nf",pub="2026-11-12",mod="2026-11-27",tit="Valor aproximado dos tributos MEI: o que colocar na NFS-e",
  resumo=["O MEI marca <strong>\"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\"</strong>.",
   "O artigo 8º do Decreto 8.264/2014 torna essa informação <strong>facultativa para o MEI</strong>, que paga os impostos em valor fixo no DAS.",
   "A opção pode ficar salva nas configurações do Emissor Nacional (ícone de engrenagem)."],
  faq=[("Qual a diferença entre preencher os valores monetários, configurar os percentuais e não informar?","Na primeira, você digita em reais a estimativa de tributos de cada NFS-e. Na segunda, cadastra percentuais e o emissor calcula a estimativa sozinho. Na terceira, \"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\", a nota sai sem a estimativa, que é o indicado para o MEI."),
   ("O que o MEI coloca em valor aproximado dos tributos na nota fiscal?","A opção \"Não informar nenhum valor estimado para os Tributos (Decreto 8.264/2014)\". O artigo 8º desse decreto torna a informação facultativa para o MEI."),
   ("O MEI é obrigado a informar os tributos na NFS-e?","Não. A Lei 12.741/2012 exige a informação nas vendas ao consumidor, mas o Decreto 8.264/2014 tornou a regra facultativa para o MEI."),
+  ("O MEI deve marcar \"Informar alíquota do Simples Nacional\"?","Não precisa. Essa opção é a regra facilitada do artigo 9º do Decreto 8.264/2014 para microempresas e empresas de pequeno porte do Simples, que têm alíquota. O MEI paga valor fixo no DAS e pode simplesmente não informar, pelo artigo 8º."),
   ("Informei um valor de tributos por engano. Vou pagar mais imposto?","Não. O campo é só informativo para o cliente. O imposto do MEI é o valor fixo mensal do DAS, que não muda com o que aparece nesse campo.")],
  rel=["tributacao-do-issqn-nfs-e-mei","nota-fiscal-mei","mei-reforma-tributaria-2027-ibs-cbs-nota-fiscal"]),
 "mei-2027-o-que-muda":dict(grupo="obr",sim=True,pub="2026-11-12",mod="2026-11-17",gratis=True,tit="Tabela MEI 2027: tudo o que muda e o calendário do ano",
